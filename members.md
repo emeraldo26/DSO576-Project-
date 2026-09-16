@@ -6,5 +6,5 @@
 | Alternatives | Taotianchen Wan | [add username] |
 | Data Fit | Brahmani Mundhe | [add username] |
 | Auxiliary Data | Kaho Sakemi | [add username] |
-| Technical Path | Chang Zhou | [add username] |
+| Technical Path | Chang Zhou | ChelseaChangZ |
 | Objections | Xiru Zhang | [add username] |
