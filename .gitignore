@@ -1,20 +1,16 @@
-# macOS
-.DS_Store
+# Downloaded datasets
+data/*.csv
+data/*.xlsx
 
-# Python
-__pycache__/
-*.pyc
+# Generated outputs
+outputs/
+
+# Python files
 .venv/
+venv/
+__pycache__/
+*.py[cod]
 
-# Environment / secrets
-.env
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Raw downloaded data
-data/raw/
-
-# Temporary files
-*.tmp
-*.log
+# Local files
+.DS_Store
+*.zip
