@@ -12,7 +12,7 @@ First, I would identify occupations with a large number of workers or major chan
 
 This process may be difficult because the information comes from different sources and may use different occupation codes. AI-use data may be national rather than specific to California. It may also be difficult to compare AI exposure, employment demand, training cost, regional needs, and equity considerations at the same time. Some decisions may therefore depend heavily on staff judgment and stakeholder opinions.
 
-This description is a plausible role-play based on public information. We have not verified that California EDD follows this exact process.
+
 
 ## Google Searches to Test This Process
 
