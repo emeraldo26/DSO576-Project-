@@ -36,7 +36,7 @@ not be committed to GitHub.
 From the repository root:
 
 ```bash
-python analysis/explore_data.py
+python explore_analysis/explore_data.py
 ```
 
 The script writes its generated tables and text report to `outputs/`. That
