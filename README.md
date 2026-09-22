@@ -24,6 +24,7 @@ The main occupation-level join uses six-digit SOC codes. The task-level join use
 ## Project documentation map
 
 - Start with [`docs/project-start.md`](docs/project-start.md) for the project context, candidate visions, and unresolved questions.
+- Review [`docs/Phase1- Deliverables.pdf`](docs/Phase1-%20Deliverables.pdf) for the Phase 1 project sketch.
 - See [`roles/members.md`](roles/members.md) for team ownership.
 - See [`code/README.md`](code/README.md) for the Phase 1 script description.
 - See [`data/README.md`](data/README.md) for the raw-data policy.
