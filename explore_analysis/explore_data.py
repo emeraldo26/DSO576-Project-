@@ -1,4 +1,4 @@
-"""Phase 1 data exploration for the AI Workforce Investment Planner (in GPT-assisted).
+"""Phase 1 data exploration for the AI Workforce Investment Planner, with assistance from GPT.
 
 This script checks whether the Anthropic, O*NET, and BLS datasets can be
 connected at the occupation and task levels. It also creates two analysis-ready
