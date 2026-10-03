@@ -196,6 +196,9 @@ def main() -> None:
             "right_only": int(merge_counts.get("right_only", 0)),
         }
     )
+    exposure_merge.loc[exposure_merge["_merge"].eq("left_only")].drop(columns="_merge").to_csv(
+        OUTPUT_DIR / "unmatched_exposure_records.csv", index=False
+    )
     exposure_merge.drop(columns="_merge").to_csv(OUTPUT_DIR / "occupation_clean.csv", index=False)
     SAMPLE_DIR.mkdir(exist_ok=True)
     exposure_merge.drop(columns="_merge").head(50).to_csv(SAMPLE_DIR / "occupation_clean_sample.csv", index=False)
