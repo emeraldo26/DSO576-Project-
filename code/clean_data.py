@@ -203,6 +203,77 @@ def main() -> None:
     SAMPLE_DIR.mkdir(exist_ok=True)
     exposure_merge.drop(columns="_merge").head(50).to_csv(SAMPLE_DIR / "occupation_clean_sample.csv", index=False)
 
+    # Five reproducible record checks for the assignment evidence.
+    record_checks: list[dict] = []
+
+    unmatched_row = exposure.loc[exposure["soc6"].eq("11-1031")].iloc[0]
+    unmatched_actual = int(exposure_merge.loc[exposure_merge["soc6"].eq("11-1031"), "_merge"].eq("both").sum())
+    record_checks.append(
+        {
+            "check_id": "R1",
+            "case": "unmatched occupation",
+            "original": f'{unmatched_row["occ_code"]} | {unmatched_row["title"]}',
+            "expected": "No BLS line-item match; preserve and flag the exposure record",
+            "actual": f"BLS matches = {unmatched_actual}",
+            "matches_expected": unmatched_actual == 0,
+        }
+    )
+
+    duplicate_task = penetration_raw.loc[penetration_raw.duplicated(keep=False), "task"].iloc[0]
+    duplicate_key = normalize_text(pd.Series([duplicate_task])).str.casefold().iloc[0]
+    retained_count = int((penetration["task_normalized"].eq(duplicate_key)).sum())
+    record_checks.append(
+        {
+            "check_id": "R2",
+            "case": "duplicate task penetration",
+            "original": duplicate_task,
+            "expected": "One row retained for the normalized task and penetration value",
+            "actual": f"Retained rows = {retained_count}",
+            "matches_expected": retained_count == 1,
+        }
+    )
+
+    wage_row = bls_raw.loc[bls_raw["2025 National Employment Matrix code"].eq("27-2011")].iloc[0]
+    wage_cleaned = bls.loc[bls["2025 National Employment Matrix code"].eq("27-2011"), "Median annual wage, dollars, 2025"].iloc[0]
+    record_checks.append(
+        {
+            "check_id": "R3",
+            "case": "missing BLS wage",
+            "original": f'{wage_row["2025 National Employment Matrix code"]} | {wage_row["Median annual wage, dollars, 2025"]}',
+            "expected": "Formatted missing marker becomes missing, not zero",
+            "actual": "Missing" if pd.isna(wage_cleaned) else str(wage_cleaned),
+            "matches_expected": bool(pd.isna(wage_cleaned)),
+        }
+    )
+
+    missing_task_row = tasks_raw.loc[tasks_raw["Task Type"].isna()].iloc[0]
+    cleaned_task_type = tasks.loc[tasks["Task ID"].eq(missing_task_row["Task ID"]), "Task Type"].iloc[0]
+    record_checks.append(
+        {
+            "check_id": "R4",
+            "case": "missing task type",
+            "original": f'{missing_task_row["Task ID"]} | {missing_task_row["Task Type"]}',
+            "expected": "Missing task type remains missing; do not infer a category",
+            "actual": "Missing" if pd.isna(cleaned_task_type) else str(cleaned_task_type),
+            "matches_expected": bool(pd.isna(cleaned_task_type)),
+        }
+    )
+
+    normal_soc = "11-1011"
+    normal_match = exposure_merge.loc[exposure_merge["soc6"].eq(normal_soc)]
+    normal_wage = normal_match["Median annual wage, dollars, 2025"].iloc[0]
+    record_checks.append(
+        {
+            "check_id": "R5",
+            "case": "successful occupation merge",
+            "original": "11-1011 | Chief Executives | exposure 0.0333",
+            "expected": "One BLS line-item match with a numeric wage",
+            "actual": f"Matches = {int(normal_match['_merge'].eq('both').sum())}; wage = {normal_wage}",
+            "matches_expected": bool(normal_match["_merge"].eq("both").sum() == 1 and pd.notna(normal_wage)),
+        }
+    )
+    pd.DataFrame(record_checks).to_csv(OUTPUT_DIR / "record_checks.csv", index=False)
+
     pd.DataFrame(table_reports).to_csv(OUTPUT_DIR / "cleaning_row_counts.csv", index=False)
     pd.DataFrame(missing_reports).to_csv(OUTPUT_DIR / "cleaning_missing_values.csv", index=False)
     pd.DataFrame(duplicate_reports).to_csv(OUTPUT_DIR / "cleaning_duplicates.csv", index=False)
