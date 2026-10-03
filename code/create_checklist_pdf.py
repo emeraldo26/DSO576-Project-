@@ -1,6 +1,7 @@
 """Build the Gradescope checklist PDF from the generated cleaning evidence."""
 
 from pathlib import Path
+import subprocess
 
 import pandas as pd
 from reportlab.lib import colors
@@ -49,6 +50,7 @@ def main() -> None:
         str(PDF_PATH), pagesize=letter, rightMargin=0.55 * inch, leftMargin=0.55 * inch,
         topMargin=0.5 * inch, bottomMargin=0.5 * inch,
     )
+    commit_id = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     story = [
         Paragraph("DSO 576 — Project Data Cleaning Assignment", styles["CenterTitle"]),
         Spacer(1, 8),
@@ -56,7 +58,7 @@ def main() -> None:
         Paragraph("Student: [ENTER YOUR NAME]", styles["BodyText"]),
         Paragraph("Branch: cleaning-emerald", styles["BodyText"]),
         Paragraph("Branch URL: PENDING — push the branch, then replace with the GitHub branch URL", styles["BodyText"]),
-        Paragraph("Submitted commit ID for this draft: b2a8c2467cd011af666c255ac0e012cad1bb6fb9", styles["BodyText"]),
+        Paragraph(f"Submitted commit ID for this draft: {commit_id}", styles["BodyText"]),
         Spacer(1, 8),
         Paragraph("Project vision and question", styles["Heading2"]),
         Paragraph("The project supports workforce-development decisions about occupations that may deserve priority for AI-transition training and reskilling. The business question is which occupations should be prioritized based on observed AI exposure, task penetration, employment, wages, and projected employment change.", styles["BodyText"]),
