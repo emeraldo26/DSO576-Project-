@@ -15,7 +15,9 @@ __pycache__/
 .DS_Store
 *.zip
 
-# Ignore these files
-requirements.txt
 .vscode/*
 code/mock.ipynb
+
+# Local assignment artifacts
+data/raw/
+data/sample/
