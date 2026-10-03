@@ -58,11 +58,38 @@ The inspection script is `code/inspect_raw_data.py`. It reads every CSV and ever
 
 ## Run instructions
 
-The cleaning script and dependency file are being prepared. The final command will be documented here after implementation and testing.
+The raw files must be available under `data/raw/`. Install the dependencies and run the scripts from the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python3 code/inspect_raw_data.py
+python3 code/clean_data.py
+```
+
+The inspection script records the starting state. The cleaning script applies the documented rules without overwriting `data/raw/`.
 
 ## Expected output files
 
-The final workflow will create cleaned tables, a cleaning-validation report, and a labeled sample of no more than 50 cleaned rows in `outputs/` and `data/sample/`.
+The workflow creates cleaned tables and validation evidence in the ignored `outputs/` directory, including:
+
+- `occupation_clean.csv`
+- `job_exposure_clean.csv`
+- `task_penetration_clean.csv`
+- `onet_occupation_clean.csv`
+- `onet_task_statements_clean.csv`
+- `bls_table_1_2_clean.csv`
+- `cleaning_row_counts.csv`
+- `cleaning_missing_values.csv`
+- `cleaning_duplicates.csv`
+- `cleaning_conversions.csv`
+- `cleaning_merges.csv`
+- `cleaning_keys.csv`
+
+The labeled submission sample is written to `data/sample/occupation_clean_sample.csv` and contains no more than 50 cleaned rows.
+
+The first run found 17,998 raw task-penetration rows and retained 17,991 after removing duplicate normalized task/penetration pairs. It converted all nonmissing numeric values without failed conversions. The occupation merge matched 755 of 756 AI-exposure records to BLS line-item records; one exposure occupation remains unmatched and requires review.
 
 ## Submission branch
 

@@ -1,0 +1,217 @@
+"""Clean the project source tables and write reproducible validation evidence.
+
+Raw files under data/raw/ are never overwritten. The script creates cleaned
+tables under outputs/ and a small review sample under data/sample/.
+"""
+
+from pathlib import Path
+
+import pandas as pd
+
+
+ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = ROOT / "data" / "raw"
+OUTPUT_DIR = ROOT / "outputs"
+SAMPLE_DIR = ROOT / "data" / "sample"
+
+
+def normalize_text(series: pd.Series) -> pd.Series:
+    """Trim surrounding whitespace and collapse repeated whitespace."""
+    return series.astype("string").str.strip().str.replace(r"\s+", " ", regex=True)
+
+
+def add_soc_key(frame: pd.DataFrame, source_column: str, key_name: str) -> tuple[pd.DataFrame, int]:
+    """Add a six-digit SOC key while preserving the source identifier."""
+    result = frame.copy()
+    result[source_column] = normalize_text(result[source_column])
+    result[key_name] = result[source_column].str.extract(r"^(\d{2}-\d{4})", expand=False)
+    invalid = int(result[key_name].isna().sum())
+    return result, invalid
+
+
+def convert_numeric(
+    frame: pd.DataFrame,
+    column: str,
+    conversion_report: list[dict],
+) -> None:
+    """Convert formatted numeric text and record failed conversions."""
+    original = frame[column]
+    cleaned = (
+        original.astype("string")
+        .str.replace(",", "", regex=False)
+        .str.replace("$", "", regex=False)
+        .str.replace("%", "", regex=False)
+        .str.strip()
+        .replace({"": pd.NA, "--": pd.NA, "—": pd.NA, "N/A": pd.NA})
+    )
+    converted = pd.to_numeric(cleaned, errors="coerce")
+    failed = int((cleaned.notna() & converted.isna()).sum())
+    conversion_report.append(
+        {
+            "column": column,
+            "nonmissing_before": int(cleaned.notna().sum()),
+            "nonmissing_after": int(converted.notna().sum()),
+            "failed_conversions": failed,
+        }
+    )
+    frame[column] = converted
+
+
+def table_report(name: str, before: pd.DataFrame, after: pd.DataFrame) -> dict:
+    return {
+        "table": name,
+        "rows_before": len(before),
+        "rows_after": len(after),
+        "row_change": len(after) - len(before),
+        "columns_after": len(after.columns),
+        "exact_duplicates_before": int(before.duplicated().sum()),
+        "exact_duplicates_after": int(after.duplicated().sum()),
+    }
+
+
+def missing_report(name: str, frame: pd.DataFrame) -> list[dict]:
+    return [
+        {
+            "table": name,
+            "column": column,
+            "missing_count": int(frame[column].isna().sum()),
+            "missing_percent": round(float(frame[column].isna().mean() * 100), 3),
+        }
+        for column in frame.columns
+        if frame[column].isna().any()
+    ]
+
+
+def main() -> None:
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    SAMPLE_DIR.mkdir(exist_ok=True)
+
+    conversion_report: list[dict] = []
+    table_reports: list[dict] = []
+    missing_reports: list[dict] = []
+    duplicate_reports: list[dict] = []
+    merge_reports: list[dict] = []
+    key_reports: list[dict] = []
+
+    # Occupation-level exposure data.
+    exposure_raw = pd.read_csv(RAW_DIR / "job_exposure.csv")
+    exposure = exposure_raw.copy()
+    exposure["title"] = normalize_text(exposure["title"])
+    exposure, invalid = add_soc_key(exposure, "occ_code", "soc6")
+    key_reports.append({"table": "job_exposure", "key": "soc6", "invalid_count": invalid})
+    exposure.to_csv(OUTPUT_DIR / "job_exposure_clean.csv", index=False)
+    table_reports.append(table_report("job_exposure", exposure_raw, exposure))
+    missing_reports.extend(missing_report("job_exposure", exposure))
+
+    # Task-level penetration data.
+    penetration_raw = pd.read_csv(RAW_DIR / "task_penetration.csv")
+    penetration = penetration_raw.copy()
+    penetration["task_original"] = penetration["task"]
+    penetration["task"] = normalize_text(penetration["task"])
+    penetration["task_normalized"] = penetration["task"].str.casefold()
+    convert_numeric(penetration, "penetration", conversion_report)
+    normalized_duplicates = int(penetration.duplicated(["task_normalized", "penetration"]).sum())
+    conflicting_groups = (
+        penetration.groupby("task_normalized", dropna=False)["penetration"].nunique(dropna=False) > 1
+    )
+    conflicting_task_count = int(conflicting_groups.sum())
+    penetration = penetration.drop_duplicates(["task_normalized", "penetration"], keep="first")
+    duplicate_reports.append(
+        {
+            "table": "task_penetration",
+            "duplicate_type": "normalized_task_and_penetration",
+            "count": normalized_duplicates,
+            "conflicting_task_groups": conflicting_task_count,
+        }
+    )
+    penetration.to_csv(OUTPUT_DIR / "task_penetration_clean.csv", index=False)
+    table_reports.append(table_report("task_penetration", penetration_raw, penetration))
+    missing_reports.extend(missing_report("task_penetration", penetration))
+
+    # O*NET occupation data: retain the full code and add the six-digit key.
+    onet_occ_raw = pd.read_csv(RAW_DIR / "onet_occupation_data.csv")
+    onet_occ = onet_occ_raw.copy()
+    onet_occ["Title"] = normalize_text(onet_occ["Title"])
+    onet_occ, invalid = add_soc_key(onet_occ, "O*NET-SOC Code", "soc6")
+    key_reports.append({"table": "onet_occupation_data", "key": "O*NET-SOC Code", "invalid_count": invalid})
+    onet_occ.to_csv(OUTPUT_DIR / "onet_occupation_clean.csv", index=False)
+    table_reports.append(table_report("onet_occupation_data", onet_occ_raw, onet_occ))
+    missing_reports.extend(missing_report("onet_occupation_data", onet_occ))
+
+    # O*NET task statements: Task ID is the record key; occupation codes repeat.
+    tasks_raw = pd.read_csv(RAW_DIR / "onet_task_statements.csv")
+    tasks = tasks_raw.copy()
+    tasks["Title"] = normalize_text(tasks["Title"])
+    tasks["Task"] = normalize_text(tasks["Task"])
+    tasks["task_normalized"] = tasks["Task"].str.casefold()
+    tasks, invalid = add_soc_key(tasks, "O*NET-SOC Code", "soc6")
+    key_reports.append({"table": "onet_task_statements", "key": "Task ID", "invalid_count": int(tasks["Task ID"].isna().sum())})
+    convert_numeric(tasks, "Incumbents Responding", conversion_report)
+    tasks.to_csv(OUTPUT_DIR / "onet_task_statements_clean.csv", index=False)
+    table_reports.append(table_report("onet_task_statements", tasks_raw, tasks))
+    missing_reports.extend(missing_report("onet_task_statements", tasks))
+
+    # BLS CSV extract: preserve summary rows, but use line items for occupation joins.
+    bls_raw = pd.read_csv(RAW_DIR / "bls_table_1_2_2025_35.csv")
+    bls = bls_raw.copy()
+    title_column = "2025 National Employment Matrix title"
+    code_column = "2025 National Employment Matrix code"
+    bls[title_column] = normalize_text(bls[title_column])
+    bls, invalid = add_soc_key(bls, code_column, "soc6")
+    key_reports.append({"table": "bls_table_1_2", "key": code_column, "invalid_count": invalid})
+    bls_numeric_columns = [
+        "Employment, 2025",
+        "Employment, 2035",
+        "Employment distribution, percent, 2025",
+        "Employment distribution, percent, 2035",
+        "Employment change, numeric, 2025–35",
+        "Employment change, percent, 2025–35",
+        "Occupational openings, 2025–35 annual average",
+        "Median annual wage, dollars, 2025",
+    ]
+    for column in bls_numeric_columns:
+        convert_numeric(bls, column, conversion_report)
+    bls.to_csv(OUTPUT_DIR / "bls_table_1_2_clean.csv", index=False)
+    table_reports.append(table_report("bls_table_1_2", bls_raw, bls))
+    missing_reports.extend(missing_report("bls_table_1_2", bls))
+
+    bls_line = bls[bls["Occupation type"].eq("Line item")].copy()
+    exposure_merge = exposure.merge(
+        bls_line,
+        on="soc6",
+        how="left",
+        indicator=True,
+        validate="one_to_one",
+        suffixes=("_exposure", "_bls"),
+    )
+    merge_counts = exposure_merge["_merge"].value_counts().to_dict()
+    merge_reports.append(
+        {
+            "merge": "job_exposure to BLS line items",
+            "left_rows": len(exposure),
+            "right_rows": len(bls_line),
+            "output_rows": len(exposure_merge),
+            "matched": int(merge_counts.get("both", 0)),
+            "left_only": int(merge_counts.get("left_only", 0)),
+            "right_only": int(merge_counts.get("right_only", 0)),
+        }
+    )
+    exposure_merge.drop(columns="_merge").to_csv(OUTPUT_DIR / "occupation_clean.csv", index=False)
+    SAMPLE_DIR.mkdir(exist_ok=True)
+    exposure_merge.drop(columns="_merge").head(50).to_csv(SAMPLE_DIR / "occupation_clean_sample.csv", index=False)
+
+    pd.DataFrame(table_reports).to_csv(OUTPUT_DIR / "cleaning_row_counts.csv", index=False)
+    pd.DataFrame(missing_reports).to_csv(OUTPUT_DIR / "cleaning_missing_values.csv", index=False)
+    pd.DataFrame(duplicate_reports).to_csv(OUTPUT_DIR / "cleaning_duplicates.csv", index=False)
+    pd.DataFrame(conversion_report).to_csv(OUTPUT_DIR / "cleaning_conversions.csv", index=False)
+    pd.DataFrame(merge_reports).to_csv(OUTPUT_DIR / "cleaning_merges.csv", index=False)
+    pd.DataFrame(key_reports).to_csv(OUTPUT_DIR / "cleaning_keys.csv", index=False)
+
+    print("Cleaning complete. Raw files were not modified.")
+    print(pd.DataFrame(table_reports).to_string(index=False))
+    print("\nMerge evidence:")
+    print(pd.DataFrame(merge_reports).to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
