@@ -98,5 +98,5 @@ The first run found 17,998 raw task-penetration rows and retained 17,991 after r
 ## Submission branch
 
 - Branch: `cleaning-emerald`
-- Branch URL: to be added after the branch is pushed to GitHub
-- Final commit ID: to be added after the assignment is complete
+- Branch URL: https://github.com/emeraldo26/DSO576-Project-/tree/cleaning-emerald
+- Final commit ID: see the latest commit after the final push
