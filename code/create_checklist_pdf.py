@@ -77,7 +77,7 @@ def main() -> None:
         (8, "Done", "Missing wage markers and the unmatched Legislators occupation are flagged for review."),
         (9, "Done", "The exposure-to-BLS merge reports 755 matches and one unmatched exposure record."),
         (10, "Done", "Starting and final row counts are recorded in cleaning_row_counts.csv."),
-        (11, "Unresolved", "Cleaning metrics are validated, but final project scoring calculations and their denominators have not yet been implemented."),
+        (11, "Done", "Metric totals/averages, nonmissing counts, missing counts, and denominators are recorded in metric_validation.csv. Missing wages are not treated as zero."),
         (12, "Done", "Five original/expected/actual record checks are recorded in record_checks.csv."),
         (13, "Done", "The notebook reruns inspection and cleaning from raw files; outputs were regenerated successfully."),
         (14, "Done", "Limitations include the unmatched Legislators occupation and source-level missing fields."),
@@ -116,11 +116,19 @@ def main() -> None:
     ]))
     story.append(decision_table)
 
+    story += [Spacer(1, 10), Paragraph("Metric calculations and denominators", styles["Heading2"])]
+    story.append(evidence_table(
+        OUTPUTS / "metric_validation.csv",
+        ["metric", "statistic", "rows_total", "nonmissing_count", "missing_count", "denominator", "value", "missing_value_rule"],
+        [1.25 * inch, 0.55 * inch, 0.55 * inch, 0.7 * inch, 0.55 * inch, 0.6 * inch, 0.75 * inch, 2.35 * inch],
+        styles,
+    ))
+
     story += [Spacer(1, 10), Paragraph("Five record checks", styles["Heading2"])]
     story.append(evidence_table(OUTPUTS / "record_checks.csv", ["check_id", "case", "original", "expected", "actual", "matches_expected"], [0.45 * inch, 1.0 * inch, 1.55 * inch, 1.7 * inch, 1.55 * inch, 0.75 * inch], styles))
 
     story += [Spacer(1, 10), Paragraph("Codex suggestion review", styles["Heading2"]), Paragraph("Codex suggested normalizing SOC identifiers to a six-digit join key and normalizing task text for matching. I checked that suggestion against the raw data by comparing key validity, duplicate counts, merge row counts, the one unmatched Legislators record, and the five individual record checks. The checks supported using derived normalized keys while preserving the original source fields.", styles["BodyText"])]
-    story += [Spacer(1, 10), Paragraph("Remaining limitations", styles["Heading2"]), Paragraph("The exposure record for Legislators (11-1031) is absent from the BLS line-item extract and is preserved as unmatched. Several source fields are genuinely missing, including BLS wage/training fields and O*NET task metadata. The final project priority score and its weighting/denominator rules have not yet been implemented.", styles["BodyText"])]
+    story += [Spacer(1, 10), Paragraph("Remaining limitations", styles["Heading2"]), Paragraph("The exposure record for Legislators (11-1031) is absent from the BLS line-item extract and is preserved as unmatched. Several source fields are genuinely missing, including BLS wage/training fields and O*NET task metadata. The final project priority score and its weighting rules remain outside this cleaning deliverable.", styles["BodyText"])]
 
     document.build(story)
     print(PDF_PATH)

@@ -92,6 +92,7 @@ def main() -> None:
     duplicate_reports: list[dict] = []
     merge_reports: list[dict] = []
     key_reports: list[dict] = []
+    metric_rows: list[dict] = []
 
     # Occupation-level exposure data.
     exposure_raw = pd.read_csv(RAW_DIR / "job_exposure.csv")
@@ -202,6 +203,56 @@ def main() -> None:
     exposure_merge.drop(columns="_merge").to_csv(OUTPUT_DIR / "occupation_clean.csv", index=False)
     SAMPLE_DIR.mkdir(exist_ok=True)
     exposure_merge.drop(columns="_merge").head(50).to_csv(SAMPLE_DIR / "occupation_clean_sample.csv", index=False)
+
+    def add_metric(table: str, metric: str, series: pd.Series, statistic: str, unit: str, missing_rule: str) -> None:
+        valid = series.dropna()
+        if statistic == "sum":
+            value = valid.sum()
+        elif statistic == "mean":
+            value = valid.mean()
+        else:
+            raise ValueError(f"Unsupported statistic: {statistic}")
+        metric_rows.append(
+            {
+                "table": table,
+                "metric": metric,
+                "statistic": statistic,
+                "unit": unit,
+                "rows_total": len(series),
+                "nonmissing_count": len(valid),
+                "missing_count": int(series.isna().sum()),
+                "denominator": len(valid),
+                "value": value,
+                "missing_value_rule": missing_rule,
+            }
+        )
+
+    matched_occupations = exposure_merge.loc[exposure_merge["_merge"].eq("both")]
+    add_metric(
+        "job_exposure", "mean observed exposure", exposure["observed_exposure"], "mean",
+        "exposure proportion", "Exclude missing exposure values; none are missing.",
+    )
+    add_metric(
+        "task_penetration", "mean task penetration", penetration["penetration"], "mean",
+        "penetration proportion", "Exclude missing penetration values; none are missing.",
+    )
+    add_metric(
+        "matched occupation merge", "total employment 2025", matched_occupations["Employment, 2025"], "sum",
+        "thousands of workers", "Use matched occupations with nonmissing BLS employment; unmatched occupations are reported separately.",
+    )
+    add_metric(
+        "matched occupation merge", "total employment 2035", matched_occupations["Employment, 2035"], "sum",
+        "thousands of workers", "Use matched occupations with nonmissing BLS employment; unmatched occupations are reported separately.",
+    )
+    add_metric(
+        "matched occupation merge", "mean employment change percent", matched_occupations["Employment change, percent, 2025–35"], "mean",
+        "percent", "Exclude missing projected-change values and report the denominator.",
+    )
+    add_metric(
+        "matched occupation merge", "mean median annual wage", matched_occupations["Median annual wage, dollars, 2025"], "mean",
+        "dollars", "Do not treat missing wages as zero; average only nonmissing wages.",
+    )
+    pd.DataFrame(metric_rows).to_csv(OUTPUT_DIR / "metric_validation.csv", index=False)
 
     # Five reproducible record checks for the assignment evidence.
     record_checks: list[dict] = []

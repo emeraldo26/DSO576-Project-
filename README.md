@@ -88,10 +88,13 @@ The workflow creates cleaned tables and validation evidence in the ignored `outp
 - `cleaning_keys.csv`
 - `unmatched_exposure_records.csv`
 - `record_checks.csv`
+- `metric_validation.csv`
 
 The labeled submission sample is written to `data/sample/occupation_clean_sample.csv` and contains no more than 50 cleaned rows.
 
 `record_checks.csv` contains five checks covering an unmatched occupation, a duplicate task, a missing wage, a missing task type, and a successful occupation merge. Each check records the original value, expected result, actual result, and whether the result matched the expectation.
+
+`metric_validation.csv` reports the total rows, nonmissing rows, missing rows, denominator, and calculated value for each cleaning-level metric. Missing wages are excluded from wage averages rather than treated as zero; unmatched occupations are excluded from BLS-dependent metrics and reported separately.
 
 The first run found 17,998 raw task-penetration rows and retained 17,991 after removing duplicate normalized task/penetration pairs. It converted all nonmissing numeric values without failed conversions. The occupation merge matched 755 of 756 AI-exposure records to BLS line-item records. The unmatched record is `11-1031 — Legislators`: it is present in the exposure data but absent from the BLS line-item extract, so it is preserved and flagged in `unmatched_exposure_records.csv` rather than dropped.
 
