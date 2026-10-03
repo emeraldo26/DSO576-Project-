@@ -32,6 +32,30 @@ These rules are written before the cleaning transformations are applied:
 7. Validate merge keys and report unmatched records and row-count changes.
 8. Keep unusual but valid observations and flag values that require review rather than silently deleting them.
 
+## Initial inspection evidence
+
+The inspection script is `code/inspect_raw_data.py`. It reads every CSV and every worksheet in the raw Excel workbook without changing them and writes ignored evidence files to `outputs/`.
+
+- `job_exposure.csv`: 756 rows; `occ_code` is unique.
+- `task_penetration.csv`: 17,998 rows; six exact duplicate rows were found, and task text includes case differences that need a matching key.
+- `onet_occupation_data.csv`: 1,016 rows; `O*NET-SOC Code` is unique.
+- `onet_task_statements.csv`: 18,838 rows; `Task ID` is unique, while occupation codes repeat because this is a task-level table. Missing values occur in `Task Type` and `Incumbents Responding`.
+- `bls_table_1_2_2025_35.csv`: 1,112 rows; 831 line-item rows and 281 summary rows. Several employment and wage fields require numeric conversion because they contain formatted text.
+- The BLS workbook contains multiple tables; the project-level BLS extract is preserved as the CSV above and will be used for the occupation-level analysis.
+
+## Cleaning decision log — initial rules
+
+| Rule | Reason | Check/evidence |
+|---|---|---|
+| Preserve every raw file and write transformed files separately. | The assignment requires the source to remain unchanged and the results to be reproducible. | Compare raw file checksums and confirm no script writes under `data/raw/`. |
+| Keep SOC and O*NET-SOC identifiers as strings; derive a documented six-digit SOC join key without overwriting the original. | Numeric conversion can remove leading zeros, and O*NET includes `.00` extension codes. | Report identifier lengths, invalid formats, and unmatched keys before and after each merge. |
+| Strip surrounding whitespace and collapse repeated internal whitespace in text fields; preserve the original text columns. | Whitespace can prevent valid task/title matches, but original wording must remain auditable. | Compare original and normalized values and count changed records. |
+| Create a case-insensitive normalized task key for matching. | `task_penetration.csv` contains case variants of otherwise matching task text. | Count normalized-key duplicates and identify conflicting penetration values. |
+| Deduplicate task-penetration rows only when the normalized task and penetration value agree; flag conflicts for review. | Exact repeated observations do not add information, but conflicting values should not be silently averaged. | Report duplicate groups, conflict count, and rows retained. |
+| Convert BLS formatted numeric fields to numeric values and record failed conversions. | Wages and percentage fields include text formatting that prevents reliable calculations. | Compare non-null counts before and after conversion and list failed values. |
+| Keep BLS summary and line-item rows in the cleaned source, but use line-item rows for occupation-level joins unless the analysis explicitly needs summaries. | Summary rows are valid aggregates but can double-count occupations in a merge. | Report row counts by `Occupation type` and verify that joins use the intended subset. |
+| Keep missing `Task Type`, `Incumbents Responding`, and BLS training/experience values as missing unless a documented project rule supports an alternative. | Missingness may represent unavailable information, not zero. | Report missing counts before and after cleaning and explain metric-specific denominators. |
+
 ## Run instructions
 
 The cleaning script and dependency file are being prepared. The final command will be documented here after implementation and testing.
