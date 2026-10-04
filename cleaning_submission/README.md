@@ -8,9 +8,9 @@ The **AI Workforce Investment Planner** supports a workforce-development agency 
 
 - Branch: `cleaning-xiru-zhang`
 - Branch URL: `https://github.com/emeraldo26/DSO576-Project-/tree/cleaning-xiru-zhang` (will work after the branch is pushed)
-- Commit ID: `TO BE ADDED AFTER COMMIT`
+- Verified code commit ID: `69643db70a0239091bf87fc74bf4c7e29e8a13e4`
 
-Do not submit this assignment on `main`. Replace the commit-ID placeholder here and in `cleaning_report.md` after committing to this personal branch.
+This ID identifies the code, sample, report, and validation evidence that passed the documented checks. A later documentation commit adds the ID and exported PDF without changing the verified cleaning logic.
 
 ## Data sources and versions
 

@@ -4,7 +4,7 @@
 **Student:** Xiru Zhang  
 **Branch:** `cleaning-xiru-zhang`  
 **Branch URL:** https://github.com/emeraldo26/DSO576-Project-/tree/cleaning-xiru-zhang (available after push)  
-**Commit ID:** TO BE ADDED AFTER COMMIT
+**Verified code commit ID:** `69643db70a0239091bf87fc74bf4c7e29e8a13e4`
 
 ## 14-item checklist
 
