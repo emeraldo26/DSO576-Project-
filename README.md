@@ -29,6 +29,25 @@ The main occupation-level join uses six-digit SOC codes. The task-level join use
 - See [`code/README.md`](code/README.md) for the Phase 1 script description.
 - See [`data/README.md`](data/README.md) for the raw-data policy.
 
+## Module 6 data-cleaning submission
+
+Student: Brahmani Mundhe  
+Branch: `cleaning-brahmanimundhe`  
+Branch URL: `https://github.com/emeraldo26/DSO576-Project-/tree/cleaning-brahmanimundhe`  
+Commit ID: run `git rev-parse HEAD` after the final local commit; the exact
+submitted commit is also recorded in the generated Gradescope PDF.
+
+Run the cleaning assignment from the repository root:
+
+```bash
+python3 code/clean_project_data.py
+```
+
+The original CSV files remain unchanged in `data/`. The script writes full
+cleaned outputs to `outputs/`, writes the review sample to
+`samples/cleaned_sample_50_rows.csv`, and recreates the PDF report at
+`docs/module6_cleaning_assignment_brahmani_mundhe.pdf`.
+
 ## Current limitations and next steps
 
 - AI exposure is an observation of usage and should not be interpreted as proof of job replacement.

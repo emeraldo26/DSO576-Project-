@@ -15,7 +15,6 @@ __pycache__/
 .DS_Store
 *.zip
 
-# Ignore these files
-requirements.txt
+# Keep dependency files for homework reproducibility.
 .vscode/*
 code/mock.ipynb

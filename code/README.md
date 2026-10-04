@@ -42,3 +42,26 @@ python explore_analysis/explore_data.py
 The script writes its generated tables and text report to `outputs/`. That
 folder is also excluded from Git because the results can be reproduced by
 running the script.
+
+## Module 6 cleaning assignment
+
+The Module 6 cleaning script is:
+
+```bash
+python3 code/clean_project_data.py
+```
+
+It uses only the Python 3 standard library. It reads the unchanged source CSVs
+from `data/`, then recreates:
+
+- `outputs/cleaned/job_exposure_clean.csv`
+- `outputs/cleaned/task_penetration_clean.csv`
+- `outputs/cleaned/onet_task_statements_clean.csv`
+- `outputs/cleaned/onet_occupation_data_clean.csv`
+- `outputs/cleaned/bls_occupations_clean.csv`
+- `outputs/cleaned/occupation_clean_merged.csv`
+- `outputs/cleaned/top_tasks_by_occupation_clean.csv`
+- `outputs/cleaning_evidence.json`
+- `outputs/cleaning_report.md`
+- `samples/cleaned_sample_50_rows.csv`
+- `docs/module6_cleaning_assignment_brahmani_mundhe.pdf`
