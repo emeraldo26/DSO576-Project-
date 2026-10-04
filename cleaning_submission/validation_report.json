@@ -1,0 +1,322 @@
+{
+  "status": "PASS",
+  "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "command": "/private/tmp/dso576_clean_env_verify_20261004/bin/python /Users/zhangqianru/dso576/DSO576-Project-/code/clean_data.py",
+  "source_sha256": {
+    "job_exposure.csv": "4f0a3adf5feeb2ec5f5d02ab18cc5e851a2a4b8470bde84c0c9335017be12d68",
+    "task_penetration.csv": "85bee872db1d55d3e9a7f4e89da5ae4a5d59aa8ec875d728fbf4b7d820984616",
+    "onet_task_statements.csv": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+    "onet_occupation_data.csv": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+    "bls_table_1_2_2025_35.csv": "460af8e1eaf961732bc29b56cc92b25c4d6ef85c587b8b566f834beaebededa2"
+  },
+  "output_sha256": {
+    "cleaned_occupations.csv": "d027172a7d6a3d6899c75ceb236a5dd28eea92437a9d879237b2f5e3a0302fa2",
+    "cleaned_top_tasks.csv": "dd25ed5f2fc3ef2fda5fdfb54eead8f938ecd572d1d9d0d156df380cb1cba20b",
+    "sample_cleaned_occupations.csv": "747f8c1f0425854d1188cd2e9dcbf52f706dd0d65c901f587d68eae739165ecc"
+  },
+  "checks": [
+    {
+      "check": "source files unchanged after two runs",
+      "expected": {
+        "job_exposure.csv": "4f0a3adf5feeb2ec5f5d02ab18cc5e851a2a4b8470bde84c0c9335017be12d68",
+        "task_penetration.csv": "85bee872db1d55d3e9a7f4e89da5ae4a5d59aa8ec875d728fbf4b7d820984616",
+        "onet_task_statements.csv": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+        "onet_occupation_data.csv": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+        "bls_table_1_2_2025_35.csv": "460af8e1eaf961732bc29b56cc92b25c4d6ef85c587b8b566f834beaebededa2"
+      },
+      "actual": {
+        "job_exposure.csv": "4f0a3adf5feeb2ec5f5d02ab18cc5e851a2a4b8470bde84c0c9335017be12d68",
+        "task_penetration.csv": "85bee872db1d55d3e9a7f4e89da5ae4a5d59aa8ec875d728fbf4b7d820984616",
+        "onet_task_statements.csv": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+        "onet_occupation_data.csv": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+        "bls_table_1_2_2025_35.csv": "460af8e1eaf961732bc29b56cc92b25c4d6ef85c587b8b566f834beaebededa2"
+      },
+      "passed": true,
+      "evidence": "SHA-256 hashes taken before and after both pipeline runs"
+    },
+    {
+      "check": "two runs produce identical submitted outputs",
+      "expected": {
+        "cleaned_occupations.csv": "d027172a7d6a3d6899c75ceb236a5dd28eea92437a9d879237b2f5e3a0302fa2",
+        "cleaned_top_tasks.csv": "dd25ed5f2fc3ef2fda5fdfb54eead8f938ecd572d1d9d0d156df380cb1cba20b",
+        "sample_cleaned_occupations.csv": "747f8c1f0425854d1188cd2e9dcbf52f706dd0d65c901f587d68eae739165ecc"
+      },
+      "actual": {
+        "cleaned_occupations.csv": "d027172a7d6a3d6899c75ceb236a5dd28eea92437a9d879237b2f5e3a0302fa2",
+        "cleaned_top_tasks.csv": "dd25ed5f2fc3ef2fda5fdfb54eead8f938ecd572d1d9d0d156df380cb1cba20b",
+        "sample_cleaned_occupations.csv": "747f8c1f0425854d1188cd2e9dcbf52f706dd0d65c901f587d68eae739165ecc"
+      },
+      "passed": true,
+      "evidence": "SHA-256 hashes of both full outputs and the 50-row sample"
+    },
+    {
+      "check": "cleaned occupation row count",
+      "expected": 755,
+      "actual": 755,
+      "passed": true,
+      "evidence": "Expected count is the intersection of source SOC keys"
+    },
+    {
+      "check": "cleaned occupation key duplicates",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "One row must represent one SOC"
+    },
+    {
+      "check": "top-task composite-key duplicates",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "One row must represent one normalized task within an SOC"
+    },
+    {
+      "check": "submitted sample maximum rows",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "evidence": "Assignment permits up to 50 cleaned rows"
+    },
+    {
+      "check": "submitted sample row count",
+      "expected": 50,
+      "actual": 50,
+      "passed": true,
+      "evidence": "The documented deterministic selection should fill all 50 permitted rows"
+    },
+    {
+      "check": "submitted sample duplicate SOC keys",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "The sample should contain 50 different occupations"
+    },
+    {
+      "check": "submitted sample keys come from full output",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "evidence": "Every sample SOC must be traceable to the full cleaned output"
+    },
+    {
+      "check": "sample includes five low/high observed_exposure cases",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "evidence": "Confirms the documented difficult-case selection rule"
+    },
+    {
+      "check": "sample includes five low/high employment_change_percent_2025_35 cases",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "evidence": "Confirms the documented difficult-case selection rule"
+    },
+    {
+      "check": "sample includes five low/high median_annual_wage_2025 cases",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "evidence": "Confirms the documented difficult-case selection rule"
+    },
+    {
+      "check": "unmatched Anthropic SOC keys",
+      "expected": [
+        "11-1031"
+      ],
+      "actual": [
+        "11-1031"
+      ],
+      "passed": true,
+      "evidence": "Calculated independently from source SOC sets"
+    },
+    {
+      "check": "matched employment total preserved",
+      "expected": 154223.4,
+      "actual": 154223.4,
+      "passed": true,
+      "evidence": "A task join must not multiply occupation employment"
+    },
+    {
+      "check": "matched annual-openings total preserved",
+      "expected": 15607.2,
+      "actual": 15607.2,
+      "passed": true,
+      "evidence": "A task join must not multiply occupation openings"
+    },
+    {
+      "check": "observed exposure within [0,1]",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "Values outside the documented proportion range"
+    },
+    {
+      "check": "task penetration within [0,1]",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "Values outside the documented proportion range"
+    },
+    {
+      "check": "nonnegative employment",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "Negative employment is impossible"
+    },
+    {
+      "check": "nonnegative annual openings",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "Negative annual openings are impossible"
+    },
+    {
+      "check": "positive nonmissing wages",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "Nonpositive annual wage is suspicious"
+    },
+    {
+      "check": "invalid O*NET month/year dates",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "evidence": "Strict parsing with format MM/YYYY"
+    },
+    {
+      "check": "all five record checks match fixed expectations",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "evidence": "See record_checks in this validation report"
+    },
+    {
+      "check": "cleaned output types",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "evidence": "SOC is text; analytic measures are numeric"
+    }
+  ],
+  "exact_duplicate_rows": {
+    "job_exposure.csv": 0,
+    "task_penetration.csv": 6,
+    "onet_task_statements.csv": 0,
+    "onet_occupation_data.csv": 0,
+    "bls_table_1_2_2025_35.csv": 0
+  },
+  "repeated_ids": {
+    "job_exposure occ_code": 0,
+    "O*NET Task ID": 0,
+    "O*NET occupation code": 0,
+    "BLS matrix code": 0
+  },
+  "missing_before_cleaning": {
+    "O*NET Task Type": 418,
+    "O*NET Incumbents Responding": 587,
+    "BLS median wage (line items)": 6,
+    "BLS related experience (line items)": 716,
+    "BLS training (line items)": 321
+  },
+  "missing_after_cleaning": {
+    "median_annual_wage_2025": 3,
+    "related_work_experience": 646,
+    "on_the_job_training": 295,
+    "occupation_description": 0,
+    "average_task_penetration": 0,
+    "matched_task_count": 0
+  },
+  "metric_nonmissing_denominators": {
+    "observed_exposure": 755,
+    "employment_2025_thousands": 755,
+    "employment_change_percent_2025_35": 755,
+    "annual_openings_2025_35_thousands": 755,
+    "median_annual_wage_2025": 752,
+    "average_task_penetration": 755
+  },
+  "difficult_case_examples": {
+    "minimum_exposure": {
+      "soc_code": "11-3012",
+      "title": "Administrative Services Managers",
+      "observed_exposure": 0.0
+    },
+    "maximum_exposure": {
+      "soc_code": "15-1251",
+      "title": "Computer Programmers",
+      "observed_exposure": 0.7451
+    },
+    "minimum_growth": {
+      "soc_code": "43-9022",
+      "title": "Word Processors and Typists",
+      "employment_change_percent_2025_35": -34.4
+    },
+    "maximum_growth": {
+      "soc_code": "29-1171",
+      "title": "Nurse Practitioners",
+      "employment_change_percent_2025_35": 41.0
+    }
+  },
+  "record_checks": [
+    {
+      "case": "O*NET occupation mapped to six-digit SOC",
+      "source_file": "onet_occupation_data.csv",
+      "record_id": "O*NET-SOC Code=11-1011.00",
+      "original_value": "O*NET-SOC Code=11-1011.00; Title=Chief Executives",
+      "expected_result": "soc_code=11-1011; title=Chief Executives",
+      "reason": "Remove only the O*NET detail suffix so the record can join on six-digit SOC.",
+      "actual_result": "soc_code=11-1011; title=Chief Executives",
+      "passed": true
+    },
+    {
+      "case": "BLS title whitespace",
+      "source_file": "bls_table_1_2_2025_35.csv",
+      "record_id": "2025 National Employment Matrix code=11-1011",
+      "original_value": "title='      Chief executives'",
+      "expected_result": "bls_title=Chief executives",
+      "reason": "Leading spaces are table indentation, not meaningful title text.",
+      "actual_result": "bls_title=Chief executives",
+      "passed": true
+    },
+    {
+      "case": "BLS unavailable wage retained as missing",
+      "source_file": "bls_table_1_2_2025_35.csv",
+      "record_id": "2025 National Employment Matrix code=27-2011",
+      "original_value": "title=Actors; median wage=—",
+      "expected_result": "missing (NaN)",
+      "reason": "An em dash means unavailable; it must not be converted to zero or imputed.",
+      "actual_result": "missing (NaN)",
+      "passed": true
+    },
+    {
+      "case": "Specific O*NET task joined to task penetration",
+      "source_file": "onet_task_statements.csv + task_penetration.csv",
+      "record_id": "Task ID=8825",
+      "original_value": "O*NET-SOC Code=11-1011.00; task=Analyze operations to evaluate performance of a company or its staff in meeting objectives or to determine areas of potential cost reduction, program improvement, or policy change.; penetration=0.831",
+      "expected_result": "soc_code=11-1011; task_rank=1; penetration=0.831",
+      "reason": "Normalized exact task text should connect this task to its observed penetration and base SOC.",
+      "actual_result": "soc_code=11-1011; task_rank=1; penetration=0.831",
+      "passed": true
+    },
+    {
+      "case": "Unmatched occupation",
+      "source_file": "job_exposure.csv",
+      "record_id": "occ_code=11-1031",
+      "original_value": "title=Legislators; observed_exposure=0.0",
+      "expected_result": "absent from cleaned_occupations.csv; logged unmatched",
+      "reason": "This analysis is limited to occupations successfully matched to BLS. Keep the record in the unmatched log rather than deleting it merely for missing values.",
+      "actual_result": "absent from cleaned_occupations.csv; logged unmatched",
+      "passed": true
+    }
+  ],
+  "type_checks": {
+    "soc_code_is_text": true,
+    "observed_exposure_is_numeric": true,
+    "employment_is_numeric": true,
+    "growth_is_numeric": true,
+    "openings_is_numeric": true,
+    "wage_is_numeric": true
+  }
+}
