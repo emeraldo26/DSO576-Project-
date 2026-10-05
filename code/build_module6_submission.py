@@ -15,6 +15,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 ROOT = Path(__file__).resolve().parents[1]
 E = ROOT / 'docs/module6_evidence'
 BRANCH = 'https://github.com/emeraldo26/DSO576-Project-/tree/cleantaotianchen123'
+CLEANING_COMMIT = '1f85f180ceb04b71e7bd921f706859c04317acbd'
 OUT = ROOT / 'output/pdf/module6_individual_submission.pdf'
 
 def rows(name):
@@ -88,10 +89,11 @@ def checklist_block(start, stop):
 
 add('DSO 576 Module 6', 'title')
 add('Individual cleaning submission | national occupation-screening prototype', 'h')
-add('Student: Taotianchen Wan. Branch: cleantaotianchen123. Assignment commit ID: PENDING.', 'small')
+add('Student: Taotianchen Wan. Branch: cleantaotianchen123.', 'small')
+add(f'Cleaning commit ID: {CLEANING_COMMIT}', 'small')
 story.append(Paragraph(f'Branch URL: <link href="{BRANCH}" color="#174a75">{BRANCH}</link>', styles['small']))
 add('Question: Which U.S. occupations warrant further human review for AI-transition training when observed AI use and matched task penetration are compared with national employment, outlook, wages, openings and training requirements?')
-add(f'Actual saved results: {manifest["checks_passed"]:,} checks passed; {manifest["checks_failed"]} failures; 5/5 record checks passed. The master retains 756 occupations; 755 have BLS matches. Sources are unchanged. No commit or push has occurred.')
+add(f'Actual saved results: {manifest["checks_passed"]:,} checks passed; {manifest["checks_failed"]} failures; 5/5 record checks passed. The master retains 756 occupations; 755 have BLS matches. Sources are unchanged. The cleaning commit is identified above.')
 add('Exact 14-item checklist, items 1-7', 'h')
 add('Headings follow the supplied assignment, not the earlier provisional interpretation. All items apply; none is Not applicable. Evidence filenames without a path refer to docs/module6_evidence when present, otherwise the 41 files regenerated under outputs/.', 'small')
 checklist_block(0, 7)
@@ -168,14 +170,14 @@ add('Independent check of the BLS "None" suggestion', 'h')
 add(f'The suggestion was treated as a hypothesis, not permission to fill all blanks. The pipeline compared all 1,112 code-aligned workbook rows with the extract, allowing only the documented category differences and verifying numeric equivalence plus shared measures in Table 1.10. The fresh notebook independently read original cells with openpyxl (no cleaning-module import), checked text codes, literal string values, CSV blanks, canonical saved values and exact recovery cell addresses.', 'small')
 add(f'Actual independent result: {independent["coded_rows"]:,} coded rows inspected; {independent["literal_None_recoveries"]["work_experience"]} experience and {independent["literal_None_recoveries"]["ojt"]} training cells verified ({independent["cells_checked"]:,} total), all PASS. Other missing values were not filled by analogy. This establishes local workbook agreement, not external source authenticity. Evidence: independent_bls_none_check.json and generated bls_category_recovery.csv.', 'small')
 add('Fresh-kernel execution and handoff', 'h')
-add(f'code/module6_cleaning.ipynb completed {execution["executed_code_cells"]} code cells in a fresh Python {execution["python"]} kernel with zero error outputs. It rebuilt sources, displayed validation tables, independently checked categories and reran the 41-file reproducibility/source-drift test. Code, pinned dependencies, evidence and the sample are Git-eligible; raw inputs and bulky outputs remain ignored. Assignment commit ID is pending. See code/README.md for commands.', 'small')
+add(f'code/module6_cleaning.ipynb completed {execution["executed_code_cells"]} code cells in a fresh Python {execution["python"]} kernel with zero error outputs. It rebuilt sources, displayed validation tables, independently checked categories and reran the 41-file reproducibility/source-drift test. Code, pinned dependencies, evidence and the sample are Git-eligible; raw inputs and bulky outputs remain ignored. Cleaning commit ID: {CLEANING_COMMIT}. See code/README.md for commands.', 'small')
 
 def footer(canvas, doc):
     canvas.setStrokeColor(colors.HexColor('#b9c6cf'))
     canvas.line(44, 36, 568, 36)
     canvas.setFont('Helvetica', 8)
     canvas.setFillColor(colors.HexColor('#455969'))
-    canvas.drawString(44, 24, 'DSO 576 Module 6 | cleantaotianchen123 | assignment commit pending')
+    canvas.drawString(44, 24, f'DSO 576 Module 6 | cleaning commit {CLEANING_COMMIT}')
     canvas.drawRightString(568, 24, str(doc.page))
 
 OUT.parent.mkdir(parents=True, exist_ok=True)

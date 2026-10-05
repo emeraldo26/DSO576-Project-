@@ -2,7 +2,7 @@
 
 ## Status and guardrails
 
-The reviewed rules have now been implemented for a **national occupation-screening prototype**. Every row of all five CSVs and the relevant workbook data was inspected. The final source-to-output run passed 3,529 checks, including five saved-record checks. A fresh Python process reproduced all 41 outputs byte for byte. Original source files remain unchanged; no commit or push has been made. Sections 2–4 retain the full inspection findings and reviewed rule specification; sections 5, 7, and 8 point to actual implementation evidence.
+The reviewed rules have now been implemented for a **national occupation-screening prototype**. Every row of all five CSVs and the relevant workbook data was inspected. The final source-to-output run passed 3,529 checks, including five saved-record checks. A fresh Python process reproduced all 41 outputs byte for byte. Original source files remain unchanged. Cleaning commit: `1f85f180ceb04b71e7bd921f706859c04317acbd`. Sections 2–4 retain the full inspection findings and reviewed rule specification; sections 5, 7, and 8 point to actual implementation evidence.
 
 The implementation writes to a fresh directory under `outputs/`. Lookup and analysis-view reductions are documented in a row-level ledger. IDs are loaded as text and round-trip checked. Every original column is retained alongside any parsed or corrected companion. The tracked review sample and compact evidence are copies of verified outputs.
 
@@ -423,8 +423,8 @@ explained in [examples/README.md](examples/README.md).
 The exact filename `requirements.txt` is ignored, so the pinned dependency file
 uses `requirements-cleaning.txt`. No change to `.gitignore` was necessary.
 `.gitattributes` preserves LF bytes for the sample/evidence. The existing
-`data/README.md` edit is preserved. New deliverables are uncommitted and pending
-staging on `cleantaotianchen123`; no commit or push occurred.
+`data/README.md` edit is preserved. The 32 assignment files are committed on
+`cleantaotianchen123` in cleaning commit `1f85f180ceb04b71e7bd921f706859c04317acbd`.
 
 ### 7.4 Actual verification and failed development check
 
@@ -489,10 +489,10 @@ remain.
   from employment; occupation medians cannot be averaged into a national median.
 - **Submission:** the current branch is `cleantaotianchen123`. Code, dependency
   file, README, compact evidence and 50-row sample are ready for review in
-  Git-eligible paths. No commit or push occurred. The assignment's Gradescope
+  Git-eligible paths. Cleaning commit: `1f85f180ceb04b71e7bd921f706859c04317acbd`. The assignment's Gradescope
   PDF and notebook are now completed; see `code/README.md` and the submission
-  receipts for fresh-kernel and page-review results. Actual submitted commit
-  ID remains pending; no commit or push is authorized yet.
+  receipts for fresh-kernel and page-review results. The cleaning commit is distinct from the later metadata-update commit.
+  Publishing this branch is now authorized; no Gradescope upload is performed.
 
 The reviewed cleaning rules have been executed. No additional permission is
 needed to inspect these results. The remaining source metadata gaps and final

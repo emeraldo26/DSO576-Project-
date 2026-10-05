@@ -85,4 +85,6 @@ limits remain documented in plan section 9. No score or causal conclusion is
 supported by cleaning alone. The subsequent submission-artifact step produced a
 six-page Gradescope PDF and a notebook executed from a fresh kernel. See
 `code/README.md`, `notebook_execution.json` and `independent_bls_none_check.json`
-in the evidence folder. No commit, push or Gradescope upload has occurred.
+in the evidence folder. Cleaning commit: `1f85f180ceb04b71e7bd921f706859c04317acbd`.
+The later metadata update records this ID without changing cleaning rules or source
+data. No Gradescope upload is performed.

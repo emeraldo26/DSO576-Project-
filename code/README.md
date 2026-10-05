@@ -7,9 +7,9 @@ weights or priority thresholds are calculated.
 
 Current branch: `cleantaotianchen123`.
 Branch URL: https://github.com/emeraldo26/DSO576-Project-/tree/cleantaotianchen123
-Submitted commit ID: **pending review; no assignment commit or push has been made**.
-The existing HEAD is not a submitted cleaning commit. Replace the pending field
-with the actual submitted commit ID after the user approves committing/pushing.
+Cleaning commit ID: `1f85f180ceb04b71e7bd921f706859c04317acbd`.
+This identifies the cleaning submission, not the later metadata-update commit.
+Student: **Taotianchen Wan**. The branch URL identifies the latest branch state.
 
 ## Sources and snapshot versions
 
@@ -124,7 +124,7 @@ The six-page [individual PDF](../output/pdf/module6_individual_submission.pdf)
 contains the exact checklist, all 16 cleaning decisions, reductions/totals,
 five original/expected/actual record checks and the independent BLS category
 check. The individual cover identifies **Taotianchen Wan** and retains the branch
-URL. Assignment commit ID remains **pending**.
+URL. Cleaning commit ID: `1f85f180ceb04b71e7bd921f706859c04317acbd`.
 
 [module6_cleaning.ipynb](module6_cleaning.ipynb) runs the original-source pipeline,
 shows validation tables and independently checks workbook cells without importing
@@ -170,14 +170,14 @@ successfully with a temporary `uv` Node runtime. Neither affected source data.
 ignores the exact name `requirements.txt`; `requirements-cleaning.txt` is
 unignored. Code, plan, dependencies, compact evidence and sample use Git-eligible
 paths. No ignore rule was relaxed, and the pre-existing `data/README.md` edit
-was preserved. New files are pending staging/commit.
+was preserved. The 32 assignment files were included in the cleaning commit.
 
 The PDF uses `output/pdf/` (singular), not ignored `outputs/`; the notebook is not
 the ignored `code/mock.ipynb`. Both dependency filenames are Git-eligible.
 See [final file inventory and Git snapshot](../docs/module6_submission_files.md).
-Git-eligible means not ignored, not already committed. No staging, commit, push
-or Gradescope submission has occurred. The branch URL above may not expose new
-artifacts until an assignment commit is approved and pushed.
+The cleaning commit contains the 32 listed assignment files. The metadata update
+records that commit ID and is separately committed. No Gradescope upload is
+performed by these scripts. Push status is verified against origin after publishing.
 
 The older generated `cleaning_report.md` records the pipeline-stage handoff;
 its statement that PDF/notebook work remained is historical. This README and
