@@ -2,7 +2,7 @@
 
 Branch: `cleaning-chang`  
 Branch URL: https://github.com/emeraldo26/DSO576-Project-/tree/cleaning-chang  
-Submitted commit ID: pending; no submission or push has been made for this cleaning work.
+Submitted commit ID: a60695e11a17c5d607ab4239c2c8d9429ba0d444
 
 This is the individual data-cleaning implementation of the accepted [plan](../../plan.md). It prepares occupation and occupation-task data for later analysis. It does not calculate a priority score or build the dashboard. The source release versions and download dates are unknown; the script records and checks SHA-256 hashes instead.
 
