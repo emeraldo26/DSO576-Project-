@@ -1,0 +1,12 @@
+{
+  "file": "output/pdf/module6_individual_submission.pdf",
+  "sha256": "2e9d800d3af6658d0517bb11cf19a44e7603257be6f054876327ac9a3b3f2051",
+  "pages": 6,
+  "render_engine": "PyMuPDF 1.28.2",
+  "render_scale": 1.5,
+  "visually_inspected_pages": [1, 2, 3, 4, 5, 6],
+  "status": "PASS",
+  "review": "After adding Taotianchen Wan to the cover, all six regenerated pages were opened as rendered images. No clipped text, broken tables, unreadable text or split record-check tables observed. Text bounding boxes also checked against page bounds. Full name and retained branch hyperlink verified in the saved PDF.",
+  "draft_issue_resolved": "First draft split case 3 onto a seventh page. Reduced table padding, kept font size, rebuilt and inspected the six final pages.",
+  "remaining": "Assignment commit pending. Source release/download metadata unresolved."
+}

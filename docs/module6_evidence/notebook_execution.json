@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "fresh_kernel": true,
+  "python": "3.11.4",
+  "executed_code_cells": 5,
+  "error_outputs": 0,
+  "notebook_sha256": "ebd37352e1c30533082c63b4df6cc3b90ddf9a7ad45b64034745217ebcec4eb0",
+  "packages": {
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.3.0",
+    "reportlab": "5.0.1",
+    "pymupdf": "1.28.2"
+  },
+  "method": "nbclient; disposable kernelspec explicitly uses this process Python; errors abort"
+}

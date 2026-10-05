@@ -1,0 +1,8 @@
+# Tested with CPython 3.11.4. Pinned direct and transitive dependencies.
+pandas==3.0.6
+numpy==2.4.6
+openpyxl==3.1.5
+et-xmlfile==2.0.0
+python-dateutil==2.9.0.post0
+six==1.17.0
+tzdata==2026.5

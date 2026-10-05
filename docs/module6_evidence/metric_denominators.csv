@@ -1,0 +1,6 @@
+metric,records,nonmissing_denominator,numerator,mean,missing_policy
+job_exposure_all,756,756,58.1944,0.0769767195767,exclude null from denominator; retain measured zero
+job_exposure_bls_complete,755,755,58.1944,0.0770786754967,exclude null from denominator; retain measured zero
+penetration_raw,17998,17998,1201.2546,0.0667437826425,exclude null from denominator; retain measured zero
+penetration_normalized_lookup,17991,17991,1196.1705,0.0664871602468,exclude null from denominator; retain measured zero
+employment_weighted_exposure,755,154223.4,19841.99913,0.128657513257,"matched occupations only; denominator in thousands, not occupation count"

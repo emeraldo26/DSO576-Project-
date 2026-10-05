@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "coded_rows": 1112,
+  "literal_None_recoveries": {
+    "work_experience": 716,
+    "ojt": 321
+  },
+  "cells_checked": 1037,
+  "method": "Independent openpyxl cell read; CSV code lookup; canonical saved CSV and recovery address comparison; no cleaning-module imports",
+  "external_provenance_verified": false
+}

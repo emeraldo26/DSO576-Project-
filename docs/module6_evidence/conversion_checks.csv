@@ -1,0 +1,14 @@
+dataset,column,target,kind,rows,parsed,source_missing,failures
+jobs,observed_exposure,observed_exposure_value,numeric,756,756,0,0
+penetration,penetration,penetration_value,numeric,17998,17998,0,0
+tasks,Incumbents Responding,respondents,numeric,18838,18251,587,0
+tasks,Date,task_month,date %m/%Y,18838,18838,0,0
+bls,"Employment, 2025",employment_2025_thousands,numeric,1112,1112,0,0
+bls,"Employment, 2035",employment_2035_thousands,numeric,1112,1112,0,0
+bls,"Employment distribution, percent, 2025",employment_distribution_2025_percent,numeric,1112,1112,0,0
+bls,"Employment distribution, percent, 2035",employment_distribution_2035_percent,numeric,1112,1112,0,0
+bls,"Employment change, numeric, 2025–35",employment_change_thousands,numeric,1112,1112,0,0
+bls,"Employment change, percent, 2025–35",employment_change_percent,numeric,1112,1112,0,0
+bls,"Percent self-employed, 2025",self_employed_percent,numeric,1112,892,220,0
+bls,"Occupational openings, 2025–35 annual average",annual_openings_thousands,numeric,1112,1112,0,0
+bls,"Median annual wage, dollars, 2025",median_annual_wage_dollars,numeric,1112,1103,9,0

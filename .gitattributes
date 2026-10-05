@@ -1,0 +1,5 @@
+# Preserve deterministic bytes of submitted samples and generated evidence.
+examples/module6_cleaned_sample.csv text eol=lf
+docs/module6_evidence/*.csv text eol=lf
+docs/module6_evidence/*.json text eol=lf
+output/pdf/module6_individual_submission.pdf binary

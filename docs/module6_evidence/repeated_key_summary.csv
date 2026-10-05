@@ -1,0 +1,10 @@
+dataset,key,rows,distinct_keys,repeated_groups,rows_in_repeated_groups,extra_records
+jobs,occ_code,756,756,0,0,0
+occupations,O*NET-SOC Code,1016,1016,0,0,0
+occupations_soc,soc_code,1016,867,76,225,149
+tasks,Task ID,18838,18838,0,0,0
+bls,soc_code,1112,1112,0,0,0
+penetration_raw_text,task,17998,17992,2,8,6
+penetration_normalized,task_normalized,17998,17991,1,8,7
+tasks_full_code_text,O*NET-SOC Code + task_normalized,18838,18838,0,0,0
+tasks_soc_text,soc_code + task_normalized,18838,18814,24,48,24

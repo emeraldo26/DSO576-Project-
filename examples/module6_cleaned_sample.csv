@@ -1,0 +1,51 @@
+sample_origin,selection_reason,soc_code,title,bls_match_status,observed_exposure_value,employment_2025_thousands,employment_2035_thousands,employment_change_percent,annual_openings_thousands,median_annual_wage_dollars,work_experience,ojt,total_unique_onet_tasks,matched_unique_tasks,unmatched_unique_tasks,task_match_rate,average_matched_task_penetration,task_coverage_incomplete
+bls_control,leading-zero summary; not a detailed occupation,00-0000,"Total, all occupations",summary_control,,170280.8,176198.5,3.5,17461.8,50980,,,,,,,,
+bls_control,line item ending in 0; no matching job exposure code,31-1120,Home health and personal care aides,bls_only,,4677.1,5524.4,18.1,760.5,35800,None,Short-term on-the-job training,,,,,,
+occupation_master,difficult_case,11-1011,Chief Executives,matched,0.0333,291.6,300.9,3.2,19.1,213990,5 years or more,None,49,49,0,1,0.0329448979592,False
+occupation_master,first remaining SOCs in lexical order,11-1021,General and Operations Managers,matched,0.1378,3599,3780.3,5,285,105770,5 years or more,None,17,17,0,1,0.102652941176,False
+occupation_master,difficult_case,11-1031,Legislators,job_only,0,,,,,,,,30,30,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,11-2011,Advertising and Promotions Managers,matched,0.1731,33.2,31.9,-3.7,2.3,133660,Less than 5 years,None,30,30,0,1,0.171673333333,False
+occupation_master,first remaining SOCs in lexical order,11-2021,Marketing Managers,matched,0.3195,421.6,450.8,6.9,34,166790,5 years or more,None,20,20,0,1,0.194865,False
+occupation_master,first remaining SOCs in lexical order,11-2022,Sales Managers,matched,0.0433,650.1,679.1,4.5,47.3,148270,Less than 5 years,None,17,17,0,1,0.0576705882353,False
+occupation_master,first remaining SOCs in lexical order,11-2032,Public Relations Managers,matched,0.2315,80.8,85.4,5.7,6.1,146910,5 years or more,None,20,20,0,1,0.154765,False
+occupation_master,first remaining SOCs in lexical order,11-3012,Administrative Services Managers,matched,0,279,293.3,5.2,22,114130,Less than 5 years,None,18,18,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,11-3013,Facilities Managers,matched,0.1345,165.9,173.5,4.6,14.2,106660,Less than 5 years,None,39,39,0,1,0.120812820513,False
+occupation_master,first remaining SOCs in lexical order,11-3021,Computer and Information Systems Managers,matched,0.1559,685.8,793.9,15.8,53.5,175140,5 years or more,None,17,17,0,1,0.187847058824,False
+occupation_master,first remaining SOCs in lexical order,11-3031,Financial Managers,matched,0.3907,879.7,964.6,9.7,65.6,166570,5 years or more,None,59,59,0,1,0.263766101695,False
+occupation_master,first remaining SOCs in lexical order,11-3051,Industrial Production Managers,matched,0.0132,252.1,258.6,2.6,17,126060,5 years or more,None,116,116,0,1,0.0223896551724,False
+occupation_master,first remaining SOCs in lexical order,11-3061,Purchasing Managers,matched,0.2004,88.3,91.8,4,6.4,148080,5 years or more,None,18,18,0,1,0.209061111111,False
+occupation_master,first remaining SOCs in lexical order,11-3071,"Transportation, Storage, and Distribution Managers",matched,0.0956,228.1,242.1,6.1,18.3,107230,5 years or more,None,60,60,0,1,0.0631,False
+occupation_master,first remaining SOCs in lexical order,11-3111,Compensation and Benefits Managers,matched,0,23.7,24,1.1,1.6,149230,5 years or more,None,22,22,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,11-3121,Human Resources Managers,matched,0,224.9,237.4,5.5,16.8,149280,5 years or more,None,26,26,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,11-3131,Training and Development Managers,matched,0.3777,50.2,53.5,6.4,4.1,133000,5 years or more,None,12,12,0,1,0.275766666667,False
+occupation_master,first remaining SOCs in lexical order,11-9013,"Farmers, Ranchers, and Other Agricultural Managers",matched,0,788.7,762.2,-3.4,70.8,89900,5 years or more,None,30,30,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,11-9021,Construction Managers,matched,0.1186,609.1,664.3,9.1,49.7,114990,None,Moderate-term on-the-job training,25,25,0,1,0.067308,False
+occupation_master,first remaining SOCs in lexical order,11-9031,"Education and Childcare Administrators, Preschool and Daycare",matched,0.0395,91.9,89,-3.1,5.2,59300,Less than 5 years,None,17,17,0,1,0.197517647059,False
+occupation_master,first remaining SOCs in lexical order,11-9032,"Education Administrators, Kindergarten through Secondary",matched,0.0525,343.8,342.7,-0.3,20.6,105870,5 years or more,None,32,32,0,1,0.07815625,False
+occupation_master,first remaining SOCs in lexical order,11-9033,"Education Administrators, Postsecondary",matched,0.0644,231.8,235.9,1.8,14.5,104590,Less than 5 years,None,27,27,0,1,0.0573740740741,False
+occupation_master,first remaining SOCs in lexical order,11-9041,Architectural and Engineering Managers,matched,0.0306,220.9,233.1,5.5,14.9,171270,5 years or more,None,37,37,0,1,0.0193675675676,False
+occupation_master,first remaining SOCs in lexical order,11-9051,Food Service Managers,matched,0,344.3,364.2,5.8,38.8,69390,Less than 5 years,Short-term on-the-job training,28,28,0,1,0.0357142857143,False
+occupation_master,first remaining SOCs in lexical order,11-9071,Gambling Managers,matched,0,5.6,5.8,3.6,0.6,93220,Less than 5 years,None,19,19,0,1,0.0381,False
+occupation_master,first remaining SOCs in lexical order,11-9081,Lodging Managers,matched,0.1215,54.8,56.9,3.8,5.5,69250,Less than 5 years,None,24,24,0,1,0.112566666667,False
+occupation_master,first remaining SOCs in lexical order,11-9111,Medical and Health Services Managers,matched,0.0659,640.4,795.5,24.2,62.3,123860,Less than 5 years,None,18,18,0,1,0.101361111111,False
+occupation_master,first remaining SOCs in lexical order,11-9121,Natural Sciences Managers,matched,0.0613,112.2,121.5,8.2,9.2,167220,5 years or more,None,70,70,0,1,0.0513571428571,False
+occupation_master,first remaining SOCs in lexical order,11-9131,Postmasters and Mail Superintendents,matched,0,13.3,13.2,-0.3,0.9,96660,Less than 5 years,Moderate-term on-the-job training,13,13,0,1,0.0760076923077,False
+occupation_master,first remaining SOCs in lexical order,11-9141,"Property, Real Estate, and Community Association Managers",matched,0.1653,460.4,477.6,3.7,36.9,69990,Less than 5 years,Short-term on-the-job training,26,26,0,1,0.0965846153846,False
+occupation_master,first remaining SOCs in lexical order,11-9151,Social and Community Service Managers,matched,0.1808,231,247.7,7.2,18.5,80390,Less than 5 years,None,16,16,0,1,0.1530375,False
+occupation_master,first remaining SOCs in lexical order,11-9161,Emergency Management Directors,matched,0,14,14.5,3.9,1.1,93330,5 years or more,None,23,23,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,11-9171,Funeral Home Managers,matched,0.0108,34.8,36.2,4.1,2.6,78790,Less than 5 years,None,23,22,1,0.95652173913,0.0823590909091,True
+occupation_master,first remaining SOCs in lexical order,11-9179,"Personal Service Managers, All Other",matched,0.1244,25.5,27.1,6.2,2,69770,Less than 5 years,None,45,45,0,1,0.132526666667,False
+occupation_master,first remaining SOCs in lexical order,11-9199,"Managers, All Other",matched,0.0686,1338.8,1404.4,4.9,100.9,141900,Less than 5 years,None,137,137,0,1,0.0570430656934,False
+occupation_master,first remaining SOCs in lexical order,13-1011,"Agents and Business Managers of Artists, Performers, and Athletes",matched,0.118,26.9,29.5,9.7,2.4,82890,Less than 5 years,None,14,14,0,1,0.118721428571,False
+occupation_master,first remaining SOCs in lexical order,13-1031,"Claims Adjusters, Examiners, and Investigators",matched,0.0818,376.1,355.5,-5.5,20.9,78000,None,Long-term on-the-job training,29,29,0,1,0.0678931034483,False
+occupation_master,first remaining SOCs in lexical order,13-1032,"Insurance Appraisers, Auto Damage",matched,0,13.5,12.4,-8.7,0.7,78240,None,Moderate-term on-the-job training,7,7,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,13-1041,Compliance Officers,matched,0.1211,436.4,453.1,3.8,32.7,80730,None,Moderate-term on-the-job training,146,145,1,0.993150684932,0.0956124137931,True
+occupation_master,first remaining SOCs in lexical order,13-1051,Cost Estimators,matched,0,226.4,219.5,-3.1,17.6,78740,None,Moderate-term on-the-job training,14,14,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,13-1071,Human Resources Specialists,matched,0.4034,939.7,999.7,6.4,73.7,75940,None,None,26,26,0,1,0.318,False
+occupation_master,first remaining SOCs in lexical order,13-1074,Farm Labor Contractors,matched,0,1.9,2,7.4,0.1,58460,Less than 5 years,Short-term on-the-job training,7,7,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,13-1075,Labor Relations Specialists,matched,0,66.3,67.7,2.1,4.8,95420,Less than 5 years,None,28,28,0,1,0,False
+occupation_master,first remaining SOCs in lexical order,13-1081,Logisticians,matched,0.1571,255.1,300,17.6,26.6,82320,None,None,83,83,0,1,0.0983819277108,False
+occupation_master,first remaining SOCs in lexical order,13-1111,Management Analysts,matched,0.2435,1077.1,1186.3,10.1,94.1,101860,Less than 5 years,None,11,11,0,1,0.158118181818,False
+occupation_master,difficult_case,23-2011,Paralegals and Legal Assistants,matched,0.2927,404.9,403.8,-0.3,40.8,62890,None,None,12,7,5,0.583333333333,0.133857142857,True
+occupation_master,difficult_case,27-2011,Actors,matched,0.1011,67.5,67.5,0,6.3,,None,Long-term on-the-job training,18,18,0,1,0.107294444444,False
+occupation_master,difficult_case,51-2061,Timing Device Assemblers and Adjusters,matched,0.0392,0.2,0.2,-6.1,0,62620,None,Moderate-term on-the-job training,17,17,0,1,0.0588235294118,False

@@ -1,0 +1,32 @@
+dataset,source_column,clean_column,before_blank,before_em_dash,before_literal_None,after_null,after_blank,after_em_dash,after_literal_None,rule
+jobs,occ_code,occ_code,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+jobs,title,title,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+jobs,observed_exposure,observed_exposure_value,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+penetration,task,task,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+penetration,penetration,penetration_value,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+occupations,O*NET-SOC Code,O*NET-SOC Code,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+occupations,Title,Title,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+occupations,Description,Description,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,O*NET-SOC Code,O*NET-SOC Code,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,Title,Title,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,Task ID,Task ID,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,Task,Task,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,Task Type,task_type,418,0,0,418,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,Incumbents Responding,respondents,587,0,0,587,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,Date,task_month,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+tasks,Domain Source,Domain Source,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,2025 National Employment Matrix title,2025 National Employment Matrix title,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,2025 National Employment Matrix code,2025 National Employment Matrix code,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,Occupation type,Occupation type,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Employment, 2025",employment_2025_thousands,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Employment, 2035",employment_2035_thousands,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Employment distribution, percent, 2025",employment_distribution_2025_percent,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Employment distribution, percent, 2035",employment_distribution_2035_percent,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Employment change, numeric, 2025–35",employment_change_thousands,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Employment change, percent, 2025–35",employment_change_percent,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Percent self-employed, 2025",self_employed_percent,0,220,0,220,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Occupational openings, 2025–35 annual average",annual_openings_thousands,0,0,0,0,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,"Median annual wage, dollars, 2025",median_annual_wage_dollars,0,9,0,9,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,Typical education needed for entry,education,0,281,0,281,0,0,0,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,Work experience in a related occupation,work_experience,716,281,0,281,0,0,716,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation
+bls,Typical on-the-job training needed to attain competency in the occupation,ojt,321,281,0,281,0,0,321,Preserve raw; typed companion; BLS categories from workbook; no statistical imputation

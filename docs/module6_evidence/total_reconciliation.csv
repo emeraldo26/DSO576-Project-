@@ -1,0 +1,5 @@
+metric,published_total,line_items_831,matched_755,bls_only_76,line_minus_published,expected_line_minus_published,explanation
+employment_2025_thousands,170280.8,170267.2,154223.4,16043.8,-13.6,-13.6,Snapshot control; rounding/excluded occupational data. No invented correction.
+employment_2035_thousands,176198.5,176184.5,158949.6,17234.9,-14,-14,Snapshot control; rounding/excluded occupational data. No invented correction.
+employment_change_thousands,5917.6,5917.9,4726.9,1191,0.299999999999,0.299999999999,Snapshot control; rounding/excluded occupational data. No invented correction.
+annual_openings_thousands,17461.8,17460.7,15607.2,1853.5,-1.1,-1.1,Snapshot control; rounding/excluded occupational data. No invented correction.

@@ -1,0 +1,11 @@
+relationship,status,keys
+jobs_bls_line,both,755
+jobs_bls_line,left_only,1
+jobs_bls_line,right_only,76
+jobs_onet_base,both,756
+jobs_onet_base,right_only,111
+penetration_onet_task,both,17429
+penetration_onet_task,left_only,562
+penetration_onet_task,right_only,149
+task_fullcode_occupation,both,923
+task_fullcode_occupation,right_only,93

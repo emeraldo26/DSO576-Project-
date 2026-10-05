@@ -1,0 +1,15 @@
+view,input_rows,output_rows,reduction,reason
+penetration_lookup,17998,17991,7,Same normalized key and same value; retain all raw rows; consolidate lookup only
+occupation_soc_bridge,1016,867,149,Use the unique .00 description for six-digit display; suffix rows remain in clean source
+soc_task_bridge,18838,18814,24,Consolidate identical task within one base SOC after suffix collapse; retain lineage
+matched_task_links,18814,18656,158,Analytical penetration view requires a measured value; missing remains unknown
+bls_line_items,1112,831,281,Exclude hierarchy summaries from detailed analysis
+occupation_master,756,756,0,Left join retains every job occupation
+bls_complete_analysis,756,755,1,Optional analysis requires BLS data; Legislators remains in master
+occupation_tasks,18656,17760,896,Task view for the 755 BLS-complete job occupations
+top_five_tasks,17760,3774,13986,"Top five display selection, penetration descending then normalized text ascending"
+jobs_clean,756,756,0,All original records and columns retained; parsed companions added
+penetration_clean,17998,17998,0,All original records and columns retained; parsed companions added
+occupations_clean,1016,1016,0,All original records and columns retained; parsed companions added
+tasks_clean,18838,18838,0,All original records and columns retained; parsed companions added
+bls_clean,1112,1112,0,All original records and columns retained; parsed companions added
