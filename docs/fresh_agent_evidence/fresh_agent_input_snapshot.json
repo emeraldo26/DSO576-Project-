@@ -1,0 +1,6 @@
+{
+  "BUILD_SPEC.md": "9ff119fc0b8811dde9c29426e76581899a9e8aba52e1e3202bf9fbf3cfa97c14",
+  "analysis/backend.py": "4ff9ffeb98b940c26d1e1de469fe71f5065859124834f865f9b2bfda633654dc",
+  "data/cleaned/occupation_clean_merged.csv": "545fd9865c5607e75852cc5aedd53769f8284f7bc62089abe2e6cd72ef69e47f",
+  "data/cleaned/occupation_task_matches.csv": "e012824629f29ebb430e3cc8b2af3c95acd8eafa215b1f85f143ba9ba5f9ad4a"
+}

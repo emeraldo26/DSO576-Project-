@@ -1,0 +1,20 @@
+{
+  "status": "Source reconciliation verified; merge to main remains pending",
+  "occupation_rows": 755,
+  "occupation_task_rows": 17760,
+  "unmatched_ai_occupations": [
+    {
+      "soc_code": "11-1031",
+      "title": "Legislators"
+    }
+  ],
+  "summary_metrics": {
+    "occupation_count": 755,
+    "employment_2025": 154223400.0,
+    "employment_value_count": 755,
+    "mean_observed_exposure": 0.07707867549668873,
+    "exposure_value_count": 755,
+    "declining_occupation_count": 216,
+    "unknown_outlook_count": 0
+  }
+}

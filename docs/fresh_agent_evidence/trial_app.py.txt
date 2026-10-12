@@ -1,0 +1,339 @@
+"""Isolated Phase 3 build trial; important interpretations are in docs/fresh_agent_test.md.
+
+The UI imports are deferred so formatting and backend calls can be checked when
+Streamlit/Plotly are unavailable. Run with ``streamlit run app.py`` after the
+team has selected and tested UI dependencies.
+"""
+from __future__ import annotations
+
+from pathlib import Path
+import pandas as pd
+
+from analysis import backend
+
+ROOT = Path(__file__).resolve().parent
+CLEAN_DIR = ROOT / "data" / "cleaned"
+METRICS = {
+    "Observed exposure": "observed_exposure",
+    "Mean task penetration": "average_task_penetration",
+    "2025 employment": "employment_2025",
+    "Median annual wage": "median_annual_wage_2025",
+    "Projected employment change": "employment_change_percent_2025_35",
+}
+COLORS = {"Growing": "#149E8E", "Stable": "#808080", "Declining": "#E67E22", "Unknown": "#D3D3D3"}
+OUTLOOK_ORDER = ["Growing", "Stable", "Declining", "Unknown"]
+
+
+def number(value, *, decimals=0, missing="Not reported", prefix="", suffix=""):
+    if value is None or pd.isna(value):
+        return missing
+    return f"{prefix}{float(value):,.{decimals}f}{suffix}"
+
+
+def percentage(value, *, missing="Not reported"):
+    return number(None if value is None or pd.isna(value) else value * 100,
+                  decimals=2, missing=missing, suffix="%")
+
+
+def entry_category(value):
+    if value is None or pd.isna(value):
+        return "Not reported"
+    return "None required" if value == "None" else str(value)
+
+
+def reset_filters(state, group_codes):
+    """Reset changes filters only, preserving sort, detail, and shortlist."""
+    state.update({
+        "groups": list(group_codes), "outlooks": list(OUTLOOK_ORDER), "query": "",
+        "use_employment_min": False, "use_employment_max": False,
+        "employment_min": 0.0, "employment_max": 0.0,
+        "use_exposure_min": False, "use_exposure_max": False,
+        "exposure_min_percent": 0.0, "exposure_max_percent": 100.0,
+    })
+
+
+def add_selected(state):
+    code = state.get("selected_soc")
+    if code and code not in state["shortlist_codes"]:
+        state["shortlist_codes"].append(code)
+
+
+def remove_saved(state, code):
+    state["shortlist_codes"] = [saved for saved in state["shortlist_codes"] if saved != code]
+
+
+def clear_saved(state):
+    state["shortlist_codes"] = []
+
+
+def reconcile_session_identifiers(state, occupations):
+    """Remove only SOCs absent from regenerated data and return notice details."""
+    valid_codes = set(occupations["soc_code"])
+    saved_codes = state.setdefault("shortlist_codes", [])
+    removed_codes = sorted(set(saved_codes) - valid_codes)
+    state["shortlist_codes"] = [code for code in saved_codes if code in valid_codes]
+    detail_code = state.get("selected_soc")
+    removed_detail = detail_code if detail_code is not None and detail_code not in valid_codes else None
+    if removed_detail is not None:
+        state["selected_soc"] = None
+    return {"removed_shortlist_socs": removed_codes, "removed_detail_soc": removed_detail}
+
+
+def prepare_comparison(occupations, filters, metric, ascending):
+    """Keep invalid bounds separate from a valid, empty filter result."""
+    try:
+        filtered = backend.filter_occupations(occupations, **filters)
+    except ValueError as error:
+        return {"filtered": None, "ranked": None, "error": str(error)}
+    return {"filtered": filtered,
+            "ranked": backend.rank_occupations(filtered, metric, ascending=ascending),
+            "error": None}
+
+
+def clear_filtered_detail_selection(state, filtered):
+    """Valid filters clear an excluded detail SOC; invalid filters preserve it."""
+    if filtered is None:
+        return None
+    selected = state.get("selected_soc")
+    if selected is not None and selected not in set(filtered["soc_code"]):
+        state["selected_soc"] = None
+        return selected
+    return None
+
+
+def load_tables_with_cache_key(occupation_path, task_path, occupation_mtime_ns, task_mtime_ns):
+    """Both paths and modification times are public cache arguments.
+
+    The time arguments intentionally do not participate in calculations; they
+    invalidate the Streamlit cache when either canonical CSV is regenerated.
+    """
+    occupation_path, task_path = Path(occupation_path), Path(task_path)
+    if (occupation_path.name != "occupation_clean_merged.csv"
+            or task_path.name != "occupation_task_matches.csv"
+            or occupation_path.parent != task_path.parent):
+        raise ValueError("Expected both canonical clean tables in the same directory")
+    return backend.load_clean_data(occupation_path.parent)
+
+
+def formatted_occupations(rows):
+    columns = {
+        "display_rank": "Order under selected metric", "title": "Occupation", "soc_code": "SOC",
+        "observed_exposure": "Observed exposure", "average_task_penetration": "Mean task penetration",
+        "employment_2025": "2025 employment (persons)", "median_annual_wage_2025": "Median annual wage (USD)",
+        "employment_change_percent_2025_35": "Projected change 2025–35", "task_match_rate": "Task-match coverage",
+    }
+    table = rows[list(columns)].copy()
+    for field in ("observed_exposure", "average_task_penetration", "task_match_rate"):
+        table[field] = table[field].map(percentage)
+    table["employment_2025"] = table["employment_2025"].map(number)
+    table["median_annual_wage_2025"] = table["median_annual_wage_2025"].map(lambda v: number(v, prefix="$"))
+    table["employment_change_percent_2025_35"] = table["employment_change_percent_2025_35"].map(
+        lambda v: number(v, decimals=1, suffix="%"))
+    return table.rename(columns=columns)
+
+
+def sidebar_filters(st, occupations):
+    groups = (occupations[["occupation_group_code", "occupation_group_name"]]
+              .drop_duplicates().sort_values("occupation_group_code"))
+    group_codes = groups.occupation_group_code.tolist()
+    group_names = dict(zip(groups.occupation_group_code, groups.occupation_group_name))
+    if "groups" not in st.session_state:
+        reset_filters(st.session_state, group_codes)
+    with st.sidebar:
+        st.header("Compare occupations")
+        st.multiselect("SOC major groups", group_codes, key="groups",
+                       format_func=lambda code: f"{code} — {group_names[code]}")
+        st.multiselect("Projected labor-market outlook", OUTLOOK_ORDER, key="outlooks")
+        st.caption("Cleared group or outlook selections include all categories.")
+        # A1: Separate enable switches allow each bound to be absent independently.
+        st.checkbox("Set minimum employment", key="use_employment_min")
+        st.number_input("Minimum employment (persons)", min_value=0.0, step=1000.0,
+                        format="%.0f", key="employment_min", disabled=not st.session_state.use_employment_min)
+        st.checkbox("Set maximum employment", key="use_employment_max")
+        st.number_input("Maximum employment (persons)", min_value=0.0, step=1000.0,
+                        format="%.0f", key="employment_max", disabled=not st.session_state.use_employment_max)
+        st.checkbox("Set minimum exposure", key="use_exposure_min")
+        st.number_input("Minimum exposure (%)", min_value=0.0, max_value=100.0, step=0.01,
+                        key="exposure_min_percent", disabled=not st.session_state.use_exposure_min)
+        st.checkbox("Set maximum exposure", key="use_exposure_max")
+        st.number_input("Maximum exposure (%)", min_value=0.0, max_value=100.0, step=0.01,
+                        key="exposure_max_percent", disabled=not st.session_state.use_exposure_max)
+        st.text_input("Search occupation title or SOC", key="query")
+        st.button("Reset filters", on_click=reset_filters, args=(st.session_state, group_codes))
+    state = st.session_state
+    return {
+        "groups": state.groups or None, "outlooks": state.outlooks or None, "query": state.query,
+        "employment_min": state.employment_min if state.use_employment_min else None,
+        "employment_max": state.employment_max if state.use_employment_max else None,
+        "exposure_min": state.exposure_min_percent / 100 if state.use_exposure_min else None,
+        "exposure_max": state.exposure_max_percent / 100 if state.use_exposure_max else None,
+    }, group_codes
+
+
+def render_metrics(st, filtered):
+    metrics = backend.summary_metrics(filtered)
+    columns = st.columns(4)
+    columns[0].metric("Included occupations", metrics["occupation_count"])
+    columns[1].metric("2025 employment in included occupations", number(metrics["employment_2025"], missing="—"))
+    columns[2].metric("Mean occupation exposure", percentage(metrics["mean_observed_exposure"], missing="—"))
+    columns[3].metric("Declining occupations", metrics["declining_occupation_count"])
+    st.caption("Mean exposure gives each occupation equal weight; it is not the percentage of workers using AI.")
+
+
+def render_chart(st, px, filtered):
+    chart = backend.comparison_data(filtered)
+    st.caption(f"Chart omits {len(filtered) - len(chart):,} occupations with unavailable chart inputs or nonpositive employment.")
+    if chart.empty:
+        return
+    chart["exposure_label"] = chart.observed_exposure.map(percentage)
+    chart["change_label"] = chart.employment_change_percent_2025_35.map(lambda v: number(v, decimals=1, suffix="%"))
+    chart["employment_label"] = chart.employment_2025.map(number)
+    chart["wage_label"] = chart.median_annual_wage_2025.map(lambda v: number(v, prefix="$"))
+    figure = px.scatter(
+        chart, x="employment_change_percent_2025_35", y="observed_exposure_percent",
+        size="employment_2025", color="labor_market_outlook", size_max=45,
+        color_discrete_map=COLORS, category_orders={"labor_market_outlook": OUTLOOK_ORDER},
+        custom_data=["title", "soc_code", "exposure_label", "change_label", "employment_label", "wage_label"],
+        labels={"employment_change_percent_2025_35": "Projected employment change, 2025–35 (%)",
+                "observed_exposure_percent": "Observed exposure (%)", "labor_market_outlook": "Projected outlook"},
+    )
+    figure.update_traces(marker_sizemode="area", hovertemplate=(
+        "%{customdata[0]}<br>SOC: %{customdata[1]}<br>Exposure: %{customdata[2]}"
+        "<br>Projected change: %{customdata[3]}<br>Employment: %{customdata[4]}"
+        "<br>Median annual wage: %{customdata[5]}<extra></extra>"))
+    figure.add_vline(x=0, line_color="#666666", line_dash="dash")
+    st.plotly_chart(figure, use_container_width=True)
+
+
+def render_groups(st, filtered):
+    with st.expander("SOC group summary"):
+        groups = backend.group_summary(filtered)
+        groups["employment_2025"] = groups.employment_2025.map(number)
+        groups["mean_observed_exposure"] = groups.mean_observed_exposure.map(percentage)
+        st.dataframe(groups.rename(columns={
+            "occupation_group_code": "SOC group", "occupation_group_name": "Group name",
+            "occupation_count": "Occupations", "employment_2025": "Included 2025 employment",
+            "mean_observed_exposure": "Mean occupation exposure", "declining_occupation_count": "Declining occupations",
+        }), hide_index=True, use_container_width=True)
+
+
+def render_details(st, filtered, tasks, ranked):
+    st.subheader("Inspect an occupation")
+    codes = ranked.soc_code.tolist()
+    titles = dict(zip(filtered.soc_code, filtered.title))
+    if clear_filtered_detail_selection(st.session_state, filtered) is not None:
+        st.info("Filters removed the selected occupation. Select another occupation.")
+    code = st.selectbox("Occupation", codes, index=None, key="selected_soc",
+                        format_func=lambda value: f"{titles[value]} ({value})",
+                        placeholder="Select an occupation", disabled=not codes)
+    if code is None:
+        return
+    detail = backend.occupation_details(filtered, tasks, code)
+    row = detail["occupation"]
+    st.write(row["occupation_description"] or "Not reported")
+    st.caption(f"Description source: O*NET {row['description_source_onet_code'] or 'Not reported'}.")
+    values = {
+        "Observed exposure": percentage(row["observed_exposure"]),
+        "Mean task penetration": percentage(row["average_task_penetration"]),
+        "2025 employment (persons)": number(row["employment_2025"]),
+        "Median annual wage (USD)": number(row["median_annual_wage_2025"], prefix="$"),
+        "Projected employment change 2025–35": number(row["employment_change_percent_2025_35"], decimals=1, suffix="%"),
+        "Projected labor-market outlook": row["labor_market_outlook"] or "Not reported",
+        "Annual average openings 2025–35 (persons)": number(row["annual_openings_2025_35"]),
+        "Typical education": entry_category(row["typical_education"]),
+        "Related work experience": entry_category(row["related_work_experience"]),
+        "Typical on-the-job training": entry_category(row["on_the_job_training"]),
+        "Scored matched tasks": number(row["matched_task_count"]),
+        "Distinct O*NET tasks": number(row["total_task_count"]),
+        "Task-match coverage": percentage(row["task_match_rate"]),
+    }
+    st.table(pd.DataFrame(values.items(), columns=["Measure", "Value"]))
+    st.caption("Education, experience, and on-the-job training describe typical entry requirements, not AI-training need. None required is an explicit source category.")
+    top = detail["top_tasks"][["task_rank", "task", "penetration"]].copy()
+    top["penetration"] = top.penetration.map(percentage)
+    if top.empty:
+        st.info("No scored task matches are reported for this occupation.")
+    else:
+        st.dataframe(top.rename(columns={"task_rank": "Task order", "task": "Task", "penetration": "Penetration"}),
+                     hide_index=True, use_container_width=True)
+    already_saved = code in st.session_state.shortlist_codes
+    st.button("Already in shortlist" if already_saved else "Add to shortlist", disabled=already_saved,
+              on_click=add_selected, args=(st.session_state,))
+
+
+def render_shortlist(st, occupations, filtered, metric, ascending):
+    st.caption("The shortlist lasts for this browser session. Download CSV to keep it.")
+    st.button("Clear shortlist", disabled=not st.session_state.shortlist_codes,
+              on_click=clear_saved, args=(st.session_state,))
+    saved = backend.shortlist_data(occupations, st.session_state.shortlist_codes, metric, ascending=ascending)
+    if filtered is None:
+        st.caption("Count outside current filters is unavailable while filter bounds are invalid.")
+    else:
+        outside = int((~saved.soc_code.isin(filtered.soc_code)).sum())
+        st.caption(f"{outside:,} saved occupations are outside the current filters.")
+    st.dataframe(formatted_occupations(saved), hide_index=True, use_container_width=True)
+    # A4: Rank is recomputed within the saved subset by the existing backend.
+    st.caption("Order is within this shortlist under the selected metric and direction.")
+    for row in saved.itertuples():
+        st.button(f"Remove {row.title} ({row.soc_code})", key=f"remove_{row.soc_code}",
+                  on_click=remove_saved, args=(st.session_state, row.soc_code))
+    st.download_button("Download shortlist CSV", data=saved.to_csv(index=False).encode("utf-8"),
+                       file_name="occupation_shortlist.csv", mime="text/csv", disabled=saved.empty)
+
+
+def main():
+    try:
+        import streamlit as st
+        import plotly.express as px
+    except ModuleNotFoundError as error:
+        raise SystemExit(f"UI dependency unavailable: {error.name}. Streamlit/Plotly versions must be selected and tested before running this trial.") from error
+    st.set_page_config(page_title="AI Workforce Investment Planner", layout="wide")
+    st.title("AI Workforce Investment Planner")
+    st.write("Compare national occupation measures and save occupations for AI-transition training review.")
+    st.caption("Observed Claude use does not prove job displacement or training need. BLS projections do not establish AI causation. Anthropic release and observation period: unavailable.")
+    occupation_path = CLEAN_DIR / "occupation_clean_merged.csv"
+    task_path = CLEAN_DIR / "occupation_task_matches.csv"
+    load_cached = st.cache_data(show_spinner=False)(load_tables_with_cache_key)
+    try:
+        occupations, tasks = load_cached(str(occupation_path), str(task_path),
+                                        occupation_path.stat().st_mtime_ns, task_path.stat().st_mtime_ns)
+    except (OSError, ValueError) as error:
+        st.error(f"Cannot load agreed clean data: {error}")
+        st.stop()
+    st.session_state.setdefault("shortlist_codes", [])
+    st.session_state.setdefault("selected_soc", None)
+    reconciled = reconcile_session_identifiers(st.session_state, occupations)
+    if reconciled["removed_shortlist_socs"]:
+        st.warning("Regenerated data no longer includes these saved SOCs; removed from shortlist: "
+                   + ", ".join(reconciled["removed_shortlist_socs"]))
+    if reconciled["removed_detail_soc"] is not None:
+        st.info(f"The detail selection {reconciled['removed_detail_soc']} is no longer available. Select another occupation.")
+    filters, groups = sidebar_filters(st, occupations)
+    control_columns = st.columns(2)
+    sort_label = control_columns[0].selectbox("Sort measure", list(METRICS), key="sort_label")
+    direction = control_columns[1].selectbox("Sort direction", ["Descending", "Ascending"], key="sort_direction")
+    metric, ascending = METRICS[sort_label], direction == "Ascending"
+    comparison = prepare_comparison(occupations, filters, metric, ascending)
+    filtered, filter_error = comparison["filtered"], comparison["error"]
+    compare_tab, shortlist_tab = st.tabs(["Compare occupations", "Shortlist"])
+    with compare_tab:
+        if filter_error:
+            st.error(f"Check filter bounds: {filter_error}. Enter a minimum no greater than its maximum.")
+            st.button("Reset invalid filters", on_click=reset_filters, args=(st.session_state, groups))
+        else:
+            render_metrics(st, filtered)
+            if filtered.empty:
+                st.info("No occupations match these filters")
+                st.button("Reset empty filters", on_click=reset_filters, args=(st.session_state, groups))
+            render_chart(st, px, filtered)
+            ranked = comparison["ranked"]
+            st.dataframe(formatted_occupations(ranked), hide_index=True, use_container_width=True)
+            st.caption("Order reflects the selected metric and direction; it does not measure reskilling need.")
+            render_groups(st, filtered)
+            render_details(st, filtered, tasks, ranked)
+    with shortlist_tab:
+        render_shortlist(st, occupations, filtered, metric, ascending)
+
+
+if __name__ == "__main__":
+    main()

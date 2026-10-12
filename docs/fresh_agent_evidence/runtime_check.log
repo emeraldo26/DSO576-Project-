@@ -1,0 +1,3 @@
+Syntax check exit: 0
+Attempted app startup exit: 1
+UI dependency unavailable: streamlit. Streamlit/Plotly versions must be selected and tested before running this trial.

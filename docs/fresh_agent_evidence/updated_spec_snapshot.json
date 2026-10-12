@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-12",
+  "source_specification": "/workspace/scratch/c082ec3e1eb5/phase2_work/AI_Workforce_Phase2/BUILD_SPEC.md",
+  "updated_build_spec_sha256": "67400d397e87271d96bb1ec85ddc4cbfa03a8d6eb3f4f322f31cc7862e8ab5ce",
+  "source_modified_by_trial": false,
+  "final_source_build_spec_sha256": "67400d397e87271d96bb1ec85ddc4cbfa03a8d6eb3f4f322f31cc7862e8ab5ce",
+  "trial_app_sha256": "46a76f6d571600d086ee42624f2a943351f81762304509c6cbb6e1e1a169e52f",
+  "initial_trial_validation_sha256": "155e5b49785b9d5b47496fd0777d6e0ccf20ce7e62d642c3c7ec77447deae5c2",
+  "source_and_trial_specifications_match": true
+}

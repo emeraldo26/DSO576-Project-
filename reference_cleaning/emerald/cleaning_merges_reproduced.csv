@@ -1,0 +1,2 @@
+merge,left_rows,right_rows,output_rows,matched,left_only,right_only
+job_exposure to BLS line items,756,831,756,755,1,0

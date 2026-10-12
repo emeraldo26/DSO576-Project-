@@ -1,0 +1,66 @@
+{
+  "source_counts": {
+    "job_exposure.csv": 756,
+    "task_penetration.csv": 17998,
+    "onet_task_statements.csv": 18838,
+    "onet_occupation_data.csv": 1016,
+    "bls_table_1_2_2025_35.csv": 1112
+  },
+  "source_missing": {
+    "job_exposure.csv": {},
+    "task_penetration.csv": {},
+    "onet_task_statements.csv": {
+      "Task Type": 418,
+      "Incumbents Responding": 587
+    },
+    "onet_occupation_data.csv": {},
+    "bls_table_1_2_2025_35.csv": {
+      "Work experience in a related occupation": 716,
+      "Typical on-the-job training needed to attain competency in the occupation": 321
+    }
+  },
+  "exact_duplicates": {
+    "job_exposure.csv": 0,
+    "task_penetration.csv": 6,
+    "onet_task_statements.csv": 0,
+    "onet_occupation_data.csv": 0,
+    "bls_table_1_2_2025_35.csv": 0
+  },
+  "cleaning_changes": {
+    "task_penetration_exact_duplicate_rows_removed": 6,
+    "bls_summary_rows_excluded": 281,
+    "bls_titles_whitespace_standardized": 1111,
+    "repeated_base_soc_task_matches_removed": 24,
+    "failed_numeric_conversions_excluding_documented_em_dash_missing": {
+      "Employment, 2025": 0,
+      "Employment change, percent, 2025–35": 0,
+      "Occupational openings, 2025–35 annual average": 0,
+      "Median annual wage, dollars, 2025": 0
+    }
+  },
+  "range_checks": {
+    "observed_exposure_outside_0_1": 0,
+    "penetration_outside_0_1": 0,
+    "invalid_job_soc_codes": 0,
+    "invalid_bls_line_item_soc_codes": 0
+  },
+  "merge": {
+    "anthropic_occupation_rows": 756,
+    "bls_line_item_rows": 831,
+    "matched_occupation_rows": 755,
+    "unmatched_anthropic_occupations": [
+      {
+        "soc_code": "11-1031",
+        "title": "Legislators"
+      }
+    ],
+    "anthropic_task_rows_matched_to_onet": 17436,
+    "anthropic_task_rows_total": 17998,
+    "top_task_rows": 3774
+  },
+  "output_missing": {
+    "median_annual_wage_2025": 3,
+    "related_work_experience": 646,
+    "on_the_job_training": 295
+  }
+}

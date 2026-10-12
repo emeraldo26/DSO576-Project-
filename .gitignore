@@ -15,7 +15,7 @@ __pycache__/
 .DS_Store
 *.zip
 
+# Raw inputs stay ignored. Agreed data/cleaned/ outputs should be tracked.
 # Ignore these files
-requirements.txt
 .vscode/*
 code/mock.ipynb

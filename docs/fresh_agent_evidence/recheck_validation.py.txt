@@ -1,0 +1,130 @@
+"""Recheck clarified contracts with pure app helpers, backend calls, and AST.
+
+This intentionally does not claim to execute Streamlit widgets or Plotly.
+"""
+from pathlib import Path
+import ast
+import hashlib
+import importlib.util
+import io
+import json
+import py_compile
+
+import pandas as pd
+import app
+from analysis import backend
+
+ROOT = Path(__file__).resolve().parent
+checks = []
+
+
+def checked(label, condition, kind="pure helper/backend"):
+    assert condition, label
+    checks.append({"name": label, "kind": kind, "passed": True})
+
+
+occupations, tasks = backend.load_clean_data(ROOT / "data" / "cleaned")
+state = {"selected_soc": "11-1011", "shortlist_codes": ["11-1011", "15-1251"],
+         "sort_label": "Median annual wage", "sort_direction": "Ascending"}
+app.reset_filters(state, sorted(occupations.occupation_group_code.unique()))
+checked("Q1 reset preserves sort direction, saved shortlist and detail selection",
+        state["sort_label"] == "Median annual wage" and state["sort_direction"] == "Ascending"
+        and state["shortlist_codes"] == ["11-1011", "15-1251"] and state["selected_soc"] == "11-1011")
+checked("Reset disables each numeric bound independently and clears search",
+        state["query"] == "" and all(not state[key] for key in (
+            "use_employment_min", "use_employment_max", "use_exposure_min", "use_exposure_max")))
+for filters in ({"employment_min": 100, "employment_max": 0}, {"exposure_min": .9, "exposure_max": .1}):
+    result = app.prepare_comparison(occupations, filters, "observed_exposure", False)
+    checked(f"Q2 invalid bounds produce unavailable comparison rather than empty data: {filters}",
+            result["filtered"] is None and result["ranked"] is None and bool(result["error"]))
+    app.clear_filtered_detail_selection(state, result["filtered"])
+    checked(f"Q2 invalid bounds preserve detail and saved shortlist: {filters}",
+            state["selected_soc"] == "11-1011" and state["shortlist_codes"] == ["11-1011", "15-1251"])
+valid = app.prepare_comparison(occupations, {"query": "15-1251"}, "observed_exposure", False)
+checked("A still-visible detail is retained after reset", app.clear_filtered_detail_selection(state, occupations) is None)
+removed = app.clear_filtered_detail_selection(state, valid["filtered"])
+checked("Valid excluding filters clear only detail selection", removed == "11-1011"
+        and state["selected_soc"] is None and state["shortlist_codes"] == ["11-1011", "15-1251"])
+empty = app.prepare_comparison(occupations, {"query": "__no_match__"}, "observed_exposure", False)
+checked("A valid no-match filter remains an empty dataframe with no input error",
+        empty["filtered"].empty and empty["ranked"].empty and empty["error"] is None)
+for ascending in (False, True):
+    saved = backend.shortlist_data(occupations, state["shortlist_codes"], "median_annual_wage_2025", ascending=ascending)
+    checked(f"Q3 saved-subset rank starts at one and includes hidden saved rows, ascending={ascending}",
+            saved.display_rank.tolist() == [1, 2] and len(saved) == 2
+            and int((~saved.soc_code.isin(valid["filtered"].soc_code)).sum()) == 1)
+ties = occupations.loc[occupations.soc_code.isin(["11-1011", "15-1251"])].copy()
+ties["observed_exposure"] = .5
+checked("Q3 saved subset ties use SOC ascending", backend.shortlist_data(ties, ties.soc_code).soc_code.tolist() == ["11-1011", "15-1251"])
+ties.loc[ties.soc_code.eq("11-1011"), "observed_exposure"] = float("nan")
+for ascending in (False, True):
+    checked(f"Q3 saved subset missing metric is last, ascending={ascending}",
+            backend.shortlist_data(ties, ties.soc_code, ascending=ascending).soc_code.tolist() == ["15-1251", "11-1011"])
+
+regenerated = occupations.loc[~occupations.soc_code.eq("15-1251")].copy()
+state.update(selected_soc="15-1251", shortlist_codes=["15-1251", "11-1011", "99-9999"])
+reconciled = app.reconcile_session_identifiers(state, regenerated)
+checked("Q4 remove only unavailable saved identifiers and return every removed SOC for notice",
+        state["shortlist_codes"] == ["11-1011"]
+        and reconciled["removed_shortlist_socs"] == ["15-1251", "99-9999"])
+checked("Q4 absent detail clears independently", state["selected_soc"] is None
+        and reconciled["removed_detail_soc"] == "15-1251")
+saved = backend.shortlist_data(regenerated, state["shortlist_codes"])
+exported = pd.read_csv(io.BytesIO(saved.to_csv(index=False).encode("utf-8")), dtype={"soc_code": str}, keep_default_na=False)
+checked("Q4 remaining valid saved row keeps table and full-field UTF-8 export available",
+        not saved.empty and exported.soc_code.tolist() == ["11-1011"]
+        and exported.display_rank.tolist() == [1] and set(occupations.columns) <= set(exported.columns))
+state["selected_soc"] = "11-1011"
+reconciled = app.reconcile_session_identifiers(state, regenerated)
+checked("Q4 repeated reconciliation preserves valid detail and does not repeat removals",
+        reconciled == {"removed_shortlist_socs": [], "removed_detail_soc": None}
+        and state["selected_soc"] == "11-1011" and state["shortlist_codes"] == ["11-1011"])
+state.update(selected_soc="99-9999", shortlist_codes=["99-9999"])
+reconciled = app.reconcile_session_identifiers(state, regenerated)
+checked("Q4 if every saved SOC disappears the shortlist becomes empty without substituting occupations",
+        state["shortlist_codes"] == [] and state["selected_soc"] is None
+        and backend.shortlist_data(regenerated, state["shortlist_codes"]).empty)
+
+tree = ast.parse((ROOT / "app.py").read_text())
+main = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "main")
+compare = next(node for node in main.body if isinstance(node, ast.With)
+               and isinstance(node.items[0].context_expr, ast.Name)
+               and node.items[0].context_expr.id == "compare_tab")
+invalid_branch = compare.body[0]
+render_functions = {"render_metrics", "render_chart", "render_groups", "render_details"}
+def calls_in(nodes):
+    return {node.func.id for top in nodes for node in ast.walk(top)
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)}
+def has_dataframe(nodes):
+    return any(isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+               and node.func.attr == "dataframe" for top in nodes for node in ast.walk(top))
+checked("Q2 static UI wiring places cards/chart/table/groups/details only in valid-filter branch",
+        isinstance(invalid_branch, ast.If)
+        and not (calls_in(invalid_branch.body) & render_functions)
+        and render_functions <= calls_in(invalid_branch.orelse)
+        and not has_dataframe(invalid_branch.body) and has_dataframe(invalid_branch.orelse), "static AST inspection")
+shortlist_function = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "render_shortlist")
+unavailable_branch = next(node for node in shortlist_function.body if isinstance(node, ast.If))
+checked("Q2 static UI wiring keeps Shortlist accessible with unavailable outside-filter count during invalid bounds",
+        any(isinstance(node, ast.With)
+            and isinstance(node.items[0].context_expr, ast.Name)
+            and node.items[0].context_expr.id == "shortlist_tab"
+            and "render_shortlist" in calls_in(node.body) for node in main.body)
+        and ast.unparse(unavailable_branch.test) == "filtered is None"
+        and any(isinstance(node, ast.Constant) and isinstance(node.value, str)
+                and "unavailable" in node.value for top in unavailable_branch.body for node in ast.walk(top)),
+        "static AST inspection")
+py_compile.compile(str(ROOT / "app.py"), doraise=True)
+checked("Updated trial app compiles", True, "Python syntax compilation")
+report = {
+    "date": "2026-10-12", "source_build_spec_sha256": hashlib.sha256((ROOT / "BUILD_SPEC.md").read_bytes()).hexdigest(),
+    "trial_app_sha256": hashlib.sha256((ROOT / "app.py").read_bytes()).hexdigest(),
+    "check_count": len(checks), "checks": checks,
+    "important_mvp_guesses_remaining": [],
+    "live_ui_tested": False,
+    "streamlit_available": importlib.util.find_spec("streamlit") is not None,
+    "plotly_available": importlib.util.find_spec("plotly") is not None,
+    "limitations": ["Pure helper/backend assertions and static branch inspection do not execute real Streamlit widgets, callbacks, or Plotly rendering."]
+}
+(ROOT / "recheck_validation.json").write_text(json.dumps(report, indent=2) + "\n")
+print(json.dumps(report, indent=2))

@@ -1,0 +1,19 @@
+{
+  "checks_failed": 0,
+  "checks_passed": 3529,
+  "code_sha256": "06e30437eec415869eeb25e1c09f44e22ebe59fc7c1a529d479e1f1f9e068b9c",
+  "dependencies_sha256": "86e0ddf10378c166291262330a08375ba51b9f5d0db31bb55b0417b6a8e2b5b6",
+  "expectations_sha256": "27bc8dec6e019ef99307ac442baee60e7678909f6fe586cd6f63ba50b88c2568",
+  "packages": {
+    "et-xmlfile": "2.0.0",
+    "numpy": "2.3.5",
+    "openpyxl": "3.1.5",
+    "pandas": "2.2.3",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0",
+    "tzdata": "2026.4"
+  },
+  "priority_score": "not calculated",
+  "python": "3.12.14",
+  "scope": "National occupation-screening prototype"
+}

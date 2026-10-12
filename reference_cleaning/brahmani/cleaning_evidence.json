@@ -1,0 +1,168 @@
+{
+  "generated_at": "2026-10-04T01:10:39",
+  "source_profiles": {
+    "job_exposure": {
+      "rows": 756,
+      "columns": 3,
+      "missing_by_column": {
+        "occ_code": 0,
+        "title": 0,
+        "observed_exposure": 0
+      },
+      "exact_duplicate_extra_rows": 0,
+      "repeated_key_extra_rows": 0
+    },
+    "task_penetration": {
+      "rows": 17998,
+      "columns": 2,
+      "missing_by_column": {
+        "task": 0,
+        "penetration": 0
+      },
+      "exact_duplicate_extra_rows": 6,
+      "repeated_key_extra_rows": 6
+    },
+    "onet_tasks": {
+      "rows": 18838,
+      "columns": 8,
+      "missing_by_column": {
+        "O*NET-SOC Code": 0,
+        "Title": 0,
+        "Task ID": 0,
+        "Task": 0,
+        "Task Type": 418,
+        "Incumbents Responding": 587,
+        "Date": 0,
+        "Domain Source": 0
+      },
+      "exact_duplicate_extra_rows": 0,
+      "repeated_key_extra_rows": 0
+    },
+    "onet_occupations": {
+      "rows": 1016,
+      "columns": 3,
+      "missing_by_column": {
+        "O*NET-SOC Code": 0,
+        "Title": 0,
+        "Description": 0
+      },
+      "exact_duplicate_extra_rows": 0,
+      "repeated_key_extra_rows": 0
+    },
+    "bls": {
+      "rows": 1112,
+      "columns": 15,
+      "missing_by_column": {
+        "2025 National Employment Matrix title": 0,
+        "2025 National Employment Matrix code": 0,
+        "Occupation type": 0,
+        "Employment, 2025": 0,
+        "Employment, 2035": 0,
+        "Employment distribution, percent, 2025": 0,
+        "Employment distribution, percent, 2035": 0,
+        "Employment change, numeric, 2025\u201335": 0,
+        "Employment change, percent, 2025\u201335": 0,
+        "Percent self-employed, 2025": 0,
+        "Occupational openings, 2025\u201335 annual average": 0,
+        "Median annual wage, dollars, 2025": 0,
+        "Typical education needed for entry": 0,
+        "Work experience in a related occupation": 716,
+        "Typical on-the-job training needed to attain competency in the occupation": 321
+      },
+      "exact_duplicate_extra_rows": 0,
+      "repeated_key_extra_rows": 0
+    }
+  },
+  "job_exposure_cleaning": {
+    "observed_exposure_failed_conversions": 0,
+    "suspicious_exposure_rows": 0
+  },
+  "task_penetration_cleaning": {
+    "penetration_failed_conversions": 0,
+    "duplicate_task_rows_removed": 7,
+    "duplicate_penetration_conflicts": 0,
+    "suspicious_penetration_rows": 0
+  },
+  "onet_task_cleaning": {
+    "date_failed_conversions": 0,
+    "incumbents_failed_conversions": 0
+  },
+  "bls_cleaning": {
+    "numeric_conversion_failures": {
+      "Employment, 2025": 0,
+      "Employment, 2035": 0,
+      "Employment change, numeric, 2025\u201335": 0,
+      "Employment change, percent, 2025\u201335": 0,
+      "Employment distribution, percent, 2025": 0,
+      "Employment distribution, percent, 2035": 0,
+      "Percent self-employed, 2025": 0,
+      "Occupational openings, 2025\u201335 annual average": 0,
+      "Median annual wage, dollars, 2025": 0
+    },
+    "negative_employment_2025_rows": 0,
+    "negative_wage_rows": 0,
+    "summary_rows_removed": 281
+  },
+  "merge": {
+    "anthropic_occupation_rows": 756,
+    "bls_line_item_rows": 831,
+    "occupation_rows_after_inner_join": 755,
+    "unmatched_anthropic_occupation_rows": 1,
+    "unmatched_anthropic_occupations": [
+      {
+        "soc_code": "11-1031",
+        "title": "Legislators"
+      }
+    ],
+    "task_penetration_unique_rows": 17991,
+    "onet_task_rows": 18838,
+    "onet_task_rows_matched_to_penetration": 18680,
+    "deduped_soc_task_matches": 18656,
+    "occupations_with_task_matches": 755
+  },
+  "reconcile": {
+    "merged_employment_2025_thousands": 154223.3999999999,
+    "merged_annual_openings_2025_35_thousands": 15607.200000000003
+  },
+  "record_checks": [
+    {
+      "record": "O*NET occupation 11-1011.00",
+      "original": "O*NET-SOC Code=11-1011.00",
+      "expected": "six-digit soc_code=11-1011",
+      "actual": "soc_code=11-1011",
+      "matches": "True"
+    },
+    {
+      "record": "O*NET occupation 11-1011.03",
+      "original": "detailed suffix .03 shares six-digit SOC with Chief Executives",
+      "expected": "base .00 description remains preferred for SOC 11-1011",
+      "actual": "base preferred=True",
+      "matches": "True"
+    },
+    {
+      "record": "O*NET task 8823",
+      "original": "Date=08/2023 and mixed-case task sentence",
+      "expected": "date_month=2023-08 and lowercase task_key for matching",
+      "actual": "date_month=2023-08; task_key starts=direct or coordinate an o",
+      "matches": "True"
+    },
+    {
+      "record": "BLS occupation 11-1011",
+      "original": "title has leading spaces; employment=291.6; wage=213990",
+      "expected": "trimmed title, numeric fields preserved as numbers",
+      "actual": "title=Chief executives; employment=291.6; wage=213990",
+      "matches": "True"
+    },
+    {
+      "record": "Merged occupation 15-1252",
+      "original": "Software Developers appears in Anthropic and BLS",
+      "expected": "merged row with exposure, BLS growth, wage, and task count",
+      "actual": "exposure=0.288; growth=10.2; tasks=17",
+      "matches": "True"
+    }
+  ],
+  "sample_selection": {
+    "rows": 50,
+    "rule": "Selected from high exposure, low exposure, growth, decline, no task match, and missing descriptive fields."
+  }
+}
