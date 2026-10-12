@@ -1,0 +1,1038 @@
+soc_code,column,workbook_cell,csv_original,workbook_original,clean_value,match_status
+11-9021,Work experience in a related occupation,N30,,None,None,PASS
+13-1020,Work experience in a related occupation,N55,,None,None,PASS
+13-1031,Work experience in a related occupation,N57,,None,None,PASS
+13-1032,Work experience in a related occupation,N58,,None,None,PASS
+13-1041,Work experience in a related occupation,N59,,None,None,PASS
+13-1051,Work experience in a related occupation,N60,,None,None,PASS
+13-1071,Work experience in a related occupation,N62,,None,None,PASS
+13-1081,Work experience in a related occupation,N66,,None,None,PASS
+13-1082,Work experience in a related occupation,N67,,None,None,PASS
+13-1121,Work experience in a related occupation,N69,,None,None,PASS
+13-1131,Work experience in a related occupation,N70,,None,None,PASS
+13-1161,Work experience in a related occupation,N73,,None,None,PASS
+13-1199,Work experience in a related occupation,N74,,None,None,PASS
+13-2011,Work experience in a related occupation,N76,,None,None,PASS
+13-2020,Work experience in a related occupation,N77,,None,None,PASS
+13-2031,Work experience in a related occupation,N78,,None,None,PASS
+13-2041,Work experience in a related occupation,N79,,None,None,PASS
+13-2051,Work experience in a related occupation,N81,,None,None,PASS
+13-2052,Work experience in a related occupation,N82,,None,None,PASS
+13-2053,Work experience in a related occupation,N83,,None,None,PASS
+13-2054,Work experience in a related occupation,N84,,None,None,PASS
+13-2061,Work experience in a related occupation,N85,,None,None,PASS
+13-2071,Work experience in a related occupation,N87,,None,None,PASS
+13-2081,Work experience in a related occupation,N90,,None,None,PASS
+13-2082,Work experience in a related occupation,N91,,None,None,PASS
+13-2099,Work experience in a related occupation,N92,,None,None,PASS
+15-1211,Work experience in a related occupation,N96,,None,None,PASS
+15-1221,Work experience in a related occupation,N98,,None,None,PASS
+15-1231,Work experience in a related occupation,N100,,None,None,PASS
+15-1232,Work experience in a related occupation,N101,,None,None,PASS
+15-1242,Work experience in a related occupation,N104,,None,None,PASS
+15-1244,Work experience in a related occupation,N106,,None,None,PASS
+15-1251,Work experience in a related occupation,N108,,None,None,PASS
+15-1252,Work experience in a related occupation,N109,,None,None,PASS
+15-1253,Work experience in a related occupation,N110,,None,None,PASS
+15-1254,Work experience in a related occupation,N111,,None,None,PASS
+15-1255,Work experience in a related occupation,N112,,None,None,PASS
+15-1299,Work experience in a related occupation,N113,,None,None,PASS
+15-2011,Work experience in a related occupation,N115,,None,None,PASS
+15-2021,Work experience in a related occupation,N116,,None,None,PASS
+15-2031,Work experience in a related occupation,N117,,None,None,PASS
+15-2041,Work experience in a related occupation,N118,,None,None,PASS
+15-2051,Work experience in a related occupation,N119,,None,None,PASS
+15-2099,Work experience in a related occupation,N120,,None,None,PASS
+17-1011,Work experience in a related occupation,N124,,None,None,PASS
+17-1012,Work experience in a related occupation,N125,,None,None,PASS
+17-1021,Work experience in a related occupation,N127,,None,None,PASS
+17-1022,Work experience in a related occupation,N128,,None,None,PASS
+17-2011,Work experience in a related occupation,N130,,None,None,PASS
+17-2021,Work experience in a related occupation,N131,,None,None,PASS
+17-2031,Work experience in a related occupation,N132,,None,None,PASS
+17-2041,Work experience in a related occupation,N133,,None,None,PASS
+17-2051,Work experience in a related occupation,N134,,None,None,PASS
+17-2061,Work experience in a related occupation,N135,,None,None,PASS
+17-2071,Work experience in a related occupation,N137,,None,None,PASS
+17-2072,Work experience in a related occupation,N138,,None,None,PASS
+17-2081,Work experience in a related occupation,N139,,None,None,PASS
+17-2111,Work experience in a related occupation,N141,,None,None,PASS
+17-2112,Work experience in a related occupation,N142,,None,None,PASS
+17-2121,Work experience in a related occupation,N143,,None,None,PASS
+17-2131,Work experience in a related occupation,N144,,None,None,PASS
+17-2141,Work experience in a related occupation,N145,,None,None,PASS
+17-2151,Work experience in a related occupation,N146,,None,None,PASS
+17-2161,Work experience in a related occupation,N147,,None,None,PASS
+17-2171,Work experience in a related occupation,N148,,None,None,PASS
+17-2199,Work experience in a related occupation,N149,,None,None,PASS
+17-3011,Work experience in a related occupation,N152,,None,None,PASS
+17-3012,Work experience in a related occupation,N153,,None,None,PASS
+17-3013,Work experience in a related occupation,N154,,None,None,PASS
+17-3019,Work experience in a related occupation,N155,,None,None,PASS
+17-3021,Work experience in a related occupation,N157,,None,None,PASS
+17-3022,Work experience in a related occupation,N158,,None,None,PASS
+17-3023,Work experience in a related occupation,N159,,None,None,PASS
+17-3024,Work experience in a related occupation,N160,,None,None,PASS
+17-3025,Work experience in a related occupation,N161,,None,None,PASS
+17-3026,Work experience in a related occupation,N162,,None,None,PASS
+17-3027,Work experience in a related occupation,N163,,None,None,PASS
+17-3028,Work experience in a related occupation,N164,,None,None,PASS
+17-3029,Work experience in a related occupation,N165,,None,None,PASS
+17-3031,Work experience in a related occupation,N166,,None,None,PASS
+19-1011,Work experience in a related occupation,N170,,None,None,PASS
+19-1012,Work experience in a related occupation,N171,,None,None,PASS
+19-1013,Work experience in a related occupation,N172,,None,None,PASS
+19-1021,Work experience in a related occupation,N174,,None,None,PASS
+19-1022,Work experience in a related occupation,N175,,None,None,PASS
+19-1023,Work experience in a related occupation,N176,,None,None,PASS
+19-1029,Work experience in a related occupation,N177,,None,None,PASS
+19-1031,Work experience in a related occupation,N179,,None,None,PASS
+19-1032,Work experience in a related occupation,N180,,None,None,PASS
+19-1041,Work experience in a related occupation,N182,,None,None,PASS
+19-1042,Work experience in a related occupation,N183,,None,None,PASS
+19-1099,Work experience in a related occupation,N184,,None,None,PASS
+19-2011,Work experience in a related occupation,N187,,None,None,PASS
+19-2012,Work experience in a related occupation,N188,,None,None,PASS
+19-2021,Work experience in a related occupation,N189,,None,None,PASS
+19-2031,Work experience in a related occupation,N191,,None,None,PASS
+19-2032,Work experience in a related occupation,N192,,None,None,PASS
+19-2041,Work experience in a related occupation,N194,,None,None,PASS
+19-2042,Work experience in a related occupation,N195,,None,None,PASS
+19-2043,Work experience in a related occupation,N196,,None,None,PASS
+19-2099,Work experience in a related occupation,N197,,None,None,PASS
+19-3011,Work experience in a related occupation,N199,,None,None,PASS
+19-3022,Work experience in a related occupation,N200,,None,None,PASS
+19-3032,Work experience in a related occupation,N202,,None,None,PASS
+19-3033,Work experience in a related occupation,N203,,None,None,PASS
+19-3034,Work experience in a related occupation,N204,,None,None,PASS
+19-3039,Work experience in a related occupation,N205,,None,None,PASS
+19-3041,Work experience in a related occupation,N206,,None,None,PASS
+19-3051,Work experience in a related occupation,N207,,None,None,PASS
+19-3091,Work experience in a related occupation,N209,,None,None,PASS
+19-3092,Work experience in a related occupation,N210,,None,None,PASS
+19-3093,Work experience in a related occupation,N211,,None,None,PASS
+19-3094,Work experience in a related occupation,N212,,None,None,PASS
+19-3099,Work experience in a related occupation,N213,,None,None,PASS
+19-4012,Work experience in a related occupation,N216,,None,None,PASS
+19-4013,Work experience in a related occupation,N217,,None,None,PASS
+19-4021,Work experience in a related occupation,N218,,None,None,PASS
+19-4031,Work experience in a related occupation,N219,,None,None,PASS
+19-4042,Work experience in a related occupation,N221,,None,None,PASS
+19-4043,Work experience in a related occupation,N222,,None,None,PASS
+19-4044,Work experience in a related occupation,N223,,None,None,PASS
+19-4051,Work experience in a related occupation,N224,,None,None,PASS
+19-4061,Work experience in a related occupation,N225,,None,None,PASS
+19-4071,Work experience in a related occupation,N226,,None,None,PASS
+19-4092,Work experience in a related occupation,N228,,None,None,PASS
+19-4099,Work experience in a related occupation,N229,,None,None,PASS
+19-5011,Work experience in a related occupation,N231,,None,None,PASS
+19-5012,Work experience in a related occupation,N232,,None,None,PASS
+21-1012,Work experience in a related occupation,N236,,None,None,PASS
+21-1013,Work experience in a related occupation,N237,,None,None,PASS
+21-1015,Work experience in a related occupation,N238,,None,None,PASS
+21-1018,Work experience in a related occupation,N239,,None,None,PASS
+21-1019,Work experience in a related occupation,N240,,None,None,PASS
+21-1021,Work experience in a related occupation,N242,,None,None,PASS
+21-1022,Work experience in a related occupation,N243,,None,None,PASS
+21-1023,Work experience in a related occupation,N244,,None,None,PASS
+21-1029,Work experience in a related occupation,N245,,None,None,PASS
+21-1091,Work experience in a related occupation,N247,,None,None,PASS
+21-1092,Work experience in a related occupation,N248,,None,None,PASS
+21-1093,Work experience in a related occupation,N249,,None,None,PASS
+21-1094,Work experience in a related occupation,N250,,None,None,PASS
+21-1099,Work experience in a related occupation,N251,,None,None,PASS
+21-2011,Work experience in a related occupation,N253,,None,None,PASS
+21-2099,Work experience in a related occupation,N255,,None,None,PASS
+23-1011,Work experience in a related occupation,N259,,None,None,PASS
+23-1012,Work experience in a related occupation,N260,,None,None,PASS
+23-2011,Work experience in a related occupation,N266,,None,None,PASS
+23-2093,Work experience in a related occupation,N268,,None,None,PASS
+23-2099,Work experience in a related occupation,N269,,None,None,PASS
+25-1011,Work experience in a related occupation,N272,,None,None,PASS
+25-1021,Work experience in a related occupation,N274,,None,None,PASS
+25-1022,Work experience in a related occupation,N275,,None,None,PASS
+25-1031,Work experience in a related occupation,N277,,None,None,PASS
+25-1032,Work experience in a related occupation,N278,,None,None,PASS
+25-1041,Work experience in a related occupation,N280,,None,None,PASS
+25-1042,Work experience in a related occupation,N281,,None,None,PASS
+25-1043,Work experience in a related occupation,N282,,None,None,PASS
+25-1051,Work experience in a related occupation,N284,,None,None,PASS
+25-1052,Work experience in a related occupation,N285,,None,None,PASS
+25-1053,Work experience in a related occupation,N286,,None,None,PASS
+25-1054,Work experience in a related occupation,N287,,None,None,PASS
+25-1061,Work experience in a related occupation,N289,,None,None,PASS
+25-1062,Work experience in a related occupation,N290,,None,None,PASS
+25-1063,Work experience in a related occupation,N291,,None,None,PASS
+25-1064,Work experience in a related occupation,N292,,None,None,PASS
+25-1065,Work experience in a related occupation,N293,,None,None,PASS
+25-1066,Work experience in a related occupation,N294,,None,None,PASS
+25-1067,Work experience in a related occupation,N295,,None,None,PASS
+25-1069,Work experience in a related occupation,N296,,None,None,PASS
+25-1082,Work experience in a related occupation,N302,,None,None,PASS
+25-1111,Work experience in a related occupation,N304,,None,None,PASS
+25-1113,Work experience in a related occupation,N306,,None,None,PASS
+25-1121,Work experience in a related occupation,N308,,None,None,PASS
+25-1122,Work experience in a related occupation,N309,,None,None,PASS
+25-1123,Work experience in a related occupation,N310,,None,None,PASS
+25-1124,Work experience in a related occupation,N311,,None,None,PASS
+25-1125,Work experience in a related occupation,N312,,None,None,PASS
+25-1126,Work experience in a related occupation,N313,,None,None,PASS
+25-1192,Work experience in a related occupation,N315,,None,None,PASS
+25-1193,Work experience in a related occupation,N316,,None,None,PASS
+25-1199,Work experience in a related occupation,N318,,None,None,PASS
+25-2011,Work experience in a related occupation,N321,,None,None,PASS
+25-2012,Work experience in a related occupation,N322,,None,None,PASS
+25-2021,Work experience in a related occupation,N324,,None,None,PASS
+25-2022,Work experience in a related occupation,N325,,None,None,PASS
+25-2031,Work experience in a related occupation,N328,,None,None,PASS
+25-2051,Work experience in a related occupation,N331,,None,None,PASS
+25-2052,Work experience in a related occupation,N332,,None,None,PASS
+25-2057,Work experience in a related occupation,N333,,None,None,PASS
+25-2058,Work experience in a related occupation,N334,,None,None,PASS
+25-2059,Work experience in a related occupation,N335,,None,None,PASS
+25-3011,Work experience in a related occupation,N337,,None,None,PASS
+25-3031,Work experience in a related occupation,N339,,None,None,PASS
+25-3041,Work experience in a related occupation,N340,,None,None,PASS
+25-3099,Work experience in a related occupation,N341,,None,None,PASS
+25-4011,Work experience in a related occupation,N344,,None,None,PASS
+25-4012,Work experience in a related occupation,N345,,None,None,PASS
+25-4013,Work experience in a related occupation,N346,,None,None,PASS
+25-4022,Work experience in a related occupation,N347,,None,None,PASS
+25-4031,Work experience in a related occupation,N348,,None,None,PASS
+25-9021,Work experience in a related occupation,N350,,None,None,PASS
+25-9044,Work experience in a related occupation,N353,,None,None,PASS
+25-9045,Work experience in a related occupation,N354,,None,None,PASS
+25-9099,Work experience in a related occupation,N355,,None,None,PASS
+27-1012,Work experience in a related occupation,N360,,None,None,PASS
+27-1013,Work experience in a related occupation,N361,,None,None,PASS
+27-1014,Work experience in a related occupation,N362,,None,None,PASS
+27-1019,Work experience in a related occupation,N363,,None,None,PASS
+27-1021,Work experience in a related occupation,N365,,None,None,PASS
+27-1022,Work experience in a related occupation,N366,,None,None,PASS
+27-1023,Work experience in a related occupation,N367,,None,None,PASS
+27-1024,Work experience in a related occupation,N368,,None,None,PASS
+27-1025,Work experience in a related occupation,N369,,None,None,PASS
+27-1026,Work experience in a related occupation,N370,,None,None,PASS
+27-1027,Work experience in a related occupation,N371,,None,None,PASS
+27-1029,Work experience in a related occupation,N372,,None,None,PASS
+27-2011,Work experience in a related occupation,N375,,None,None,PASS
+27-2021,Work experience in a related occupation,N378,,None,None,PASS
+27-2022,Work experience in a related occupation,N379,,None,None,PASS
+27-2023,Work experience in a related occupation,N380,,None,None,PASS
+27-2031,Work experience in a related occupation,N382,,None,None,PASS
+27-2042,Work experience in a related occupation,N386,,None,None,PASS
+27-2091,Work experience in a related occupation,N388,,None,None,PASS
+27-2099,Work experience in a related occupation,N389,,None,None,PASS
+27-3011,Work experience in a related occupation,N391,,None,None,PASS
+27-3023,Work experience in a related occupation,N392,,None,None,PASS
+27-3031,Work experience in a related occupation,N393,,None,None,PASS
+27-3043,Work experience in a related occupation,N397,,None,None,PASS
+27-3091,Work experience in a related occupation,N399,,None,None,PASS
+27-3092,Work experience in a related occupation,N400,,None,None,PASS
+27-3099,Work experience in a related occupation,N401,,None,None,PASS
+27-4011,Work experience in a related occupation,N404,,None,None,PASS
+27-4012,Work experience in a related occupation,N405,,None,None,PASS
+27-4014,Work experience in a related occupation,N406,,None,None,PASS
+27-4015,Work experience in a related occupation,N407,,None,None,PASS
+27-4021,Work experience in a related occupation,N408,,None,None,PASS
+27-4031,Work experience in a related occupation,N410,,None,None,PASS
+27-4032,Work experience in a related occupation,N411,,None,None,PASS
+27-4099,Work experience in a related occupation,N412,,None,None,PASS
+29-1011,Work experience in a related occupation,N415,,None,None,PASS
+29-1021,Work experience in a related occupation,N417,,None,None,PASS
+29-1022,Work experience in a related occupation,N418,,None,None,PASS
+29-1023,Work experience in a related occupation,N419,,None,None,PASS
+29-1024,Work experience in a related occupation,N420,,None,None,PASS
+29-1029,Work experience in a related occupation,N421,,None,None,PASS
+29-1031,Work experience in a related occupation,N422,,None,None,PASS
+29-1041,Work experience in a related occupation,N423,,None,None,PASS
+29-1051,Work experience in a related occupation,N424,,None,None,PASS
+29-1071,Work experience in a related occupation,N425,,None,None,PASS
+29-1081,Work experience in a related occupation,N426,,None,None,PASS
+29-1122,Work experience in a related occupation,N428,,None,None,PASS
+29-1123,Work experience in a related occupation,N429,,None,None,PASS
+29-1124,Work experience in a related occupation,N430,,None,None,PASS
+29-1125,Work experience in a related occupation,N431,,None,None,PASS
+29-1126,Work experience in a related occupation,N432,,None,None,PASS
+29-1127,Work experience in a related occupation,N433,,None,None,PASS
+29-1128,Work experience in a related occupation,N434,,None,None,PASS
+29-1129,Work experience in a related occupation,N435,,None,None,PASS
+29-1131,Work experience in a related occupation,N436,,None,None,PASS
+29-1141,Work experience in a related occupation,N437,,None,None,PASS
+29-1151,Work experience in a related occupation,N438,,None,None,PASS
+29-1161,Work experience in a related occupation,N439,,None,None,PASS
+29-1171,Work experience in a related occupation,N440,,None,None,PASS
+29-1181,Work experience in a related occupation,N441,,None,None,PASS
+29-1211,Work experience in a related occupation,N443,,None,None,PASS
+29-1212,Work experience in a related occupation,N444,,None,None,PASS
+29-1213,Work experience in a related occupation,N445,,None,None,PASS
+29-1214,Work experience in a related occupation,N446,,None,None,PASS
+29-1215,Work experience in a related occupation,N447,,None,None,PASS
+29-1216,Work experience in a related occupation,N448,,None,None,PASS
+29-1217,Work experience in a related occupation,N449,,None,None,PASS
+29-1218,Work experience in a related occupation,N450,,None,None,PASS
+29-1221,Work experience in a related occupation,N451,,None,None,PASS
+29-1222,Work experience in a related occupation,N452,,None,None,PASS
+29-1223,Work experience in a related occupation,N453,,None,None,PASS
+29-1224,Work experience in a related occupation,N454,,None,None,PASS
+29-1229,Work experience in a related occupation,N455,,None,None,PASS
+29-1241,Work experience in a related occupation,N457,,None,None,PASS
+29-1242,Work experience in a related occupation,N458,,None,None,PASS
+29-1243,Work experience in a related occupation,N459,,None,None,PASS
+29-1249,Work experience in a related occupation,N460,,None,None,PASS
+29-1291,Work experience in a related occupation,N462,,None,None,PASS
+29-1292,Work experience in a related occupation,N463,,None,None,PASS
+29-1299,Work experience in a related occupation,N464,,None,None,PASS
+29-2010,Work experience in a related occupation,N466,,None,None,PASS
+29-2031,Work experience in a related occupation,N468,,None,None,PASS
+29-2032,Work experience in a related occupation,N469,,None,None,PASS
+29-2033,Work experience in a related occupation,N470,,None,None,PASS
+29-2034,Work experience in a related occupation,N471,,None,None,PASS
+29-2036,Work experience in a related occupation,N473,,None,None,PASS
+29-2042,Work experience in a related occupation,N475,,None,None,PASS
+29-2051,Work experience in a related occupation,N478,,None,None,PASS
+29-2052,Work experience in a related occupation,N479,,None,None,PASS
+29-2055,Work experience in a related occupation,N481,,None,None,PASS
+29-2056,Work experience in a related occupation,N482,,None,None,PASS
+29-2057,Work experience in a related occupation,N483,,None,None,PASS
+29-2061,Work experience in a related occupation,N484,,None,None,PASS
+29-2072,Work experience in a related occupation,N485,,None,None,PASS
+29-2081,Work experience in a related occupation,N486,,None,None,PASS
+29-2091,Work experience in a related occupation,N488,,None,None,PASS
+29-2092,Work experience in a related occupation,N489,,None,None,PASS
+29-2099,Work experience in a related occupation,N490,,None,None,PASS
+29-9021,Work experience in a related occupation,N492,,None,None,PASS
+29-9091,Work experience in a related occupation,N494,,None,None,PASS
+29-9092,Work experience in a related occupation,N495,,None,None,PASS
+29-9093,Work experience in a related occupation,N496,,None,None,PASS
+29-9099,Work experience in a related occupation,N497,,None,None,PASS
+31-1120,Work experience in a related occupation,N500,,None,None,PASS
+31-1131,Work experience in a related occupation,N502,,None,None,PASS
+31-1132,Work experience in a related occupation,N503,,None,None,PASS
+31-1133,Work experience in a related occupation,N504,,None,None,PASS
+31-2011,Work experience in a related occupation,N507,,None,None,PASS
+31-2012,Work experience in a related occupation,N508,,None,None,PASS
+31-2021,Work experience in a related occupation,N510,,None,None,PASS
+31-2022,Work experience in a related occupation,N511,,None,None,PASS
+31-9011,Work experience in a related occupation,N513,,None,None,PASS
+31-9091,Work experience in a related occupation,N515,,None,None,PASS
+31-9092,Work experience in a related occupation,N516,,None,None,PASS
+31-9093,Work experience in a related occupation,N517,,None,None,PASS
+31-9094,Work experience in a related occupation,N518,,None,None,PASS
+31-9095,Work experience in a related occupation,N519,,None,None,PASS
+31-9096,Work experience in a related occupation,N520,,None,None,PASS
+31-9097,Work experience in a related occupation,N521,,None,None,PASS
+31-9099,Work experience in a related occupation,N522,,None,None,PASS
+33-2011,Work experience in a related occupation,N533,,None,None,PASS
+33-3011,Work experience in a related occupation,N539,,None,None,PASS
+33-3012,Work experience in a related occupation,N540,,None,None,PASS
+33-3031,Work experience in a related occupation,N542,,None,None,PASS
+33-3041,Work experience in a related occupation,N543,,None,None,PASS
+33-3051,Work experience in a related occupation,N545,,None,None,PASS
+33-3052,Work experience in a related occupation,N546,,None,None,PASS
+33-9011,Work experience in a related occupation,N548,,None,None,PASS
+33-9032,Work experience in a related occupation,N552,,None,None,PASS
+33-9091,Work experience in a related occupation,N554,,None,None,PASS
+33-9092,Work experience in a related occupation,N555,,None,None,PASS
+33-9093,Work experience in a related occupation,N556,,None,None,PASS
+33-9094,Work experience in a related occupation,N557,,None,None,PASS
+33-9099,Work experience in a related occupation,N558,,None,None,PASS
+35-2011,Work experience in a related occupation,N565,,None,None,PASS
+35-2012,Work experience in a related occupation,N566,,None,None,PASS
+35-2015,Work experience in a related occupation,N569,,None,None,PASS
+35-2019,Work experience in a related occupation,N570,,None,None,PASS
+35-2021,Work experience in a related occupation,N571,,None,None,PASS
+35-3011,Work experience in a related occupation,N573,,None,None,PASS
+35-3023,Work experience in a related occupation,N574,,None,None,PASS
+35-3031,Work experience in a related occupation,N575,,None,None,PASS
+35-3041,Work experience in a related occupation,N576,,None,None,PASS
+35-9011,Work experience in a related occupation,N578,,None,None,PASS
+35-9021,Work experience in a related occupation,N579,,None,None,PASS
+35-9031,Work experience in a related occupation,N580,,None,None,PASS
+35-9099,Work experience in a related occupation,N581,,None,None,PASS
+37-2011,Work experience in a related occupation,N588,,None,None,PASS
+37-2012,Work experience in a related occupation,N589,,None,None,PASS
+37-2019,Work experience in a related occupation,N590,,None,None,PASS
+37-2021,Work experience in a related occupation,N591,,None,None,PASS
+37-3011,Work experience in a related occupation,N593,,None,None,PASS
+37-3012,Work experience in a related occupation,N594,,None,None,PASS
+37-3013,Work experience in a related occupation,N595,,None,None,PASS
+37-3019,Work experience in a related occupation,N596,,None,None,PASS
+39-2011,Work experience in a related occupation,N604,,None,None,PASS
+39-2021,Work experience in a related occupation,N605,,None,None,PASS
+39-3011,Work experience in a related occupation,N608,,None,None,PASS
+39-3012,Work experience in a related occupation,N609,,None,None,PASS
+39-3019,Work experience in a related occupation,N610,,None,None,PASS
+39-3021,Work experience in a related occupation,N611,,None,None,PASS
+39-3031,Work experience in a related occupation,N612,,None,None,PASS
+39-3091,Work experience in a related occupation,N614,,None,None,PASS
+39-3092,Work experience in a related occupation,N615,,None,None,PASS
+39-3093,Work experience in a related occupation,N616,,None,None,PASS
+39-3099,Work experience in a related occupation,N617,,None,None,PASS
+39-4011,Work experience in a related occupation,N620,,None,None,PASS
+39-4012,Work experience in a related occupation,N621,,None,None,PASS
+39-4021,Work experience in a related occupation,N622,,None,None,PASS
+39-4031,Work experience in a related occupation,N623,,None,None,PASS
+39-5011,Work experience in a related occupation,N626,,None,None,PASS
+39-5012,Work experience in a related occupation,N627,,None,None,PASS
+39-5091,Work experience in a related occupation,N629,,None,None,PASS
+39-5092,Work experience in a related occupation,N630,,None,None,PASS
+39-5093,Work experience in a related occupation,N631,,None,None,PASS
+39-5094,Work experience in a related occupation,N632,,None,None,PASS
+39-6011,Work experience in a related occupation,N634,,None,None,PASS
+39-6012,Work experience in a related occupation,N635,,None,None,PASS
+39-7010,Work experience in a related occupation,N637,,None,None,PASS
+39-9011,Work experience in a related occupation,N639,,None,None,PASS
+39-9031,Work experience in a related occupation,N641,,None,None,PASS
+39-9032,Work experience in a related occupation,N642,,None,None,PASS
+39-9041,Work experience in a related occupation,N643,,None,None,PASS
+39-9099,Work experience in a related occupation,N644,,None,None,PASS
+41-2011,Work experience in a related occupation,N651,,None,None,PASS
+41-2012,Work experience in a related occupation,N652,,None,None,PASS
+41-2021,Work experience in a related occupation,N654,,None,None,PASS
+41-2022,Work experience in a related occupation,N655,,None,None,PASS
+41-2031,Work experience in a related occupation,N656,,None,None,PASS
+41-3011,Work experience in a related occupation,N658,,None,None,PASS
+41-3021,Work experience in a related occupation,N659,,None,None,PASS
+41-3031,Work experience in a related occupation,N660,,None,None,PASS
+41-3041,Work experience in a related occupation,N661,,None,None,PASS
+41-3091,Work experience in a related occupation,N662,,None,None,PASS
+41-4011,Work experience in a related occupation,N664,,None,None,PASS
+41-4012,Work experience in a related occupation,N665,,None,None,PASS
+41-9011,Work experience in a related occupation,N668,,None,None,PASS
+41-9012,Work experience in a related occupation,N669,,None,None,PASS
+41-9022,Work experience in a related occupation,N672,,None,None,PASS
+41-9031,Work experience in a related occupation,N673,,None,None,PASS
+41-9041,Work experience in a related occupation,N674,,None,None,PASS
+41-9091,Work experience in a related occupation,N676,,None,None,PASS
+41-9099,Work experience in a related occupation,N677,,None,None,PASS
+43-2011,Work experience in a related occupation,N682,,None,None,PASS
+43-2021,Work experience in a related occupation,N683,,None,None,PASS
+43-2099,Work experience in a related occupation,N684,,None,None,PASS
+43-3011,Work experience in a related occupation,N686,,None,None,PASS
+43-3021,Work experience in a related occupation,N687,,None,None,PASS
+43-3031,Work experience in a related occupation,N688,,None,None,PASS
+43-3041,Work experience in a related occupation,N689,,None,None,PASS
+43-3051,Work experience in a related occupation,N690,,None,None,PASS
+43-3061,Work experience in a related occupation,N691,,None,None,PASS
+43-3071,Work experience in a related occupation,N692,,None,None,PASS
+43-3099,Work experience in a related occupation,N693,,None,None,PASS
+43-4011,Work experience in a related occupation,N695,,None,None,PASS
+43-4021,Work experience in a related occupation,N696,,None,None,PASS
+43-4031,Work experience in a related occupation,N697,,None,None,PASS
+43-4041,Work experience in a related occupation,N698,,None,None,PASS
+43-4051,Work experience in a related occupation,N699,,None,None,PASS
+43-4061,Work experience in a related occupation,N700,,None,None,PASS
+43-4071,Work experience in a related occupation,N701,,None,None,PASS
+43-4081,Work experience in a related occupation,N702,,None,None,PASS
+43-4111,Work experience in a related occupation,N703,,None,None,PASS
+43-4121,Work experience in a related occupation,N704,,None,None,PASS
+43-4131,Work experience in a related occupation,N705,,None,None,PASS
+43-4141,Work experience in a related occupation,N706,,None,None,PASS
+43-4151,Work experience in a related occupation,N707,,None,None,PASS
+43-4161,Work experience in a related occupation,N708,,None,None,PASS
+43-4171,Work experience in a related occupation,N709,,None,None,PASS
+43-4181,Work experience in a related occupation,N710,,None,None,PASS
+43-4199,Work experience in a related occupation,N711,,None,None,PASS
+43-5011,Work experience in a related occupation,N713,,None,None,PASS
+43-5021,Work experience in a related occupation,N714,,None,None,PASS
+43-5031,Work experience in a related occupation,N716,,None,None,PASS
+43-5032,Work experience in a related occupation,N717,,None,None,PASS
+43-5041,Work experience in a related occupation,N718,,None,None,PASS
+43-5051,Work experience in a related occupation,N720,,None,None,PASS
+43-5052,Work experience in a related occupation,N721,,None,None,PASS
+43-5053,Work experience in a related occupation,N722,,None,None,PASS
+43-5061,Work experience in a related occupation,N723,,None,None,PASS
+43-5071,Work experience in a related occupation,N724,,None,None,PASS
+43-5111,Work experience in a related occupation,N725,,None,None,PASS
+43-6012,Work experience in a related occupation,N728,,None,None,PASS
+43-6013,Work experience in a related occupation,N729,,None,None,PASS
+43-6014,Work experience in a related occupation,N730,,None,None,PASS
+43-9021,Work experience in a related occupation,N733,,None,None,PASS
+43-9022,Work experience in a related occupation,N734,,None,None,PASS
+43-9031,Work experience in a related occupation,N735,,None,None,PASS
+43-9041,Work experience in a related occupation,N736,,None,None,PASS
+43-9051,Work experience in a related occupation,N737,,None,None,PASS
+43-9061,Work experience in a related occupation,N738,,None,None,PASS
+43-9071,Work experience in a related occupation,N739,,None,None,PASS
+43-9081,Work experience in a related occupation,N740,,None,None,PASS
+43-9111,Work experience in a related occupation,N741,,None,None,PASS
+43-9199,Work experience in a related occupation,N742,,None,None,PASS
+45-2011,Work experience in a related occupation,N747,,None,None,PASS
+45-2021,Work experience in a related occupation,N748,,None,None,PASS
+45-2041,Work experience in a related occupation,N749,,None,None,PASS
+45-2091,Work experience in a related occupation,N751,,None,None,PASS
+45-2092,Work experience in a related occupation,N752,,None,None,PASS
+45-2093,Work experience in a related occupation,N753,,None,None,PASS
+45-2099,Work experience in a related occupation,N754,,None,None,PASS
+45-3031,Work experience in a related occupation,N756,,None,None,PASS
+45-4011,Work experience in a related occupation,N758,,None,None,PASS
+45-4021,Work experience in a related occupation,N760,,None,None,PASS
+45-4022,Work experience in a related occupation,N761,,None,None,PASS
+45-4023,Work experience in a related occupation,N762,,None,None,PASS
+45-4029,Work experience in a related occupation,N763,,None,None,PASS
+47-2011,Work experience in a related occupation,N768,,None,None,PASS
+47-2021,Work experience in a related occupation,N770,,None,None,PASS
+47-2022,Work experience in a related occupation,N771,,None,None,PASS
+47-2031,Work experience in a related occupation,N772,,None,None,PASS
+47-2041,Work experience in a related occupation,N774,,None,None,PASS
+47-2042,Work experience in a related occupation,N775,,None,None,PASS
+47-2043,Work experience in a related occupation,N776,,None,None,PASS
+47-2044,Work experience in a related occupation,N777,,None,None,PASS
+47-2051,Work experience in a related occupation,N779,,None,None,PASS
+47-2053,Work experience in a related occupation,N780,,None,None,PASS
+47-2061,Work experience in a related occupation,N781,,None,None,PASS
+47-2071,Work experience in a related occupation,N783,,None,None,PASS
+47-2072,Work experience in a related occupation,N784,,None,None,PASS
+47-2073,Work experience in a related occupation,N785,,None,None,PASS
+47-2081,Work experience in a related occupation,N787,,None,None,PASS
+47-2082,Work experience in a related occupation,N788,,None,None,PASS
+47-2111,Work experience in a related occupation,N789,,None,None,PASS
+47-2121,Work experience in a related occupation,N790,,None,None,PASS
+47-2131,Work experience in a related occupation,N792,,None,None,PASS
+47-2132,Work experience in a related occupation,N793,,None,None,PASS
+47-2141,Work experience in a related occupation,N795,,None,None,PASS
+47-2142,Work experience in a related occupation,N796,,None,None,PASS
+47-2151,Work experience in a related occupation,N798,,None,None,PASS
+47-2152,Work experience in a related occupation,N799,,None,None,PASS
+47-2161,Work experience in a related occupation,N800,,None,None,PASS
+47-2171,Work experience in a related occupation,N801,,None,None,PASS
+47-2181,Work experience in a related occupation,N802,,None,None,PASS
+47-2211,Work experience in a related occupation,N803,,None,None,PASS
+47-2221,Work experience in a related occupation,N804,,None,None,PASS
+47-2231,Work experience in a related occupation,N805,,None,None,PASS
+47-3011,Work experience in a related occupation,N807,,None,None,PASS
+47-3012,Work experience in a related occupation,N808,,None,None,PASS
+47-3013,Work experience in a related occupation,N809,,None,None,PASS
+47-3014,Work experience in a related occupation,N810,,None,None,PASS
+47-3015,Work experience in a related occupation,N811,,None,None,PASS
+47-3016,Work experience in a related occupation,N812,,None,None,PASS
+47-3019,Work experience in a related occupation,N813,,None,None,PASS
+47-4021,Work experience in a related occupation,N816,,None,None,PASS
+47-4031,Work experience in a related occupation,N817,,None,None,PASS
+47-4041,Work experience in a related occupation,N818,,None,None,PASS
+47-4051,Work experience in a related occupation,N819,,None,None,PASS
+47-4061,Work experience in a related occupation,N820,,None,None,PASS
+47-4071,Work experience in a related occupation,N821,,None,None,PASS
+47-4090,Work experience in a related occupation,N822,,None,None,PASS
+47-5041,Work experience in a related occupation,N833,,None,None,PASS
+47-5043,Work experience in a related occupation,N834,,None,None,PASS
+47-5044,Work experience in a related occupation,N835,,None,None,PASS
+47-5049,Work experience in a related occupation,N836,,None,None,PASS
+47-5051,Work experience in a related occupation,N837,,None,None,PASS
+47-5071,Work experience in a related occupation,N838,,None,None,PASS
+47-5081,Work experience in a related occupation,N839,,None,None,PASS
+47-5099,Work experience in a related occupation,N840,,None,None,PASS
+49-2011,Work experience in a related occupation,N845,,None,None,PASS
+49-2021,Work experience in a related occupation,N847,,None,None,PASS
+49-2022,Work experience in a related occupation,N848,,None,None,PASS
+49-2091,Work experience in a related occupation,N850,,None,None,PASS
+49-2093,Work experience in a related occupation,N852,,None,None,PASS
+49-2094,Work experience in a related occupation,N853,,None,None,PASS
+49-2096,Work experience in a related occupation,N855,,None,None,PASS
+49-2097,Work experience in a related occupation,N856,,None,None,PASS
+49-2098,Work experience in a related occupation,N857,,None,None,PASS
+49-3011,Work experience in a related occupation,N859,,None,None,PASS
+49-3021,Work experience in a related occupation,N861,,None,None,PASS
+49-3022,Work experience in a related occupation,N862,,None,None,PASS
+49-3023,Work experience in a related occupation,N863,,None,None,PASS
+49-3031,Work experience in a related occupation,N864,,None,None,PASS
+49-3041,Work experience in a related occupation,N866,,None,None,PASS
+49-3042,Work experience in a related occupation,N867,,None,None,PASS
+49-3043,Work experience in a related occupation,N868,,None,None,PASS
+49-3051,Work experience in a related occupation,N870,,None,None,PASS
+49-3052,Work experience in a related occupation,N871,,None,None,PASS
+49-3053,Work experience in a related occupation,N872,,None,None,PASS
+49-3091,Work experience in a related occupation,N874,,None,None,PASS
+49-3092,Work experience in a related occupation,N875,,None,None,PASS
+49-3093,Work experience in a related occupation,N876,,None,None,PASS
+49-9011,Work experience in a related occupation,N879,,None,None,PASS
+49-9012,Work experience in a related occupation,N880,,None,None,PASS
+49-9021,Work experience in a related occupation,N881,,None,None,PASS
+49-9031,Work experience in a related occupation,N882,,None,None,PASS
+49-9041,Work experience in a related occupation,N884,,None,None,PASS
+49-9043,Work experience in a related occupation,N885,,None,None,PASS
+49-9044,Work experience in a related occupation,N886,,None,None,PASS
+49-9045,Work experience in a related occupation,N887,,None,None,PASS
+49-9051,Work experience in a related occupation,N889,,None,None,PASS
+49-9052,Work experience in a related occupation,N890,,None,None,PASS
+49-9061,Work experience in a related occupation,N892,,None,None,PASS
+49-9062,Work experience in a related occupation,N893,,None,None,PASS
+49-9063,Work experience in a related occupation,N894,,None,None,PASS
+49-9064,Work experience in a related occupation,N895,,None,None,PASS
+49-9069,Work experience in a related occupation,N896,,None,None,PASS
+49-9071,Work experience in a related occupation,N897,,None,None,PASS
+49-9081,Work experience in a related occupation,N898,,None,None,PASS
+49-9091,Work experience in a related occupation,N900,,None,None,PASS
+49-9092,Work experience in a related occupation,N901,,None,None,PASS
+49-9094,Work experience in a related occupation,N902,,None,None,PASS
+49-9095,Work experience in a related occupation,N903,,None,None,PASS
+49-9096,Work experience in a related occupation,N904,,None,None,PASS
+49-9097,Work experience in a related occupation,N905,,None,None,PASS
+49-9098,Work experience in a related occupation,N906,,None,None,PASS
+49-9099,Work experience in a related occupation,N907,,None,None,PASS
+51-2011,Work experience in a related occupation,N912,,None,None,PASS
+51-2021,Work experience in a related occupation,N914,,None,None,PASS
+51-2028,Work experience in a related occupation,N915,,None,None,PASS
+51-2031,Work experience in a related occupation,N916,,None,None,PASS
+51-2041,Work experience in a related occupation,N917,,None,None,PASS
+51-2051,Work experience in a related occupation,N918,,None,None,PASS
+51-2061,Work experience in a related occupation,N919,,None,None,PASS
+51-2090,Work experience in a related occupation,N920,,None,None,PASS
+51-3011,Work experience in a related occupation,N922,,None,None,PASS
+51-3021,Work experience in a related occupation,N924,,None,None,PASS
+51-3022,Work experience in a related occupation,N925,,None,None,PASS
+51-3023,Work experience in a related occupation,N926,,None,None,PASS
+51-3091,Work experience in a related occupation,N928,,None,None,PASS
+51-3092,Work experience in a related occupation,N929,,None,None,PASS
+51-3093,Work experience in a related occupation,N930,,None,None,PASS
+51-3099,Work experience in a related occupation,N931,,None,None,PASS
+51-4021,Work experience in a related occupation,N934,,None,None,PASS
+51-4022,Work experience in a related occupation,N935,,None,None,PASS
+51-4023,Work experience in a related occupation,N936,,None,None,PASS
+51-4031,Work experience in a related occupation,N938,,None,None,PASS
+51-4032,Work experience in a related occupation,N939,,None,None,PASS
+51-4033,Work experience in a related occupation,N940,,None,None,PASS
+51-4034,Work experience in a related occupation,N941,,None,None,PASS
+51-4035,Work experience in a related occupation,N942,,None,None,PASS
+51-4041,Work experience in a related occupation,N943,,None,None,PASS
+51-4051,Work experience in a related occupation,N945,,None,None,PASS
+51-4052,Work experience in a related occupation,N946,,None,None,PASS
+51-4061,Work experience in a related occupation,N948,,None,None,PASS
+51-4062,Work experience in a related occupation,N949,,None,None,PASS
+51-4071,Work experience in a related occupation,N951,,None,None,PASS
+51-4072,Work experience in a related occupation,N952,,None,None,PASS
+51-4081,Work experience in a related occupation,N953,,None,None,PASS
+51-4111,Work experience in a related occupation,N954,,None,None,PASS
+51-4121,Work experience in a related occupation,N956,,None,None,PASS
+51-4122,Work experience in a related occupation,N957,,None,None,PASS
+51-4191,Work experience in a related occupation,N959,,None,None,PASS
+51-4192,Work experience in a related occupation,N960,,None,None,PASS
+51-4193,Work experience in a related occupation,N961,,None,None,PASS
+51-4194,Work experience in a related occupation,N962,,None,None,PASS
+51-4199,Work experience in a related occupation,N963,,None,None,PASS
+51-5111,Work experience in a related occupation,N965,,None,None,PASS
+51-5112,Work experience in a related occupation,N966,,None,None,PASS
+51-5113,Work experience in a related occupation,N967,,None,None,PASS
+51-6011,Work experience in a related occupation,N969,,None,None,PASS
+51-6021,Work experience in a related occupation,N970,,None,None,PASS
+51-6031,Work experience in a related occupation,N971,,None,None,PASS
+51-6041,Work experience in a related occupation,N973,,None,None,PASS
+51-6042,Work experience in a related occupation,N974,,None,None,PASS
+51-6051,Work experience in a related occupation,N976,,None,None,PASS
+51-6052,Work experience in a related occupation,N977,,None,None,PASS
+51-6061,Work experience in a related occupation,N979,,None,None,PASS
+51-6062,Work experience in a related occupation,N980,,None,None,PASS
+51-6063,Work experience in a related occupation,N981,,None,None,PASS
+51-6064,Work experience in a related occupation,N982,,None,None,PASS
+51-6091,Work experience in a related occupation,N984,,None,None,PASS
+51-6092,Work experience in a related occupation,N985,,None,None,PASS
+51-6093,Work experience in a related occupation,N986,,None,None,PASS
+51-6099,Work experience in a related occupation,N987,,None,None,PASS
+51-7011,Work experience in a related occupation,N989,,None,None,PASS
+51-7021,Work experience in a related occupation,N990,,None,None,PASS
+51-7031,Work experience in a related occupation,N992,,None,None,PASS
+51-7032,Work experience in a related occupation,N993,,None,None,PASS
+51-7041,Work experience in a related occupation,N995,,None,None,PASS
+51-7042,Work experience in a related occupation,N996,,None,None,PASS
+51-7099,Work experience in a related occupation,N997,,None,None,PASS
+51-8011,Work experience in a related occupation,N1000,,None,None,PASS
+51-8012,Work experience in a related occupation,N1001,,None,None,PASS
+51-8013,Work experience in a related occupation,N1002,,None,None,PASS
+51-8021,Work experience in a related occupation,N1003,,None,None,PASS
+51-8031,Work experience in a related occupation,N1004,,None,None,PASS
+51-8091,Work experience in a related occupation,N1006,,None,None,PASS
+51-8092,Work experience in a related occupation,N1007,,None,None,PASS
+51-8093,Work experience in a related occupation,N1008,,None,None,PASS
+51-8099,Work experience in a related occupation,N1009,,None,None,PASS
+51-9011,Work experience in a related occupation,N1012,,None,None,PASS
+51-9012,Work experience in a related occupation,N1013,,None,None,PASS
+51-9021,Work experience in a related occupation,N1015,,None,None,PASS
+51-9022,Work experience in a related occupation,N1016,,None,None,PASS
+51-9023,Work experience in a related occupation,N1017,,None,None,PASS
+51-9031,Work experience in a related occupation,N1019,,None,None,PASS
+51-9032,Work experience in a related occupation,N1020,,None,None,PASS
+51-9041,Work experience in a related occupation,N1021,,None,None,PASS
+51-9051,Work experience in a related occupation,N1022,,None,None,PASS
+51-9061,Work experience in a related occupation,N1023,,None,None,PASS
+51-9071,Work experience in a related occupation,N1024,,None,None,PASS
+51-9081,Work experience in a related occupation,N1026,,None,None,PASS
+51-9082,Work experience in a related occupation,N1027,,None,None,PASS
+51-9083,Work experience in a related occupation,N1028,,None,None,PASS
+51-9111,Work experience in a related occupation,N1029,,None,None,PASS
+51-9123,Work experience in a related occupation,N1031,,None,None,PASS
+51-9124,Work experience in a related occupation,N1032,,None,None,PASS
+51-9141,Work experience in a related occupation,N1033,,None,None,PASS
+51-9151,Work experience in a related occupation,N1034,,None,None,PASS
+51-9161,Work experience in a related occupation,N1036,,None,None,PASS
+51-9162,Work experience in a related occupation,N1037,,None,None,PASS
+51-9191,Work experience in a related occupation,N1039,,None,None,PASS
+51-9192,Work experience in a related occupation,N1040,,None,None,PASS
+51-9193,Work experience in a related occupation,N1041,,None,None,PASS
+51-9194,Work experience in a related occupation,N1042,,None,None,PASS
+51-9195,Work experience in a related occupation,N1043,,None,None,PASS
+51-9196,Work experience in a related occupation,N1044,,None,None,PASS
+51-9197,Work experience in a related occupation,N1045,,None,None,PASS
+51-9198,Work experience in a related occupation,N1046,,None,None,PASS
+51-9199,Work experience in a related occupation,N1047,,None,None,PASS
+53-2012,Work experience in a related occupation,N1055,,None,None,PASS
+53-2021,Work experience in a related occupation,N1057,,None,None,PASS
+53-2022,Work experience in a related occupation,N1058,,None,None,PASS
+53-3011,Work experience in a related occupation,N1061,,None,None,PASS
+53-3031,Work experience in a related occupation,N1063,,None,None,PASS
+53-3032,Work experience in a related occupation,N1064,,None,None,PASS
+53-3033,Work experience in a related occupation,N1065,,None,None,PASS
+53-3051,Work experience in a related occupation,N1067,,None,None,PASS
+53-3052,Work experience in a related occupation,N1068,,None,None,PASS
+53-3053,Work experience in a related occupation,N1069,,None,None,PASS
+53-3054,Work experience in a related occupation,N1070,,None,None,PASS
+53-3099,Work experience in a related occupation,N1071,,None,None,PASS
+53-4013,Work experience in a related occupation,N1075,,None,None,PASS
+53-4022,Work experience in a related occupation,N1076,,None,None,PASS
+53-4031,Work experience in a related occupation,N1077,,None,None,PASS
+53-4041,Work experience in a related occupation,N1078,,None,None,PASS
+53-4099,Work experience in a related occupation,N1079,,None,None,PASS
+53-5011,Work experience in a related occupation,N1081,,None,None,PASS
+53-6011,Work experience in a related occupation,N1087,,None,None,PASS
+53-6021,Work experience in a related occupation,N1088,,None,None,PASS
+53-6031,Work experience in a related occupation,N1090,,None,None,PASS
+53-6032,Work experience in a related occupation,N1091,,None,None,PASS
+53-6041,Work experience in a related occupation,N1092,,None,None,PASS
+53-6051,Work experience in a related occupation,N1093,,None,None,PASS
+53-6061,Work experience in a related occupation,N1094,,None,None,PASS
+53-6099,Work experience in a related occupation,N1095,,None,None,PASS
+53-7011,Work experience in a related occupation,N1097,,None,None,PASS
+53-7031,Work experience in a related occupation,N1099,,None,None,PASS
+53-7041,Work experience in a related occupation,N1100,,None,None,PASS
+53-7051,Work experience in a related occupation,N1101,,None,None,PASS
+53-7061,Work experience in a related occupation,N1103,,None,None,PASS
+53-7062,Work experience in a related occupation,N1104,,None,None,PASS
+53-7063,Work experience in a related occupation,N1105,,None,None,PASS
+53-7064,Work experience in a related occupation,N1106,,None,None,PASS
+53-7065,Work experience in a related occupation,N1107,,None,None,PASS
+53-7071,Work experience in a related occupation,N1109,,None,None,PASS
+53-7072,Work experience in a related occupation,N1110,,None,None,PASS
+53-7081,Work experience in a related occupation,N1112,,None,None,PASS
+53-7121,Work experience in a related occupation,N1113,,None,None,PASS
+53-7199,Work experience in a related occupation,N1114,,None,None,PASS
+11-1011,Typical on-the-job training needed to attain competency in the occupation,O6,,None,None,PASS
+11-1021,Typical on-the-job training needed to attain competency in the occupation,O7,,None,None,PASS
+11-2011,Typical on-the-job training needed to attain competency in the occupation,O9,,None,None,PASS
+11-2021,Typical on-the-job training needed to attain competency in the occupation,O11,,None,None,PASS
+11-2022,Typical on-the-job training needed to attain competency in the occupation,O12,,None,None,PASS
+11-2032,Typical on-the-job training needed to attain competency in the occupation,O14,,None,None,PASS
+11-2033,Typical on-the-job training needed to attain competency in the occupation,O15,,None,None,PASS
+11-3012,Typical on-the-job training needed to attain competency in the occupation,O18,,None,None,PASS
+11-3013,Typical on-the-job training needed to attain competency in the occupation,O19,,None,None,PASS
+11-3021,Typical on-the-job training needed to attain competency in the occupation,O20,,None,None,PASS
+11-3031,Typical on-the-job training needed to attain competency in the occupation,O21,,None,None,PASS
+11-3051,Typical on-the-job training needed to attain competency in the occupation,O22,,None,None,PASS
+11-3061,Typical on-the-job training needed to attain competency in the occupation,O23,,None,None,PASS
+11-3071,Typical on-the-job training needed to attain competency in the occupation,O24,,None,None,PASS
+11-3111,Typical on-the-job training needed to attain competency in the occupation,O25,,None,None,PASS
+11-3121,Typical on-the-job training needed to attain competency in the occupation,O26,,None,None,PASS
+11-3131,Typical on-the-job training needed to attain competency in the occupation,O27,,None,None,PASS
+11-9013,Typical on-the-job training needed to attain competency in the occupation,O29,,None,None,PASS
+11-9031,Typical on-the-job training needed to attain competency in the occupation,O32,,None,None,PASS
+11-9032,Typical on-the-job training needed to attain competency in the occupation,O33,,None,None,PASS
+11-9033,Typical on-the-job training needed to attain competency in the occupation,O34,,None,None,PASS
+11-9039,Typical on-the-job training needed to attain competency in the occupation,O35,,None,None,PASS
+11-9041,Typical on-the-job training needed to attain competency in the occupation,O36,,None,None,PASS
+11-9071,Typical on-the-job training needed to attain competency in the occupation,O39,,None,None,PASS
+11-9072,Typical on-the-job training needed to attain competency in the occupation,O40,,None,None,PASS
+11-9081,Typical on-the-job training needed to attain competency in the occupation,O41,,None,None,PASS
+11-9111,Typical on-the-job training needed to attain competency in the occupation,O42,,None,None,PASS
+11-9121,Typical on-the-job training needed to attain competency in the occupation,O43,,None,None,PASS
+11-9151,Typical on-the-job training needed to attain competency in the occupation,O46,,None,None,PASS
+11-9161,Typical on-the-job training needed to attain competency in the occupation,O47,,None,None,PASS
+11-9171,Typical on-the-job training needed to attain competency in the occupation,O49,,None,None,PASS
+11-9179,Typical on-the-job training needed to attain competency in the occupation,O50,,None,None,PASS
+11-9199,Typical on-the-job training needed to attain competency in the occupation,O51,,None,None,PASS
+13-1011,Typical on-the-job training needed to attain competency in the occupation,O54,,None,None,PASS
+13-1071,Typical on-the-job training needed to attain competency in the occupation,O62,,None,None,PASS
+13-1075,Typical on-the-job training needed to attain competency in the occupation,O64,,None,None,PASS
+13-1081,Typical on-the-job training needed to attain competency in the occupation,O66,,None,None,PASS
+13-1082,Typical on-the-job training needed to attain competency in the occupation,O67,,None,None,PASS
+13-1111,Typical on-the-job training needed to attain competency in the occupation,O68,,None,None,PASS
+13-1121,Typical on-the-job training needed to attain competency in the occupation,O69,,None,None,PASS
+13-1131,Typical on-the-job training needed to attain competency in the occupation,O70,,None,None,PASS
+13-1141,Typical on-the-job training needed to attain competency in the occupation,O71,,None,None,PASS
+13-1151,Typical on-the-job training needed to attain competency in the occupation,O72,,None,None,PASS
+13-1161,Typical on-the-job training needed to attain competency in the occupation,O73,,None,None,PASS
+13-1199,Typical on-the-job training needed to attain competency in the occupation,O74,,None,None,PASS
+13-2011,Typical on-the-job training needed to attain competency in the occupation,O76,,None,None,PASS
+13-2031,Typical on-the-job training needed to attain competency in the occupation,O78,,None,None,PASS
+13-2041,Typical on-the-job training needed to attain competency in the occupation,O79,,None,None,PASS
+13-2051,Typical on-the-job training needed to attain competency in the occupation,O81,,None,None,PASS
+13-2054,Typical on-the-job training needed to attain competency in the occupation,O84,,None,None,PASS
+13-2099,Typical on-the-job training needed to attain competency in the occupation,O92,,None,None,PASS
+15-1211,Typical on-the-job training needed to attain competency in the occupation,O96,,None,None,PASS
+15-1212,Typical on-the-job training needed to attain competency in the occupation,O97,,None,None,PASS
+15-1221,Typical on-the-job training needed to attain competency in the occupation,O98,,None,None,PASS
+15-1241,Typical on-the-job training needed to attain competency in the occupation,O103,,None,None,PASS
+15-1242,Typical on-the-job training needed to attain competency in the occupation,O104,,None,None,PASS
+15-1243,Typical on-the-job training needed to attain competency in the occupation,O105,,None,None,PASS
+15-1244,Typical on-the-job training needed to attain competency in the occupation,O106,,None,None,PASS
+15-1251,Typical on-the-job training needed to attain competency in the occupation,O108,,None,None,PASS
+15-1252,Typical on-the-job training needed to attain competency in the occupation,O109,,None,None,PASS
+15-1253,Typical on-the-job training needed to attain competency in the occupation,O110,,None,None,PASS
+15-1254,Typical on-the-job training needed to attain competency in the occupation,O111,,None,None,PASS
+15-1255,Typical on-the-job training needed to attain competency in the occupation,O112,,None,None,PASS
+15-1299,Typical on-the-job training needed to attain competency in the occupation,O113,,None,None,PASS
+15-2021,Typical on-the-job training needed to attain competency in the occupation,O116,,None,None,PASS
+15-2031,Typical on-the-job training needed to attain competency in the occupation,O117,,None,None,PASS
+15-2041,Typical on-the-job training needed to attain competency in the occupation,O118,,None,None,PASS
+15-2051,Typical on-the-job training needed to attain competency in the occupation,O119,,None,None,PASS
+15-2099,Typical on-the-job training needed to attain competency in the occupation,O120,,None,None,PASS
+17-1021,Typical on-the-job training needed to attain competency in the occupation,O127,,None,None,PASS
+17-2011,Typical on-the-job training needed to attain competency in the occupation,O130,,None,None,PASS
+17-2021,Typical on-the-job training needed to attain competency in the occupation,O131,,None,None,PASS
+17-2031,Typical on-the-job training needed to attain competency in the occupation,O132,,None,None,PASS
+17-2041,Typical on-the-job training needed to attain competency in the occupation,O133,,None,None,PASS
+17-2051,Typical on-the-job training needed to attain competency in the occupation,O134,,None,None,PASS
+17-2061,Typical on-the-job training needed to attain competency in the occupation,O135,,None,None,PASS
+17-2071,Typical on-the-job training needed to attain competency in the occupation,O137,,None,None,PASS
+17-2072,Typical on-the-job training needed to attain competency in the occupation,O138,,None,None,PASS
+17-2081,Typical on-the-job training needed to attain competency in the occupation,O139,,None,None,PASS
+17-2111,Typical on-the-job training needed to attain competency in the occupation,O141,,None,None,PASS
+17-2112,Typical on-the-job training needed to attain competency in the occupation,O142,,None,None,PASS
+17-2121,Typical on-the-job training needed to attain competency in the occupation,O143,,None,None,PASS
+17-2131,Typical on-the-job training needed to attain competency in the occupation,O144,,None,None,PASS
+17-2141,Typical on-the-job training needed to attain competency in the occupation,O145,,None,None,PASS
+17-2151,Typical on-the-job training needed to attain competency in the occupation,O146,,None,None,PASS
+17-2161,Typical on-the-job training needed to attain competency in the occupation,O147,,None,None,PASS
+17-2171,Typical on-the-job training needed to attain competency in the occupation,O148,,None,None,PASS
+17-2199,Typical on-the-job training needed to attain competency in the occupation,O149,,None,None,PASS
+17-3011,Typical on-the-job training needed to attain competency in the occupation,O152,,None,None,PASS
+17-3012,Typical on-the-job training needed to attain competency in the occupation,O153,,None,None,PASS
+17-3013,Typical on-the-job training needed to attain competency in the occupation,O154,,None,None,PASS
+17-3019,Typical on-the-job training needed to attain competency in the occupation,O155,,None,None,PASS
+17-3021,Typical on-the-job training needed to attain competency in the occupation,O157,,None,None,PASS
+17-3022,Typical on-the-job training needed to attain competency in the occupation,O158,,None,None,PASS
+17-3023,Typical on-the-job training needed to attain competency in the occupation,O159,,None,None,PASS
+17-3024,Typical on-the-job training needed to attain competency in the occupation,O160,,None,None,PASS
+17-3025,Typical on-the-job training needed to attain competency in the occupation,O161,,None,None,PASS
+17-3026,Typical on-the-job training needed to attain competency in the occupation,O162,,None,None,PASS
+17-3027,Typical on-the-job training needed to attain competency in the occupation,O163,,None,None,PASS
+17-3028,Typical on-the-job training needed to attain competency in the occupation,O164,,None,None,PASS
+17-3029,Typical on-the-job training needed to attain competency in the occupation,O165,,None,None,PASS
+19-1011,Typical on-the-job training needed to attain competency in the occupation,O170,,None,None,PASS
+19-1012,Typical on-the-job training needed to attain competency in the occupation,O171,,None,None,PASS
+19-1013,Typical on-the-job training needed to attain competency in the occupation,O172,,None,None,PASS
+19-1021,Typical on-the-job training needed to attain competency in the occupation,O174,,None,None,PASS
+19-1022,Typical on-the-job training needed to attain competency in the occupation,O175,,None,None,PASS
+19-1023,Typical on-the-job training needed to attain competency in the occupation,O176,,None,None,PASS
+19-1029,Typical on-the-job training needed to attain competency in the occupation,O177,,None,None,PASS
+19-1031,Typical on-the-job training needed to attain competency in the occupation,O179,,None,None,PASS
+19-1032,Typical on-the-job training needed to attain competency in the occupation,O180,,None,None,PASS
+19-1041,Typical on-the-job training needed to attain competency in the occupation,O182,,None,None,PASS
+19-1042,Typical on-the-job training needed to attain competency in the occupation,O183,,None,None,PASS
+19-1099,Typical on-the-job training needed to attain competency in the occupation,O184,,None,None,PASS
+19-2011,Typical on-the-job training needed to attain competency in the occupation,O187,,None,None,PASS
+19-2012,Typical on-the-job training needed to attain competency in the occupation,O188,,None,None,PASS
+19-2021,Typical on-the-job training needed to attain competency in the occupation,O189,,None,None,PASS
+19-2031,Typical on-the-job training needed to attain competency in the occupation,O191,,None,None,PASS
+19-2032,Typical on-the-job training needed to attain competency in the occupation,O192,,None,None,PASS
+19-2041,Typical on-the-job training needed to attain competency in the occupation,O194,,None,None,PASS
+19-2042,Typical on-the-job training needed to attain competency in the occupation,O195,,None,None,PASS
+19-2043,Typical on-the-job training needed to attain competency in the occupation,O196,,None,None,PASS
+19-2099,Typical on-the-job training needed to attain competency in the occupation,O197,,None,None,PASS
+19-3011,Typical on-the-job training needed to attain competency in the occupation,O199,,None,None,PASS
+19-3022,Typical on-the-job training needed to attain competency in the occupation,O200,,None,None,PASS
+19-3041,Typical on-the-job training needed to attain competency in the occupation,O206,,None,None,PASS
+19-3051,Typical on-the-job training needed to attain competency in the occupation,O207,,None,None,PASS
+19-3091,Typical on-the-job training needed to attain competency in the occupation,O209,,None,None,PASS
+19-3092,Typical on-the-job training needed to attain competency in the occupation,O210,,None,None,PASS
+19-3093,Typical on-the-job training needed to attain competency in the occupation,O211,,None,None,PASS
+19-3094,Typical on-the-job training needed to attain competency in the occupation,O212,,None,None,PASS
+19-3099,Typical on-the-job training needed to attain competency in the occupation,O213,,None,None,PASS
+19-4021,Typical on-the-job training needed to attain competency in the occupation,O218,,None,None,PASS
+19-4042,Typical on-the-job training needed to attain competency in the occupation,O221,,None,None,PASS
+19-4061,Typical on-the-job training needed to attain competency in the occupation,O225,,None,None,PASS
+19-4071,Typical on-the-job training needed to attain competency in the occupation,O226,,None,None,PASS
+19-4099,Typical on-the-job training needed to attain competency in the occupation,O229,,None,None,PASS
+19-5011,Typical on-the-job training needed to attain competency in the occupation,O231,,None,None,PASS
+21-1012,Typical on-the-job training needed to attain competency in the occupation,O236,,None,None,PASS
+21-1015,Typical on-the-job training needed to attain competency in the occupation,O238,,None,None,PASS
+21-1019,Typical on-the-job training needed to attain competency in the occupation,O240,,None,None,PASS
+21-1021,Typical on-the-job training needed to attain competency in the occupation,O242,,None,None,PASS
+21-1029,Typical on-the-job training needed to attain competency in the occupation,O245,,None,None,PASS
+21-1091,Typical on-the-job training needed to attain competency in the occupation,O247,,None,None,PASS
+21-1099,Typical on-the-job training needed to attain competency in the occupation,O251,,None,None,PASS
+21-2021,Typical on-the-job training needed to attain competency in the occupation,O254,,None,None,PASS
+21-2099,Typical on-the-job training needed to attain competency in the occupation,O255,,None,None,PASS
+23-1011,Typical on-the-job training needed to attain competency in the occupation,O259,,None,None,PASS
+23-1012,Typical on-the-job training needed to attain competency in the occupation,O260,,None,None,PASS
+23-2011,Typical on-the-job training needed to attain competency in the occupation,O266,,None,None,PASS
+23-2099,Typical on-the-job training needed to attain competency in the occupation,O269,,None,None,PASS
+25-1011,Typical on-the-job training needed to attain competency in the occupation,O272,,None,None,PASS
+25-1021,Typical on-the-job training needed to attain competency in the occupation,O274,,None,None,PASS
+25-1022,Typical on-the-job training needed to attain competency in the occupation,O275,,None,None,PASS
+25-1031,Typical on-the-job training needed to attain competency in the occupation,O277,,None,None,PASS
+25-1032,Typical on-the-job training needed to attain competency in the occupation,O278,,None,None,PASS
+25-1041,Typical on-the-job training needed to attain competency in the occupation,O280,,None,None,PASS
+25-1042,Typical on-the-job training needed to attain competency in the occupation,O281,,None,None,PASS
+25-1043,Typical on-the-job training needed to attain competency in the occupation,O282,,None,None,PASS
+25-1051,Typical on-the-job training needed to attain competency in the occupation,O284,,None,None,PASS
+25-1052,Typical on-the-job training needed to attain competency in the occupation,O285,,None,None,PASS
+25-1053,Typical on-the-job training needed to attain competency in the occupation,O286,,None,None,PASS
+25-1054,Typical on-the-job training needed to attain competency in the occupation,O287,,None,None,PASS
+25-1061,Typical on-the-job training needed to attain competency in the occupation,O289,,None,None,PASS
+25-1062,Typical on-the-job training needed to attain competency in the occupation,O290,,None,None,PASS
+25-1063,Typical on-the-job training needed to attain competency in the occupation,O291,,None,None,PASS
+25-1064,Typical on-the-job training needed to attain competency in the occupation,O292,,None,None,PASS
+25-1065,Typical on-the-job training needed to attain competency in the occupation,O293,,None,None,PASS
+25-1066,Typical on-the-job training needed to attain competency in the occupation,O294,,None,None,PASS
+25-1067,Typical on-the-job training needed to attain competency in the occupation,O295,,None,None,PASS
+25-1069,Typical on-the-job training needed to attain competency in the occupation,O296,,None,None,PASS
+25-1071,Typical on-the-job training needed to attain competency in the occupation,O298,,None,None,PASS
+25-1072,Typical on-the-job training needed to attain competency in the occupation,O299,,None,None,PASS
+25-1081,Typical on-the-job training needed to attain competency in the occupation,O301,,None,None,PASS
+25-1082,Typical on-the-job training needed to attain competency in the occupation,O302,,None,None,PASS
+25-1111,Typical on-the-job training needed to attain competency in the occupation,O304,,None,None,PASS
+25-1112,Typical on-the-job training needed to attain competency in the occupation,O305,,None,None,PASS
+25-1113,Typical on-the-job training needed to attain competency in the occupation,O306,,None,None,PASS
+25-1121,Typical on-the-job training needed to attain competency in the occupation,O308,,None,None,PASS
+25-1122,Typical on-the-job training needed to attain competency in the occupation,O309,,None,None,PASS
+25-1123,Typical on-the-job training needed to attain competency in the occupation,O310,,None,None,PASS
+25-1124,Typical on-the-job training needed to attain competency in the occupation,O311,,None,None,PASS
+25-1125,Typical on-the-job training needed to attain competency in the occupation,O312,,None,None,PASS
+25-1126,Typical on-the-job training needed to attain competency in the occupation,O313,,None,None,PASS
+25-1192,Typical on-the-job training needed to attain competency in the occupation,O315,,None,None,PASS
+25-1193,Typical on-the-job training needed to attain competency in the occupation,O316,,None,None,PASS
+25-1194,Typical on-the-job training needed to attain competency in the occupation,O317,,None,None,PASS
+25-1199,Typical on-the-job training needed to attain competency in the occupation,O318,,None,None,PASS
+25-2011,Typical on-the-job training needed to attain competency in the occupation,O321,,None,None,PASS
+25-2012,Typical on-the-job training needed to attain competency in the occupation,O322,,None,None,PASS
+25-2021,Typical on-the-job training needed to attain competency in the occupation,O324,,None,None,PASS
+25-2022,Typical on-the-job training needed to attain competency in the occupation,O325,,None,None,PASS
+25-2023,Typical on-the-job training needed to attain competency in the occupation,O326,,None,None,PASS
+25-2031,Typical on-the-job training needed to attain competency in the occupation,O328,,None,None,PASS
+25-2032,Typical on-the-job training needed to attain competency in the occupation,O329,,None,None,PASS
+25-2051,Typical on-the-job training needed to attain competency in the occupation,O331,,None,None,PASS
+25-2052,Typical on-the-job training needed to attain competency in the occupation,O332,,None,None,PASS
+25-2057,Typical on-the-job training needed to attain competency in the occupation,O333,,None,None,PASS
+25-2058,Typical on-the-job training needed to attain competency in the occupation,O334,,None,None,PASS
+25-2059,Typical on-the-job training needed to attain competency in the occupation,O335,,None,None,PASS
+25-3011,Typical on-the-job training needed to attain competency in the occupation,O337,,None,None,PASS
+25-3021,Typical on-the-job training needed to attain competency in the occupation,O338,,None,None,PASS
+25-3031,Typical on-the-job training needed to attain competency in the occupation,O339,,None,None,PASS
+25-3041,Typical on-the-job training needed to attain competency in the occupation,O340,,None,None,PASS
+25-3099,Typical on-the-job training needed to attain competency in the occupation,O341,,None,None,PASS
+25-4011,Typical on-the-job training needed to attain competency in the occupation,O344,,None,None,PASS
+25-4012,Typical on-the-job training needed to attain competency in the occupation,O345,,None,None,PASS
+25-4013,Typical on-the-job training needed to attain competency in the occupation,O346,,None,None,PASS
+25-4022,Typical on-the-job training needed to attain competency in the occupation,O347,,None,None,PASS
+25-4031,Typical on-the-job training needed to attain competency in the occupation,O348,,None,None,PASS
+25-9021,Typical on-the-job training needed to attain competency in the occupation,O350,,None,None,PASS
+25-9031,Typical on-the-job training needed to attain competency in the occupation,O351,,None,None,PASS
+25-9044,Typical on-the-job training needed to attain competency in the occupation,O353,,None,None,PASS
+25-9045,Typical on-the-job training needed to attain competency in the occupation,O354,,None,None,PASS
+25-9099,Typical on-the-job training needed to attain competency in the occupation,O355,,None,None,PASS
+27-1011,Typical on-the-job training needed to attain competency in the occupation,O359,,None,None,PASS
+27-1014,Typical on-the-job training needed to attain competency in the occupation,O362,,None,None,PASS
+27-1021,Typical on-the-job training needed to attain competency in the occupation,O365,,None,None,PASS
+27-1022,Typical on-the-job training needed to attain competency in the occupation,O366,,None,None,PASS
+27-1024,Typical on-the-job training needed to attain competency in the occupation,O368,,None,None,PASS
+27-1025,Typical on-the-job training needed to attain competency in the occupation,O369,,None,None,PASS
+27-1027,Typical on-the-job training needed to attain competency in the occupation,O371,,None,None,PASS
+27-1029,Typical on-the-job training needed to attain competency in the occupation,O372,,None,None,PASS
+27-2012,Typical on-the-job training needed to attain competency in the occupation,O376,,None,None,PASS
+27-2022,Typical on-the-job training needed to attain competency in the occupation,O379,,None,None,PASS
+27-2041,Typical on-the-job training needed to attain competency in the occupation,O385,,None,None,PASS
+27-3011,Typical on-the-job training needed to attain competency in the occupation,O391,,None,None,PASS
+27-3023,Typical on-the-job training needed to attain competency in the occupation,O392,,None,None,PASS
+27-3031,Typical on-the-job training needed to attain competency in the occupation,O393,,None,None,PASS
+27-3041,Typical on-the-job training needed to attain competency in the occupation,O395,,None,None,PASS
+27-3091,Typical on-the-job training needed to attain competency in the occupation,O399,,None,None,PASS
+27-4031,Typical on-the-job training needed to attain competency in the occupation,O410,,None,None,PASS
+27-4032,Typical on-the-job training needed to attain competency in the occupation,O411,,None,None,PASS
+29-1011,Typical on-the-job training needed to attain competency in the occupation,O415,,None,None,PASS
+29-1021,Typical on-the-job training needed to attain competency in the occupation,O417,,None,None,PASS
+29-1041,Typical on-the-job training needed to attain competency in the occupation,O423,,None,None,PASS
+29-1051,Typical on-the-job training needed to attain competency in the occupation,O424,,None,None,PASS
+29-1071,Typical on-the-job training needed to attain competency in the occupation,O425,,None,None,PASS
+29-1122,Typical on-the-job training needed to attain competency in the occupation,O428,,None,None,PASS
+29-1123,Typical on-the-job training needed to attain competency in the occupation,O429,,None,None,PASS
+29-1124,Typical on-the-job training needed to attain competency in the occupation,O430,,None,None,PASS
+29-1125,Typical on-the-job training needed to attain competency in the occupation,O431,,None,None,PASS
+29-1126,Typical on-the-job training needed to attain competency in the occupation,O432,,None,None,PASS
+29-1128,Typical on-the-job training needed to attain competency in the occupation,O434,,None,None,PASS
+29-1129,Typical on-the-job training needed to attain competency in the occupation,O435,,None,None,PASS
+29-1131,Typical on-the-job training needed to attain competency in the occupation,O436,,None,None,PASS
+29-1141,Typical on-the-job training needed to attain competency in the occupation,O437,,None,None,PASS
+29-1151,Typical on-the-job training needed to attain competency in the occupation,O438,,None,None,PASS
+29-1161,Typical on-the-job training needed to attain competency in the occupation,O439,,None,None,PASS
+29-1171,Typical on-the-job training needed to attain competency in the occupation,O440,,None,None,PASS
+29-1181,Typical on-the-job training needed to attain competency in the occupation,O441,,None,None,PASS
+29-1291,Typical on-the-job training needed to attain competency in the occupation,O462,,None,None,PASS
+29-1292,Typical on-the-job training needed to attain competency in the occupation,O463,,None,None,PASS
+29-1299,Typical on-the-job training needed to attain competency in the occupation,O464,,None,None,PASS
+29-2010,Typical on-the-job training needed to attain competency in the occupation,O466,,None,None,PASS
+29-2031,Typical on-the-job training needed to attain competency in the occupation,O468,,None,None,PASS
+29-2032,Typical on-the-job training needed to attain competency in the occupation,O469,,None,None,PASS
+29-2033,Typical on-the-job training needed to attain competency in the occupation,O470,,None,None,PASS
+29-2034,Typical on-the-job training needed to attain competency in the occupation,O471,,None,None,PASS
+29-2035,Typical on-the-job training needed to attain competency in the occupation,O472,,None,None,PASS
+29-2036,Typical on-the-job training needed to attain competency in the occupation,O473,,None,None,PASS
+29-2042,Typical on-the-job training needed to attain competency in the occupation,O475,,None,None,PASS
+29-2043,Typical on-the-job training needed to attain competency in the occupation,O476,,None,None,PASS
+29-2051,Typical on-the-job training needed to attain competency in the occupation,O478,,None,None,PASS
+29-2055,Typical on-the-job training needed to attain competency in the occupation,O481,,None,None,PASS
+29-2056,Typical on-the-job training needed to attain competency in the occupation,O482,,None,None,PASS
+29-2057,Typical on-the-job training needed to attain competency in the occupation,O483,,None,None,PASS
+29-2061,Typical on-the-job training needed to attain competency in the occupation,O484,,None,None,PASS
+29-2072,Typical on-the-job training needed to attain competency in the occupation,O485,,None,None,PASS
+29-2099,Typical on-the-job training needed to attain competency in the occupation,O490,,None,None,PASS
+29-9021,Typical on-the-job training needed to attain competency in the occupation,O492,,None,None,PASS
+29-9091,Typical on-the-job training needed to attain competency in the occupation,O494,,None,None,PASS
+29-9092,Typical on-the-job training needed to attain competency in the occupation,O495,,None,None,PASS
+29-9093,Typical on-the-job training needed to attain competency in the occupation,O496,,None,None,PASS
+29-9099,Typical on-the-job training needed to attain competency in the occupation,O497,,None,None,PASS
+31-1131,Typical on-the-job training needed to attain competency in the occupation,O502,,None,None,PASS
+31-2011,Typical on-the-job training needed to attain competency in the occupation,O507,,None,None,PASS
+31-2021,Typical on-the-job training needed to attain competency in the occupation,O510,,None,None,PASS
+31-9011,Typical on-the-job training needed to attain competency in the occupation,O513,,None,None,PASS
+31-9091,Typical on-the-job training needed to attain competency in the occupation,O515,,None,None,PASS
+31-9092,Typical on-the-job training needed to attain competency in the occupation,O516,,None,None,PASS
+31-9094,Typical on-the-job training needed to attain competency in the occupation,O518,,None,None,PASS
+31-9097,Typical on-the-job training needed to attain competency in the occupation,O521,,None,None,PASS
+31-9099,Typical on-the-job training needed to attain competency in the occupation,O522,,None,None,PASS
+33-1011,Typical on-the-job training needed to attain competency in the occupation,O526,,None,None,PASS
+33-1091,Typical on-the-job training needed to attain competency in the occupation,O530,,None,None,PASS
+33-1099,Typical on-the-job training needed to attain competency in the occupation,O531,,None,None,PASS
+35-1011,Typical on-the-job training needed to attain competency in the occupation,O561,,None,None,PASS
+35-1012,Typical on-the-job training needed to attain competency in the occupation,O562,,None,None,PASS
+35-2013,Typical on-the-job training needed to attain competency in the occupation,O567,,None,None,PASS
+37-1011,Typical on-the-job training needed to attain competency in the occupation,O584,,None,None,PASS
+37-1012,Typical on-the-job training needed to attain competency in the occupation,O585,,None,None,PASS
+39-1013,Typical on-the-job training needed to attain competency in the occupation,O600,,None,None,PASS
+39-1014,Typical on-the-job training needed to attain competency in the occupation,O601,,None,None,PASS
+39-1022,Typical on-the-job training needed to attain competency in the occupation,O602,,None,None,PASS
+39-5011,Typical on-the-job training needed to attain competency in the occupation,O626,,None,None,PASS
+39-5012,Typical on-the-job training needed to attain competency in the occupation,O627,,None,None,PASS
+39-5091,Typical on-the-job training needed to attain competency in the occupation,O629,,None,None,PASS
+39-5092,Typical on-the-job training needed to attain competency in the occupation,O630,,None,None,PASS
+39-5094,Typical on-the-job training needed to attain competency in the occupation,O632,,None,None,PASS
+41-1011,Typical on-the-job training needed to attain competency in the occupation,O647,,None,None,PASS
+41-1012,Typical on-the-job training needed to attain competency in the occupation,O648,,None,None,PASS
+41-9012,Typical on-the-job training needed to attain competency in the occupation,O669,,None,None,PASS
+41-9021,Typical on-the-job training needed to attain competency in the occupation,O671,,None,None,PASS
+41-9099,Typical on-the-job training needed to attain competency in the occupation,O677,,None,None,PASS
+43-1011,Typical on-the-job training needed to attain competency in the occupation,O680,,None,None,PASS
+43-4161,Typical on-the-job training needed to attain competency in the occupation,O708,,None,None,PASS
+43-6011,Typical on-the-job training needed to attain competency in the occupation,O727,,None,None,PASS
+43-9081,Typical on-the-job training needed to attain competency in the occupation,O740,,None,None,PASS
+43-9111,Typical on-the-job training needed to attain competency in the occupation,O741,,None,None,PASS
+45-1011,Typical on-the-job training needed to attain competency in the occupation,O745,,None,None,PASS
+47-1011,Typical on-the-job training needed to attain competency in the occupation,O766,,None,None,PASS
+49-1011,Typical on-the-job training needed to attain competency in the occupation,O843,,None,None,PASS
+49-2091,Typical on-the-job training needed to attain competency in the occupation,O850,,None,None,PASS
+49-3011,Typical on-the-job training needed to attain competency in the occupation,O859,,None,None,PASS
+51-1011,Typical on-the-job training needed to attain competency in the occupation,O910,,None,None,PASS
+51-5111,Typical on-the-job training needed to attain competency in the occupation,O965,,None,None,PASS
+53-1041,Typical on-the-job training needed to attain competency in the occupation,O1050,,None,None,PASS
+53-1047,Typical on-the-job training needed to attain competency in the occupation,O1051,,None,None,PASS
+53-5021,Typical on-the-job training needed to attain competency in the occupation,O1083,,None,None,PASS
+53-5022,Typical on-the-job training needed to attain competency in the occupation,O1084,,None,None,PASS
+53-5031,Typical on-the-job training needed to attain competency in the occupation,O1085,,None,None,PASS

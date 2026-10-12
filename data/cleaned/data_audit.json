@@ -1,0 +1,499 @@
+{
+  "status": "Source reconciliation verified; merge to main remains pending",
+  "input_rows": {
+    "jobs": 756,
+    "penetration": 17998,
+    "onet_tasks": 18838,
+    "onet_occupations": 1016,
+    "bls": 1112
+  },
+  "bls_line_item_rows": 831,
+  "bls_summary_rows_excluded": 281,
+  "task_exact_duplicate_rows": 6,
+  "task_normalized_duplicate_rows_removed": 7,
+  "unique_penetration_task_keys": 17991,
+  "penetration_task_keys_matched_to_onet": 17429,
+  "onet_task_rows_matched_to_penetration": 18680,
+  "occupation_rows": 755,
+  "occupation_master_rows": 756,
+  "occupation_task_rows": 17760,
+  "all_onet_scored_soc_task_pairs": 18656,
+  "metric_precision": "Full calculation precision is retained; round only for display",
+  "recovered_categories_in_analysis": {
+    "related_work_experience": 646,
+    "on_the_job_training": 295
+  },
+  "unmatched_ai_occupations": [
+    {
+      "soc_code": "11-1031",
+      "title": "Legislators"
+    }
+  ],
+  "missing_output_values": {
+    "median_annual_wage_2025": 3
+  },
+  "source_release_and_observation_period": "Not supplied. Confirm from original source documentation.",
+  "source_files": {
+    "job_exposure.csv": {
+      "rows": 756,
+      "columns": [
+        "occ_code",
+        "title",
+        "observed_exposure"
+      ],
+      "sha256": "4f0a3adf5feeb2ec5f5d02ab18cc5e851a2a4b8470bde84c0c9335017be12d68",
+      "size_bytes": 37176
+    },
+    "task_penetration.csv": {
+      "rows": 17998,
+      "columns": [
+        "task",
+        "penetration"
+      ],
+      "sha256": "85bee872db1d55d3e9a7f4e89da5ae4a5d59aa8ec875d728fbf4b7d820984616",
+      "size_bytes": 1889822
+    },
+    "onet_task_statements.csv": {
+      "rows": 18838,
+      "columns": [
+        "O*NET-SOC Code",
+        "Title",
+        "Task ID",
+        "Task",
+        "Task Type",
+        "Incumbents Responding",
+        "Date",
+        "Domain Source"
+      ],
+      "sha256": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+      "size_bytes": 3461375
+    },
+    "onet_occupation_data.csv": {
+      "rows": 1016,
+      "columns": [
+        "O*NET-SOC Code",
+        "Title",
+        "Description"
+      ],
+      "sha256": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+      "size_bytes": 268030
+    },
+    "bls_table_1_2_2025_35.csv": {
+      "rows": 1112,
+      "columns": [
+        "2025 National Employment Matrix title",
+        "2025 National Employment Matrix code",
+        "Occupation type",
+        "Employment, 2025",
+        "Employment, 2035",
+        "Employment distribution, percent, 2025",
+        "Employment distribution, percent, 2035",
+        "Employment change, numeric, 2025–35",
+        "Employment change, percent, 2025–35",
+        "Percent self-employed, 2025",
+        "Occupational openings, 2025–35 annual average",
+        "Median annual wage, dollars, 2025",
+        "Typical education needed for entry",
+        "Work experience in a related occupation",
+        "Typical on-the-job training needed to attain competency in the occupation"
+      ],
+      "sha256": "460af8e1eaf961732bc29b56cc92b25c4d6ef85c587b8b566f834beaebededa2",
+      "size_bytes": 162307
+    },
+    "bls_occupation_tables_2025_35.xlsx": {
+      "sha256": "a7d060f0576f7d4f5b829b9a0bb4a6c11a12766d159ebb0e07aab5bd2e7583c5",
+      "size_bytes": 413398,
+      "verification": {
+        "status": "verified",
+        "coded_rows": 1112,
+        "numeric_mismatches": {
+          "Employment, 2025": 0,
+          "Employment, 2035": 0,
+          "Employment distribution, percent, 2025": 0,
+          "Employment distribution, percent, 2035": 0,
+          "Employment change, numeric, 2025–35": 0,
+          "Employment change, percent, 2025–35": 0,
+          "Percent self-employed, 2025": 0,
+          "Occupational openings, 2025–35 annual average": 0,
+          "Median annual wage, dollars, 2025": 0
+        },
+        "unexpected_text_mismatches": 0,
+        "recovered_categories": {
+          "related_work_experience": 716,
+          "on_the_job_training": 321
+        },
+        "table_1_10_shared_measure_mismatches": 0
+      },
+      "source_url": "https://www.bls.gov/emp/ind-occ-matrix/occupation.xlsx"
+    }
+  },
+  "summary_metrics": {
+    "occupation_count": 755,
+    "employment_2025": 154223400.0,
+    "employment_value_count": 755,
+    "mean_observed_exposure": 0.07707867549668873,
+    "exposure_value_count": 755,
+    "declining_occupation_count": 216,
+    "unknown_outlook_count": 0
+  },
+  "team_comparison": {
+    "status": "All five supplied cleaning pipelines reproduced; canonical differences resolved and workbook recovery independently verified. Main merge remains pending.",
+    "review_date": "2026-10-11",
+    "submissions_reviewed": [
+      "Brahmani Mundhe",
+      "Chang Zhou",
+      "Taotianchen Wan",
+      "Xiru Zhang",
+      "Emerald Ouyang"
+    ],
+    "submission_not_supplied": [
+      "Kaho Sakemi"
+    ],
+    "runtime": {
+      "python": "3.12.14",
+      "pandas": "2.2.3"
+    },
+    "pipelines": {
+      "brahmani": {
+        "reproduced": true,
+        "exit_code": 0,
+        "occupation_output_rows": 755,
+        "matched_occupation_rows": 755,
+        "common_csv_source_hashes_unchanged": true
+      },
+      "chang": {
+        "reproduced": true,
+        "exit_code": 0,
+        "occupation_output_rows": 756,
+        "matched_occupation_rows": 755,
+        "common_csv_source_hashes_unchanged": true
+      },
+      "xiru": {
+        "reproduced": true,
+        "exit_code": 0,
+        "occupation_output_rows": 755,
+        "matched_occupation_rows": 755,
+        "common_csv_source_hashes_unchanged": true
+      },
+      "emerald": {
+        "reproduced": true,
+        "exit_code": 0,
+        "occupation_output_rows": 756,
+        "matched_occupation_rows": 755,
+        "common_csv_source_hashes_unchanged": true
+      },
+      "taotianc": {
+        "reproduced": true,
+        "exit_code": 0,
+        "required_workbook_sha256": "a7d060f0576f7d4f5b829b9a0bb4a6c11a12766d159ebb0e07aab5bd2e7583c5",
+        "checks_passed": 3529,
+        "checks_failed": 0,
+        "occupation_output_rows": 756,
+        "matched_occupation_rows": 755,
+        "common_csv_source_hashes_unchanged": true,
+        "workbook_verified": true,
+        "reproduced_result": {
+          "master_rows": 756,
+          "analysis_rows": 755,
+          "occupation_task_rows": 17760,
+          "work_experience_none_recoveries": 716,
+          "on_the_job_training_none_recoveries": 321
+        }
+      }
+    },
+    "numeric_comparisons": [
+      {
+        "person": "brahmani",
+        "field": "observed_exposure",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "brahmani",
+        "field": "employment_2025_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "brahmani",
+        "field": "employment_change_percent_2025_35",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "brahmani",
+        "field": "annual_openings_2025_35_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "brahmani",
+        "field": "median_annual_wage_2025",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "brahmani",
+        "field": "average_task_penetration",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 370,
+        "maximum_absolute_difference": 5.000000000000143e-05,
+        "interpretation": "Four-decimal stored rounding; canonical retains full mean precision"
+      },
+      {
+        "person": "brahmani",
+        "field": "matched_task_count",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "chang",
+        "field": "observed_exposure",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "chang",
+        "field": "employment_2025_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "chang",
+        "field": "employment_change_percent_2025_35",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "chang",
+        "field": "annual_openings_2025_35_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "chang",
+        "field": "median_annual_wage_2025",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "chang",
+        "field": "average_task_penetration",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "chang",
+        "field": "matched_task_count",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "xiru",
+        "field": "observed_exposure",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "xiru",
+        "field": "employment_2025_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "xiru",
+        "field": "employment_change_percent_2025_35",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "xiru",
+        "field": "annual_openings_2025_35_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "xiru",
+        "field": "median_annual_wage_2025",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "xiru",
+        "field": "average_task_penetration",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "xiru",
+        "field": "matched_task_count",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "emerald",
+        "field": "observed_exposure",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "emerald",
+        "field": "employment_2025_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "emerald",
+        "field": "employment_change_percent_2025_35",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "emerald",
+        "field": "annual_openings_2025_35_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "emerald",
+        "field": "median_annual_wage_2025",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance"
+      },
+      {
+        "person": "taotianc",
+        "field": "observed_exposure",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance after workbook verification"
+      },
+      {
+        "person": "taotianc",
+        "field": "average_task_penetration",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 4.848066392781902e-13,
+        "interpretation": "Same numeric values within tolerance after workbook verification"
+      },
+      {
+        "person": "taotianc",
+        "field": "employment_2025_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance after workbook verification"
+      },
+      {
+        "person": "taotianc",
+        "field": "employment_change_percent_2025_35",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance after workbook verification"
+      },
+      {
+        "person": "taotianc",
+        "field": "annual_openings_2025_35_thousands",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance after workbook verification"
+      },
+      {
+        "person": "taotianc",
+        "field": "median_annual_wage_2025",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance after workbook verification"
+      },
+      {
+        "person": "taotianc",
+        "field": "matched_task_count",
+        "compared_soc_rows": 755,
+        "rows_different_at_1e_10": 0,
+        "maximum_absolute_difference": 0.0,
+        "interpretation": "Same numeric values within tolerance after workbook verification"
+      }
+    ],
+    "brahmani_saved_output_reproduction": {
+      "byte_identical_clean_files": 6,
+      "clean_files_compared": 7,
+      "different_cell": {
+        "soc_code": "41-4012",
+        "field": "average_task_penetration",
+        "uploaded": 0.4797,
+        "rerun": 0.4796,
+        "full_precision_mean": 0.4796499999999999
+      },
+      "resolution": "Store full precision in canonical metrics; round only in UI. The four-decimal rounding tie is not a substantive input-data disagreement."
+    },
+    "branch_archive_fingerprints": {
+      "DSO576-Project--cleaning-chang.zip": "a843c3158570bb0a0fe66aa4c30dadc52eab789fcdef950834abf58ca6058e2f",
+      "DSO576-Project--cleaning-taotianc.zip": "4e70d9b372ef89374e185c82e58322a1ac8efc0216002b09234d03ee1ec19b3a",
+      "DSO576-Project--cleaning-xiru-zhang.zip": "a0d352015178b94171c38f393e0c6ef36bdb4a785683c483101991681fcf4de4",
+      "DSO576-Project--cleaning-emerald.zip": "5bddfeb533fbc367ba5d4be2c83d94fdfb157d123114048608e32c6fb14f56db"
+    },
+    "workbook_verification": {
+      "uploaded_name": "occupation.xlsx",
+      "stored_name": "bls_occupation_tables_2025_35.xlsx",
+      "sha256": "a7d060f0576f7d4f5b829b9a0bb4a6c11a12766d159ebb0e07aab5bd2e7583c5",
+      "matches_taotianc_manifest": true,
+      "coded_rows": 1112,
+      "experience_recoveries": 716,
+      "training_recoveries": 321,
+      "source_url": "https://www.bls.gov/emp/ind-occ-matrix/occupation.xlsx"
+    }
+  }
+}

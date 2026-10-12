@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-12",
+  "checks": [
+    "app.py parses successfully",
+    "canonical loader returns 755 occupations and 17760 task pairs",
+    "zero is formatted as zero rather than unavailable",
+    "fraction percentages have two decimals and growth keeps percent units",
+    "missing wage differs from verified None category",
+    "default table starts with programmers and correct display units",
+    "adding selected occupation twice stores one SOC",
+    "reset interpretation preserves shortlist sort and selection",
+    "saved occupation persists outside filters",
+    "CSV includes all clean fields and consecutive saved-subset rank for observed_exposure, ascending=False",
+    "CSV includes all clean fields and consecutive saved-subset rank for observed_exposure, ascending=True",
+    "CSV includes all clean fields and consecutive saved-subset rank for average_task_penetration, ascending=False",
+    "CSV includes all clean fields and consecutive saved-subset rank for average_task_penetration, ascending=True",
+    "CSV includes all clean fields and consecutive saved-subset rank for employment_2025, ascending=False",
+    "CSV includes all clean fields and consecutive saved-subset rank for employment_2025, ascending=True",
+    "CSV includes all clean fields and consecutive saved-subset rank for median_annual_wage_2025, ascending=False",
+    "CSV includes all clean fields and consecutive saved-subset rank for median_annual_wage_2025, ascending=True",
+    "CSV includes all clean fields and consecutive saved-subset rank for employment_change_percent_2025_35, ascending=False",
+    "CSV includes all clean fields and consecutive saved-subset rank for employment_change_percent_2025_35, ascending=True",
+    "remove helper retains other saved SOCs",
+    "clear helper leaves empty shortlist",
+    "empty table formats successfully and preserves zero count unavailable mean"
+  ],
+  "check_count": 22,
+  "environment": {
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "openpyxl": "3.1.5",
+    "streamlit_available": false,
+    "plotly_available": false
+  },
+  "limitations": [
+    "No Streamlit/Plotly runtime or browser interaction was tested.",
+    "UI dependency versions have not been selected or tested."
+  ]
+}

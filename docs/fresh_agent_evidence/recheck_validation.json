@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-12",
+  "source_build_spec_sha256": "67400d397e87271d96bb1ec85ddc4cbfa03a8d6eb3f4f322f31cc7862e8ab5ce",
+  "trial_app_sha256": "46a76f6d571600d086ee42624f2a943351f81762304509c6cbb6e1e1a169e52f",
+  "check_count": 22,
+  "checks": [
+    {
+      "name": "Q1 reset preserves sort direction, saved shortlist and detail selection",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Reset disables each numeric bound independently and clears search",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q2 invalid bounds produce unavailable comparison rather than empty data: {'employment_min': 100, 'employment_max': 0}",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q2 invalid bounds preserve detail and saved shortlist: {'employment_min': 100, 'employment_max': 0}",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q2 invalid bounds produce unavailable comparison rather than empty data: {'exposure_min': 0.9, 'exposure_max': 0.1}",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q2 invalid bounds preserve detail and saved shortlist: {'exposure_min': 0.9, 'exposure_max': 0.1}",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "A still-visible detail is retained after reset",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Valid excluding filters clear only detail selection",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "A valid no-match filter remains an empty dataframe with no input error",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q3 saved-subset rank starts at one and includes hidden saved rows, ascending=False",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q3 saved-subset rank starts at one and includes hidden saved rows, ascending=True",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q3 saved subset ties use SOC ascending",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q3 saved subset missing metric is last, ascending=False",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q3 saved subset missing metric is last, ascending=True",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q4 remove only unavailable saved identifiers and return every removed SOC for notice",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q4 absent detail clears independently",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q4 remaining valid saved row keeps table and full-field UTF-8 export available",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q4 repeated reconciliation preserves valid detail and does not repeat removals",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q4 if every saved SOC disappears the shortlist becomes empty without substituting occupations",
+      "kind": "pure helper/backend",
+      "passed": true
+    },
+    {
+      "name": "Q2 static UI wiring places cards/chart/table/groups/details only in valid-filter branch",
+      "kind": "static AST inspection",
+      "passed": true
+    },
+    {
+      "name": "Q2 static UI wiring keeps Shortlist accessible with unavailable outside-filter count during invalid bounds",
+      "kind": "static AST inspection",
+      "passed": true
+    },
+    {
+      "name": "Updated trial app compiles",
+      "kind": "Python syntax compilation",
+      "passed": true
+    }
+  ],
+  "important_mvp_guesses_remaining": [],
+  "live_ui_tested": false,
+  "streamlit_available": false,
+  "plotly_available": false,
+  "limitations": [
+    "Pure helper/backend assertions and static branch inspection do not execute real Streamlit widgets, callbacks, or Plotly rendering."
+  ]
+}
