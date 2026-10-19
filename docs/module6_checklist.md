@@ -422,6 +422,49 @@ Reference:
 Status: Unresolved
 Evidence:
 
-## 14. Document remaining limitations
-Status: Unresolved
+## 14. Document Remaining Limitations
+Status: Done
+
 Evidence:
+
+1. Data Source Versions
+The five CSV datasets were obtained from the team's shared
+Google Drive on October 19, 2026. Original upstream source
+versions have not been independently verified.
+
+2. Unmatched Occupation
+Legislators (SOC 11-1031) could not be matched to the BLS
+line-item occupation data and was excluded from the final
+occupation-level analytical dataset.
+
+3. Task Matching
+Task penetration values were matched using normalized exact
+task descriptions. Semantically similar tasks with different
+wording may remain unmatched.
+
+4. Missing Values
+Missing BLS employment-related descriptors and unavailable
+numeric values were preserved rather than imputed.
+Consequently, some analyses may have incomplete information.
+
+5. SOC Code Aggregation
+Multiple detailed O*NET-SOC occupations can map to the same
+six-digit SOC code. Duplicate occupation-task combinations
+were removed before calculating occupation-level averages.
+
+6. Interpretation
+Observed AI exposure measures reported AI use, not confirmed
+job displacement or future automation risk.
+
+7. Synthetic Sample
+The GitHub sample contains fictional records because
+permission to redistribute original source records has
+not been confirmed. Full-dataset verification requires
+access to the team's original CSV files.
+
+8. Project Scope
+The final workforce investment priority score and its
+weighting methodology have not yet been established.
+
+These limitations are documented so downstream users can
+interpret the analytical outputs appropriately.
