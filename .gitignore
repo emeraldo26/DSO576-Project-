@@ -17,5 +17,6 @@ __pycache__/
 
 # Ignore these files
 requirements.txt
+!/requirements.txt
 .vscode/*
 code/mock.ipynb

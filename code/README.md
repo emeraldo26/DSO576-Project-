@@ -11,8 +11,11 @@ It performs four Phase 1 checks:
 3. Measures occupation-level and task-level match rates.
 4. Creates an occupation-level table and a top-five-tasks table for later use.
 
-**The code does not calculate a priority score yet.** 
-The team still needs to choose and justify how the measures should be weighted.
+The Phase 1 exploration script does not calculate a priority score. The separate
+Phase 2 backend in `analysis/backend.py` calculates the agreed review score;
+see `BUILD_SPEC.md` for its definition and limits. Brahmani's Module 6 script
+is `code/clean_project_data.py`; it generates individual cleaning outputs under
+`outputs/` and a 50-row review sample under `samples/`.
 
 ## Files needed locally
 
@@ -27,8 +30,8 @@ Place these downloaded files in a local `data/` folder:
 - `onet_occupation_data.csv`
 - `bls_table_1_2_2025_35.csv`
 
-The `data/` folder is excluded by `.gitignore`, so the downloaded datasets will
-not be committed to GitHub.
+Raw files directly in `data/` are ignored by Git. Reviewed Phase 2 tables in
+`data/cleaned/` are tracked separately.
 
 
 ## Run the exploration
@@ -36,7 +39,7 @@ not be committed to GitHub.
 From the repository root:
 
 ```bash
-python explore_analysis/explore_data.py
+python code/explore_data.py
 ```
 
 The script writes its generated tables and text report to `outputs/`. That
