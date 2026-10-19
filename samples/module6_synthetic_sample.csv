@@ -1,0 +1,11 @@
+record_id,source,original_value,expected_cleaned_value,cleaning_issue
+1,onet_occupation,11-1011.00,11-1011,SOC code normalization
+2,onet_occupation,15-1299.01,15-1299,SOC code normalization
+3,task_penetration,Review Customer Reports,review customer reports,Text capitalization
+4,task_penetration,review customer reports,review customer reports,Duplicate normalized task
+5,task_penetration,  Prepare monthly reports  ,prepare monthly reports,Extra whitespace
+6,job_exposure,11-1031,UNMATCHED,Occupation without BLS match
+7,bls,EM_DASH,MISSING,Unavailable numeric value
+8,bls,85000,85000,Valid numeric value
+9,bls,0,0,Valid zero value
+10,task_penetration,1.2,INVALID,Out-of-range penetration
