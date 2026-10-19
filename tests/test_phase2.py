@@ -1,4 +1,4 @@
-"""Check source reconciliation, missing data, and dashboard behavior."""
+"""Reconstruction checks requiring all six raw inputs."""
 from pathlib import Path
 import unittest
 import math
@@ -16,6 +16,16 @@ ROOT = Path(__file__).resolve().parents[1]
 class Phase2Checks(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        required = [
+            "job_exposure.csv", "task_penetration.csv", "onet_task_statements.csv",
+            "onet_occupation_data.csv", "bls_table_1_2_2025_35.csv",
+            "bls_occupation_tables_2025_35.xlsx",
+        ]
+        missing = [name for name in required if not (ROOT / "data" / name).is_file()]
+        if missing:
+            raise unittest.SkipTest(
+                "raw-input reconstruction checks skipped; missing data/ files: " + ", ".join(missing)
+            )
         cls.sources, cls.metadata, cls.recovery_ledger = load_sources(ROOT / "data")
         cls.occupations, cls.tasks = load_clean_data(ROOT / "data" / "cleaned")
 
