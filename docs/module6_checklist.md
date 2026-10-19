@@ -418,9 +418,57 @@ Reference:
 - code/inspect_cleaning.py
 - outputs/occupation_exploration.csv
 
-## 13. Test reproducibility
-Status: Unresolved
+## 13. Ensure Reproducibility
+Status: Done
+
 Evidence:
+
+The cleaning and verification workflow was successfully
+rerun using the project's Python environment.
+
+1. Environment
+- Python 3
+- pandas==3.0.6
+- Dependencies documented in requirements.txt
+
+2. Reproduction Instructions
+The README provides instructions for obtaining the
+source datasets, installing dependencies, and running
+the analysis and verification scripts.
+
+3. Scripts
+- code/explore_data.py
+- code/inspect_cleaning.py
+
+4. Verification
+Both scripts executed successfully.
+
+The verification confirmed:
+- 755 matched occupations.
+- 17,991 unique normalized task descriptions.
+- No duplicate occupation codes in the final output.
+- No mismatches in independently calculated occupation-level
+  task counts or average task penetration.
+- All five record-level verification checks passed.
+
+5. Data Preservation
+The five original CSV files remain unchanged and are
+excluded from GitHub using .gitignore.
+
+6. Synthetic Sample
+A 10-record synthetic sample is provided at:
+samples/module6_synthetic_sample.csv
+
+The sample illustrates cleaning rules and difficult cases.
+The README explains how to obtain the original datasets
+and inspect actual verification results.
+
+7. GitHub
+Branch: kaho-module6-cleaning
+Repository: https://github.com/emeraldo26/DSO576-Project-
+
+All cleaning documentation, scripts, dependencies,
+and the synthetic sample are committed to GitHub.
 
 ## 14. Document Remaining Limitations
 Status: Done
