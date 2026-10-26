@@ -601,7 +601,7 @@ def build_markdown_report(
         "",
         "13. Test reproducibility",
         f"Status: {status}",
-        "Evidence or explanation: From the repository root, run: python3 code/clean_project_data.py. The command recreates outputs/cleaned/*.csv, data/samples/cleaned_sample_50_rows.csv, outputs/cleaning_evidence.json, outputs/cleaning_report.md, and docs/module6_cleaning_assignment_brahmani_mundhe.pdf. The script was restarted and run from source files.",
+        "Evidence or explanation: From the repository root, run: python3 analysis/brahmani_module6_cleaning.py. The command recreates outputs/cleaned/*.csv, data/samples/cleaned_sample_50_rows.csv, outputs/cleaning_evidence.json, outputs/cleaning_report.md, and docs/module6_cleaning_assignment_brahmani_mundhe.pdf. The script was restarted and run from source files.",
         "",
         "14. Document remaining limitations",
         f"Status: {status}",

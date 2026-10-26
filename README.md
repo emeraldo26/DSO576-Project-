@@ -10,7 +10,7 @@ The analysis combines:
 - O*NET occupation and task information; and
 - BLS employment, wage, training, and employment-projection data.
 
-This integration branch contains Phase 1 exploration, Brahmani's individual Module 6 cleaning workflow, and the reviewed Phase 2 occupation/task data and analysis backend. The dashboard interface is planned for Phase 3; see [BUILD_SPEC.md](BUILD_SPEC.md).
+The repository contains Phase 1 exploration, Brahmani's individual Module 6 cleaning workflow, the reviewed Phase 2 occupation/task data and analysis backend, and the Phase 3 Streamlit app. See [BUILD_SPEC.md](BUILD_SPEC.md) for the build specification.
 
 
 ### Version-control note
@@ -39,7 +39,11 @@ raw inputs are present and reports a clear skip listing missing files otherwise.
 
 The Phase 2 path writes 755 matched occupations, a 756-row master retaining the unmatched Legislators record, 17,760 scored occupation/task pairs, a BLS category-recovery ledger, and an audit JSON. The fixed-reference review score is calculated by `analysis/backend.py` when loading the clean occupations: 40% observed AI exposure, 30% projected employment contraction, 20% employment size, and 10% average task penetration. It is a screening rank, not a causal estimate or job-loss probability. The raw measures and score components remain available for review. The source fingerprints and row reconciliation are in `data/cleaned/data_audit.json`.
 
-Brahmani's individual cleaning script is retained separately at `code/clean_project_data.py`; its reviewed 50-row sample is `data/samples/cleaned_sample_50_rows.csv`. Run `python3 code/clean_project_data.py --skip-pdf` to recreate her full outputs under ignored `outputs/`. The integration uses exact decimal arithmetic for its four-place task-mean output so the sample regenerates identically. Her output schema differs from the Phase 2 backend contract, so use `analysis.run_phase2` for `data/cleaned/`. The two paths preserve their distinct cleaning decisions and provenance.
+Brahmani's individual cleaning script is retained separately at `analysis/brahmani_module6_cleaning.py`; its reviewed 50-row sample is `data/samples/cleaned_sample_50_rows.csv`. Run `python3 analysis/brahmani_module6_cleaning.py --skip-pdf` to recreate her full outputs under ignored `outputs/`. The integration uses exact decimal arithmetic for its four-place task-mean output so the sample regenerates identically. Her output schema differs from the Phase 2 backend contract, so use `analysis.run_phase2` for `data/cleaned/`. The two paths preserve their distinct cleaning decisions and provenance.
+
+## Phase 1 data exploration
+
+Run `python3 analysis/explore_data.py` from the repository root with the five CSV files listed in `data/README.md` present locally. This script checks expected files and columns, derives six-digit SOC matching keys, measures occupation and task match rates, and writes an occupation exploration table, a top-five-tasks table, and a text report to ignored `outputs/`. It does not calculate a priority score; the Phase 2 backend defines the review score separately.
 
 ## Data and analysis flow
 
@@ -50,7 +54,7 @@ The main occupation-level join uses six-digit SOC codes. The task-level join use
 - Start with [`docs/project-start.md`](docs/project-start.md) for the project context, candidate visions, and unresolved questions.
 - Review [`docs/Phase1- Deliverables.pdf`](docs/Phase1-%20Deliverables.pdf) for the Phase 1 project sketch.
 - See [`roles/members.md`](roles/members.md) for team ownership.
-- See [`code/README.md`](code/README.md) for the Phase 1 script description.
+- See the Phase 1 data exploration section above for the exploration script.
 - See [`data/README.md`](data/README.md) for the raw-data policy.
 - See [`docs/team_reconciliation.md`](docs/team_reconciliation.md) for the Phase 2 comparison of the five cleaning submissions.
 
