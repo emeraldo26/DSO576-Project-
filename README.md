@@ -24,22 +24,22 @@ With the six raw files listed in `data/README.md` present locally, install `requ
 ```bash
 python3 -m pip install -r requirements.txt
 python3 -m analysis.run_phase2
-python3 -m unittest discover -s tests -v
+python3 -m unittest discover -s analysis/tests -v
 ```
 
 The backend-only checks use only the tracked clean tables and can run in a
 fresh clone even before raw inputs are downloaded:
 
 ```bash
-python3 -m unittest tests.test_backend -v
+python3 -m unittest analysis.tests.test_backend -v
 ```
 
-`tests.test_phase2` is the source-reconstruction suite. It runs when all six
+`analysis.tests.test_phase2` is the source-reconstruction suite. It runs when all six
 raw inputs are present and reports a clear skip listing missing files otherwise.
 
 The Phase 2 path writes 755 matched occupations, a 756-row master retaining the unmatched Legislators record, 17,760 scored occupation/task pairs, a BLS category-recovery ledger, and an audit JSON. The fixed-reference review score is calculated by `analysis/backend.py` when loading the clean occupations: 40% observed AI exposure, 30% projected employment contraction, 20% employment size, and 10% average task penetration. It is a screening rank, not a causal estimate or job-loss probability. The raw measures and score components remain available for review. The source fingerprints and row reconciliation are in `data/cleaned/data_audit.json`.
 
-Brahmani's individual cleaning script is retained separately at `code/clean_project_data.py`; its reviewed 50-row sample is `samples/cleaned_sample_50_rows.csv`. Run `python3 code/clean_project_data.py --skip-pdf` to recreate her full outputs under ignored `outputs/`. The integration uses exact decimal arithmetic for its four-place task-mean output so the sample regenerates identically. Her output schema differs from the Phase 2 backend contract, so use `analysis.run_phase2` for `data/cleaned/`. The two paths preserve their distinct cleaning decisions and provenance.
+Brahmani's individual cleaning script is retained separately at `code/clean_project_data.py`; its reviewed 50-row sample is `data/samples/cleaned_sample_50_rows.csv`. Run `python3 code/clean_project_data.py --skip-pdf` to recreate her full outputs under ignored `outputs/`. The integration uses exact decimal arithmetic for its four-place task-mean output so the sample regenerates identically. Her output schema differs from the Phase 2 backend contract, so use `analysis.run_phase2` for `data/cleaned/`. The two paths preserve their distinct cleaning decisions and provenance.
 
 ## Data and analysis flow
 

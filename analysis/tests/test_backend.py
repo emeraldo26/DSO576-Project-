@@ -7,7 +7,7 @@ from analysis.backend import (
     rank_occupations, shortlist_data, summary_metrics,
 )
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 class BackendOnlyChecks(unittest.TestCase):

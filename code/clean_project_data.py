@@ -58,7 +58,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=project_root / "data")
     parser.add_argument("--output-dir", type=Path, default=project_root / "outputs")
-    parser.add_argument("--samples-dir", type=Path, default=project_root / "samples")
+    parser.add_argument("--samples-dir", type=Path, default=project_root / "data" / "samples")
     parser.add_argument("--docs-dir", type=Path, default=project_root / "docs")
     parser.add_argument("--student", default="Brahmani Mundhe")
     parser.add_argument("--branch", default=None)
@@ -601,7 +601,7 @@ def build_markdown_report(
         "",
         "13. Test reproducibility",
         f"Status: {status}",
-        "Evidence or explanation: From the repository root, run: python3 code/clean_project_data.py. The command recreates outputs/cleaned/*.csv, samples/cleaned_sample_50_rows.csv, outputs/cleaning_evidence.json, outputs/cleaning_report.md, and docs/module6_cleaning_assignment_brahmani_mundhe.pdf. The script was restarted and run from source files.",
+        "Evidence or explanation: From the repository root, run: python3 code/clean_project_data.py. The command recreates outputs/cleaned/*.csv, data/samples/cleaned_sample_50_rows.csv, outputs/cleaning_evidence.json, outputs/cleaning_report.md, and docs/module6_cleaning_assignment_brahmani_mundhe.pdf. The script was restarted and run from source files.",
         "",
         "14. Document remaining limitations",
         f"Status: {status}",
@@ -641,7 +641,7 @@ def build_markdown_report(
             "",
             "## Data sample choice",
             "",
-            "The committed sample file samples/cleaned_sample_50_rows.csv contains up to 50 cleaned occupation rows selected from high AI exposure, low AI exposure, high projected growth, projected decline, missing task-match cases, and records with 'Not specified in source' training/experience fields. This makes the review sample more useful than simply taking the first 50 rows.",
+            "The committed sample file data/samples/cleaned_sample_50_rows.csv contains up to 50 cleaned occupation rows selected from high AI exposure, low AI exposure, high projected growth, projected decline, missing task-match cases, and records with 'Not specified in source' training/experience fields. This makes the review sample more useful than simply taking the first 50 rows.",
             "",
             "## Generated files",
             "",
@@ -652,7 +652,7 @@ def build_markdown_report(
             "- outputs/cleaned/bls_occupations_clean.csv",
             "- outputs/cleaned/occupation_clean_merged.csv",
             "- outputs/cleaned/top_tasks_by_occupation_clean.csv",
-            "- samples/cleaned_sample_50_rows.csv",
+            "- data/samples/cleaned_sample_50_rows.csv",
             "- outputs/cleaning_evidence.json",
             "- outputs/cleaning_report.md",
             "- docs/module6_cleaning_assignment_brahmani_mundhe.pdf",

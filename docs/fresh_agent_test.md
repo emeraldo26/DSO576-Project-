@@ -18,7 +18,7 @@ acceptance record, not a claim that the score has been approved by the team.
   `data/README.md`.
 - The original source-dependent test module ran 19/19 tests with the local raw
   inputs. A clean clone cannot run those reconstruction checks until the six
-  inputs are supplied. Backend-only checks are separated in `tests/test_backend.py`
+  inputs are supplied. Backend-only checks are separated in `analysis/tests/test_backend.py`
   and do not require raw inputs.
 
 ## Score review

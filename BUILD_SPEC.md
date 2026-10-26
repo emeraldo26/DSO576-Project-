@@ -118,4 +118,4 @@ For this supplied snapshot:
 - Shortlist ordering/export respects the selected metric and direction. Resorting an already-ranked dataframe updates its displayed ranks without an error.
 - Reset preserves sorting, the shortlist, and a still-visible detail selection. Invalid bounds suppress only the comparison views and mark the shortlist's outside-filter count unavailable.
 - If a regenerated dataset removes a saved SOC, a notice identifies the removed SOC, the remaining saved rows stay available, and any invalid detail selection clears.
-- Backend checks run with `python -m unittest discover -s tests -v`. The October 12 fresh-agent build trial in `docs/fresh_agent_test.md` is historical and does not cover this score; the revised spec still needs its own fresh-agent pass. A live Streamlit/Plotly UI run remains Phase 3 validation.
+- Backend checks run with `python -m unittest discover -s analysis/tests -v`. The October 12 fresh-agent build trial in `docs/fresh_agent_test.md` is historical and does not cover this score; the revised spec still needs its own fresh-agent pass. A live Streamlit/Plotly UI run remains Phase 3 validation.

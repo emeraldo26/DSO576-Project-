@@ -15,7 +15,7 @@ The Phase 1 exploration script does not calculate a priority score. The separate
 Phase 2 backend in `analysis/backend.py` calculates the agreed review score;
 see `BUILD_SPEC.md` for its definition and limits. Brahmani's Module 6 script
 is `code/clean_project_data.py`; it generates individual cleaning outputs under
-`outputs/` and a 50-row review sample under `samples/`.
+`outputs/` and a 50-row review sample under `data/samples/`.
 
 ## Files needed locally
 

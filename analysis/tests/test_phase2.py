@@ -10,7 +10,7 @@ from analysis.backend import (
     occupation_details, rank_occupations, score_occupations, shortlist_data, summary_metrics, top_tasks,
 )
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 class Phase2Checks(unittest.TestCase):
