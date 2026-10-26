@@ -1,4 +1,4 @@
-"""Run from the repository root: python docs/audits/emerald/check_bubble_chart.py .
+"""Run from the repository root: python audits/emerald/check_bubble_chart.py .
 
 Checks actual backend code and extracts pure UI formatters without starting Streamlit.
 This is an AI-authored check; it does not establish browser rendering or raw-source accuracy.
