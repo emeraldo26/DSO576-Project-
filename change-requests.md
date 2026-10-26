@@ -35,3 +35,18 @@ Copy this block for each actionable finding and choose a unique ID. Reference th
 - Implementation commit and verification result, if resolved:
 
 Record findings without undoing a teammate's work. Mark a request resolved only after verifying the change.
+
+### B5-01 Correct projected-decline units in occupation details
+
+- Author: Brahmani Mundhe
+- Status: open
+- App version or commit checked: Backend/data commit `4a6a5b4`, together with the separately shared `app.py`.
+- Feature or number and its intended behavior or definition: Part 5 — occupation details and task list. The projected-decline value should use the unit stated in its row label.
+- Inputs and steps to reproduce: Launch the app, scroll to Occupation details, select Paralegals and Legal Assistants (23-2011), and inspect the projected-change and projected-decline rows.
+- Expected result: Projected change displays `-0.3%`. The row labeled “Projected decline (percentage points)” displays `0.3 pp`.
+- Actual result: The projected-decline row displays `0.3%`, despite its percentage-points label.
+- Evidence (including file, function, and relevant lines if code was checked): Confirmed in my live app screenshots. In the audited `app.py`, `details()` at line 103 passes this value to `growth()`, which appends `%` at lines 45–46. Source review was AI-assisted. Separate checks passed: Paralegals’ average task penetration is `(0.9370 / 7) × 100 = 13.39%`, and task coverage is `(7 / 12) × 100 = 58.33%`; both match the live display.
+- Likely cause, if established, and remaining uncertainty: The percentage formatter is reused for a field labeled in percentage points. This is a presentation inconsistency; the underlying numeric magnitude is unchanged. Raw-source accuracy was not independently re-established.
+- Requested change: Use a percentage-point formatter for this row, preserving `Not reported` for missing values. Keep the separate projected-change row in percent.
+- Verification check and expected result: Paralegals displays decline `0.3 pp`; Chief Executives displays decline `0.0 pp`. Their projected-change values remain `-0.3%` and `3.2%`, respectively.
+- Implementation commit and verification result, if resolved: Not resolved; no fix has been implemented or verified.
