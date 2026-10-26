@@ -9,7 +9,7 @@ Add your name and what you will audit. Choose a different scope from your teamma
 | Author | Feature | Number | Distinct scope or new evidence |
 | --- | --- | --- | --- |
 | Xiru | Filters and summary cards | Occupation count; total employment | Check that filters select the intended occupations and that summary counts and employment totals match the filtered data. |
-| Emerald | Bubble chart | Axis values; bubble sizes; AI exposure percentages | Check that plotted values, bubble sizes, and percentage formatting match the underlying data and intended chart definitions. |
+| Emerald | Bubble chart: axes, bubble area, tooltips, omissions, and explanatory caption | Observed AI exposure percentage; axis values and employment size encoding | Compare BUILD_SPEC.md with app.py and analysis/backend.py at commit 7485591666afe70acf5c0c7f9eeed6d6e5e16e74. AI-assisted numerical and local browser checks passed for chart scaling and area encoding. B2-01 records a reproduced reset discrepancy affecting chart population, adding rendered-chart evidence to the filter audit. |
 | Maksim | SOC group bar chart | Declining-occupation count per SOC group | Independently count declining occupations by SOC group and compare the results with the bar chart. |
 | Chang Zhou | Priority score and ranking table | Priority scores; displayed ranks | Independently recalculate priority scores using the build-spec formula and check sorting, rank assignment, and consistency between scores and displayed ranks. |
 | Brahmani | Occupation details and task list | Occupation-level measures; task values and ordering | Compare the selected occupation’s displayed measures and tasks with the source data, and check that tasks follow the intended ordering. |
@@ -35,6 +35,21 @@ Copy this block for each actionable finding and choose a unique ID. Reference th
 - Implementation commit and verification result, if resolved:
 
 Record findings without undoing a teammate's work. Mark a request resolved only after verifying the change.
+
+### B2-01 Persistently clear exposure bounds when resetting chart filters
+
+- Author: Emerald
+- Status: open
+- App version or commit checked: 7485591666afe70acf5c0c7f9eeed6d6e5e16e74, unchanged local app; Streamlit 1.66.1 and Plotly 6.9.0.
+- Feature or number and its intended behavior or definition: Bubble-chart population after Reset filters. BUILD_SPEC.md specifies Reset filters and defaults with exposure bounds disabled. A reset should keep all occupations included until another filter is deliberately applied.
+- Inputs and steps to reproduce: Start a fresh session. Enable Use minimum exposure, set Minimum AI exposure (%) to 50, and press Enter. Observe 11 chart points. Click Reset filters. Observe 755 points, but the checkbox remains checked and the input remains 50.00. Change Sort by to Median annual wage. Observe the chart returns to 11 points.
+- Expected result: Reset disables the exposure bound, synchronizes the visible controls with the full population, and subsequent sorting keeps 755 chart points.
+- Actual result: Reset briefly produces 755 points while showing the old active bound; the next sort restores the 11-point filtered population.
+- Evidence: check_reset_browser.py; browser-evidence/reset-results.json; browser-evidence/05-reset-followup.png. Reproduced in a separate fresh Chrome session after first appearing during the main browser audit. app.py reset_filters(), lines 62–66, removes widget keys; main() creates the bound widgets at lines 158–163 and applies their returned values at lines 179–180.
+- Likely cause, if established, and remaining uncertainty: Removing keys does not persistently reset the currently mounted widgets in the tested Streamlit version. A code-level root cause and behavior on the team's deployed dependency versions remain to be verified.
+- Requested change: Reset widget values explicitly to their defaults using the supported Streamlit callback pattern, keeping the displayed control states and backend filter inputs synchronized. Coordinate with the filter owner; no teammate code has been changed.
+- Verification check and expected result: Repeat the steps in a fresh session. After reset the bound is unchecked; sorting still leaves 755 chart points. Also check the other bounds, multiselects, and search retain their default state after a later interaction.
+- Implementation commit and verification result, if resolved: Not resolved; no implementation change was made.
 
 ### B5-01 Correct projected-decline units in occupation details
 

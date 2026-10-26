@@ -1,0 +1,57 @@
+{
+  "default": {
+    "points": 755,
+    "axes": [
+      "BLS projected employment change (%)",
+      "Observed AI exposure (%)"
+    ],
+    "color_range": [
+      0,
+      100
+    ],
+    "sizemode": "area",
+    "reference_line": true,
+    "caption_and_omissions": true
+  },
+  "bubble_area": {
+    "svg_markers_checked": 755,
+    "result": "Rendered circle radii match sqrt(employment/(2*sizeref)) within 0.006 pixels; area is proportional to employment."
+  },
+  "programmers": {
+    "point": {
+      "x": -7.3,
+      "y": 74.51,
+      "soc": "15-1251",
+      "custom": [
+        "15-1251",
+        "82.5",
+        "1.0",
+        "0.6",
+        "0.7",
+        "1.0",
+        "74.51%",
+        "-7.3%",
+        "110,800",
+        "$100,390"
+      ],
+      "size": 110800,
+      "color": 82.53620250831469
+    },
+    "actual_hover": "Computer Programmers (15-1251)Score: 82.5Exposure / decline / employment / task components: 1.0 / 0.6 / 0.7 / 1.0AI exposure: 74.51%Projected change: -7.3%Employment: 110,800Wage: $100,390"
+  },
+  "filter": {
+    "minimum_exposure_percent": 50,
+    "points": 11,
+    "minimum_y": 50.99
+  },
+  "sort": {
+    "selected": "Median annual wage",
+    "color_values_unchanged": true,
+    "range_unchanged": true
+  },
+  "empty": {
+    "message": true,
+    "plot_count": 0,
+    "omitted": 0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "before": {
+    "n": 11,
+    "checked": true,
+    "bound": "50.00"
+  },
+  "after_reset": {
+    "n": 755,
+    "checked": true,
+    "bound": "50.00"
+  },
+  "after_sort": {
+    "n": 11,
+    "checked": true,
+    "bound": "50.00"
+  }
+}
