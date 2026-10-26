@@ -65,3 +65,48 @@ Record findings without undoing a teammate's work. Mark a request resolved only 
 - Requested change: Use a percentage-point formatter for this row, preserving `Not reported` for missing values. Keep the separate projected-change row in percent.
 - Verification check and expected result: Paralegals displays decline `0.3 pp`; Chief Executives displays decline `0.0 pp`. Their projected-change values remain `-0.3%` and `3.2%`, respectively.
 - Implementation commit and verification result, if resolved: Not resolved; no fix has been implemented or verified.
+
+### C4-01 Label the ranking-table wage as median
+
+- Author: Chang Zhou
+- Status: open
+- App version or commit checked: `a1776b5` (the app code is unchanged from its introduction in `c4621e9`).
+- Feature or number and its intended behavior or definition: Part 4 ranking table. The wage column should name the measure it displays.
+- Inputs and steps to reproduce: Open Compare occupations and read the wage column heading; add an occupation to Shortlist and read the same heading there; inspect `display_table()` in `app.py`.
+- Expected result: The heading says “Median annual wage” because the table displays `median_annual_wage_2025`, formatted as dollars.
+- Actual result: The heading says “Annual wage”. The source column and value formatter already use the median wage field.
+- Evidence (including file, function, and relevant lines if code was checked): `app.py` `display_table()`, lines 70–83: line 72 selects `median_annual_wage_2025`, line 79 formats it, and line 82 labels it “Annual wage”. `BUILD_SPEC.md` identifies the wage as a median. This is a code review; a live UI check remains to be done.
+- Likely cause, if established, and remaining uncertainty: The display label is abbreviated; no numeric-value defect is established.
+- Requested change: Change only this ranking-table heading to “Median annual wage”.
+- Verification check and expected result: Confirm the new heading in both Compare occupations and Shortlist. Compare several SOC wage values before and after; the values and ordering should remain the same.
+- Implementation commit and verification result, if resolved: Not resolved; no implementation change was made.
+
+### C4-02 Explain score components and provisional interpretation concisely
+
+- Author: Chang Zhou
+- Status: open
+- App version or commit checked: `a1776b5` (the app code is unchanged from its introduction in `c4621e9`).
+- Feature or number and its intended behavior or definition: Part 4 “How the review score works” expander should let a reader interpret the 0–100 score using the formula in `BUILD_SPEC.md`, without changing the backend calculation.
+- Inputs and steps to reproduce: Expand “How the review score works” below the ranking table and compare its text with `BUILD_SPEC.md` and `analysis/backend.py`.
+- Expected result: A brief explanation says exposure and matched-task mean are divided by fixed reference values and capped at 1; only negative projected employment change contributes to decline; employment uses `log1p(employment_2025 / 1000) / log1p(921220 / 1000)`, capped at 1. The four components receive 40/30/20/10 weights and the sum is multiplied by 100. A missing required input leaves the score unavailable. The weights are a provisional team screening choice, and the score is neither a job-loss probability nor an AI-caused job-loss estimate.
+- Actual result: The expander gives the weights, fixed-reference behavior, missing-input rule, and wage exclusion, but not the component transformations or provisional interpretation.
+- Evidence (including file, function, and relevant lines if code was checked): `app.py` lines 248–251; `analysis/backend.py` `SCORE_REFERENCES` and `score_occupations()`, lines 16–63; `BUILD_SPEC.md` score definitions around lines 48–57. This is a code review; no score-calculation defect is claimed.
+- Likely cause, if established, and remaining uncertainty: The app summarizes the formula more briefly than the build specification. The visual length of a proposed expanded explanation has not yet been checked in a live browser.
+- Requested change: Add a compact component explanation and provisional-use sentence inside the existing expander. Use the exact backend reference values if numbers are shown, especially `0.3194842391304347` for task penetration. Keep the expander collapsed by default and avoid a large table unless the rendered layout remains readable. Do not change `score_occupations()`.
+- Verification check and expected result: Compare every displayed transformation and reference value with the backend and spec; confirm the expander is readable at normal width and scores remain unchanged.
+- Implementation commit and verification result, if resolved: Not resolved; no implementation change was made.
+
+### C4-03 Clarify sort choices and rank rules
+
+- Author: Chang Zhou
+- Status: open
+- App version or commit checked: `a1776b5` (the app code is unchanged from its introduction in `c4621e9`).
+- Feature or number and its intended behavior or definition: Part 4 sort controls and displayed ranks should be understandable without reading the source code.
+- Inputs and steps to reproduce: Inspect the six “Sort by” labels and change Direction between descending and ascending; compare the ranking table with the sorting contract in `BUILD_SPEC.md`.
+- Expected result: Brief help text defines the six measures: 0–100 review priority score, observed AI exposure percentage, mean penetration across matched tasks, 2025 employment in persons, 2025 median annual wage in dollars, and BLS projected employment change percentage from 2025 to 2035. It also states that Direction controls high-to-low or low-to-high order, exact ties (including zeros) use SOC code ascending, missing values sort last, and ranks count rows from 1 in the current view.
+- Actual result: The interface lists the six short labels and a direction selector, but does not state their units, tie rule, missing-value rule, or how ranks are assigned.
+- Evidence (including file, function, and relevant lines if code was checked): `app.py` `SORT_OPTIONS`, lines 17–24; sort controls, lines 167–169; table call, lines 245–247. `analysis/backend.py` `rank_occupations()`, lines 189–199, already implements the stated tie, missing-value, and rank rules. This is a code review; a live UI check remains to be done.
+- Likely cause, if established, and remaining uncertainty: The interface relies on short control labels while the fuller sorting contract stays in the build specification. No backend sorting defect is claimed.
+- Requested change: Add compact sort help near the control or in a collapsed explanation near the table; avoid a long always-visible paragraph. Keep `rank_occupations()` unchanged.
+- Verification check and expected result: Confirm all six descriptions match the selected columns and units. Check default score descending, reverse direction, an exact zero tie ordered by SOC ascending, missing values last, and row-by-row ranks beginning at 1.
+- Implementation commit and verification result, if resolved: Not resolved; no implementation change was made.
