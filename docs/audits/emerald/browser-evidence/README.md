@@ -15,7 +15,7 @@ Install the project's `requirements.txt` and Playwright in an isolated Python en
 From the project root, run the numeric check:
 
 ```sh
-python check_bubble_chart.py .
+python docs/audits/emerald/check_bubble_chart.py .
 ```
 
 Start the unchanged app in another terminal:
@@ -27,8 +27,8 @@ python -m streamlit run app.py --server.headless true --server.port 8519 --brows
 Then run:
 
 ```sh
-python check_browser.py
-python check_reset_browser.py
+python docs/audits/emerald/check_browser.py
+python docs/audits/emerald/check_reset_browser.py
 ```
 
 Scripts replace their corresponding evidence files on rerun. `check_browser.py` checks passing chart behavior; `check_reset_browser.py` records reset state without treating the documented defect as a passing fix verification.

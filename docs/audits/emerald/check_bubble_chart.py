@@ -1,4 +1,4 @@
-"""Run with the course uv environment: uv run python homework-draft/check_bubble_chart.py APP_REPO.
+"""Run from the repository root: python docs/audits/emerald/check_bubble_chart.py .
 
 Checks actual backend code and extracts pure UI formatters without starting Streamlit.
 This is an AI-authored check; it does not establish browser rendering or raw-source accuracy.

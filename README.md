@@ -57,6 +57,7 @@ The main occupation-level join uses six-digit SOC codes. The task-level join use
 - See the Phase 1 data exploration section above for the exploration script.
 - See [`data/README.md`](data/README.md) for the raw-data policy.
 - See [`docs/team_reconciliation.md`](docs/team_reconciliation.md) for the Phase 2 comparison of the five cleaning submissions.
+- See [`change-requests.md`](change-requests.md) for shared app audit requests and [`docs/audits/emerald/browser-evidence/README.md`](docs/audits/emerald/browser-evidence/README.md) for Emerald's bubble-chart audit evidence.
 
 ## Current limitations and next steps
 
