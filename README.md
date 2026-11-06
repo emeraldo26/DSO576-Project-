@@ -1,5 +1,37 @@
 # AI Workforce Investment Planner
 
+**Live app:** _add Streamlit Community Cloud URL_ · **Demo video:** _add link_ · **Repository:** _add GitHub URL_
+
+## Phase 3 MVP at a glance
+
+**User and decision.** A program manager at a workforce-development agency deciding which occupations to put on the review list for AI-transition training and reskilling funding.
+
+**User flow.** A program manager moves through three steps, chosen with the step bar under the summary cards. A filter bar at the top drives every step: quick views (Office & admin, Tech, Sales, Healthcare, Teaching, Only shrinking jobs), industry, job size, job outlook, job search, and the "High AI use" threshold. Exact worker and AI-use ranges are under "More filters" in the same bar, next to Reset. Four summary cards (jobs, workers, average AI use, shrinking jobs) always reflect the filters.
+
+| Step | User question | What they see |
+|---|---|---|
+| ① Explore the landscape | How is AI changing work, and where? | Jobs by AI-use band (columns); workers in four groups (waffle); AI use by industry (lollipop); where high-AI, shrinking jobs are (block chart); entry education (donut) and pay bands (columns). |
+| ② Prioritize jobs | Which jobs should we review first, and why? | The Phase 1 sketch flow: AI use vs. job outlook bubble chart (size = workers, colour = priority score), score breakdown of the top jobs, ranked table with sort controls, and a compact job card (five key numbers, score parts, top 5 AI-used tasks, education / training / openings; all numbers in an expander). Clicking a bubble or table row opens that job. |
+| ③ Build your shortlist | What do we bring to program review? | Saved jobs compared side by side, re-ranked table, CSV export, remove/clear. |
+
+Every chart title is a one-line takeaway recalculated from the filters; extra detail sits behind the ⓘ icons. Colours keep one meaning: orange = high AI use and projected to shrink (and priority score), blue = AI use, grey = other.
+
+**Run locally**
+
+```bash
+python3 -m pip install -r requirements.txt
+streamlit run app.py
+python3 -m unittest discover -s analysis/tests -v   # backend + headless UI checks
+```
+
+**Deploy (Streamlit Community Cloud).** Repository: this repo · Branch: `main` · Main file path: `app.py` · Python 3.11+. No secrets are needed; the app reads only the tracked files in `data/cleaned/`. The theme is in `.streamlit/config.toml`.
+
+**Data scope.** All 755 occupations matched across the Anthropic Economic Index, O*NET and BLS 2025–35 national projections (17,760 occupation/task pairs). No subset or sample is used. Legislators (11-1031) is excluded because it has no BLS match. The Anthropic release/observation period is not identified in the supplied files.
+
+**Current limitations.** The review score weights (40/30/20/10) are a provisional team choice, not validated against training outcomes. Observed AI exposure records usage, not job replacement. BLS change does not isolate AI's effect. Data is national, with no regional demand or training-cost information. Task matching uses exact normalized text, so some tasks remain unmatched. The 'Hide jobs with no AI use' toggle and the High AI use threshold are view settings only and never change a score.
+
+---
+
 ## Project overview
 
 The **AI Workforce Investment Planner** explores how observed AI use, occupation-level tasks, and labor-market data can support workforce decisions. The project is designed to help a workforce-development agency identify occupations that may deserve priority for AI-transition training and reskilling support.
@@ -64,5 +96,5 @@ The main occupation-level join uses six-digit SOC codes. The task-level join use
 - AI exposure is an observation of usage and should not be interpreted as proof of job replacement.
 - The current task match is based on normalized exact task text, so semantically similar but differently worded tasks may remain unmatched.
 - National BLS projections do not by themselves describe California or other local labor markets.
-- The fixed-reference priority score is a transparent review choice and should be assessed by the team before using it for decisions. The dashboard interface is not yet implemented.
+- The fixed-reference priority score is a transparent review choice and should be assessed by the team before using it for decisions.
 - Future work should review match quality, add relevant regional or training-access data, and test the screening choices with stakeholders.
