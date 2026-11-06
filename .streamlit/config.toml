@@ -1,0 +1,12 @@
+[theme]
+base = "light"
+primaryColor = "#eb6834"
+backgroundColor = "#f6f5f1"
+secondaryBackgroundColor = "#ecebe5"
+textColor = "#13263f"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, sans-serif"
+headingFont = "Space Grotesk:https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap, sans-serif"
+baseRadius = "0.6rem"
+
+[server]
+headless = true
