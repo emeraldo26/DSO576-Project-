@@ -1,6 +1,6 @@
 # AI Workforce Investment Planner
 
-**Live app:** _add Streamlit Community Cloud URL_ · **Demo video:** _add link_ · **Repository:** _add GitHub URL_
+**Live app:** [Open the app](https://dso576-mvp-preview.streamlit.app/) · **Demo video:** [Watch the video](https://drive.google.com/file/d/1x7Z8uQi4_X0tSMpd4lVhmfvnW169IGqR/view?usp=sharing) · **Repository:** [GitHub](https://github.com/emeraldo26/DSO576-Project-)
 
 ## Phase 3 MVP at a glance
 
